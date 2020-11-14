@@ -1,50 +1,97 @@
-<!-- Default form login -->
-<form class="text-center border border-light p-5">
+<!--Navbar-->
+<mdb-navbar
+  SideClass="navbar navbar-expand-lg navbar-dark white lighten-1"
+  [containerInside]="false"
+>
+  <!-- Navbar brand -->
+  <mdb-navbar-brand
+    ><a class="navbar-black"  href="#">Navbar</a></mdb-navbar-brand
+  >
 
-    <p class="h4 mb-4">Sign in</p>
-  
-    <!-- Email -->
-    <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail">
-  
-    <!-- Password -->
-    <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password">
-  
-    <div class="d-flex justify-content-around">
-      <div>
-        <!-- Remember me -->
-        <mdb-checkbox [default]="true">Remember me</mdb-checkbox>
-      </div>
-      <div>
-        <!-- Forgot password -->
-        <a href="">Forgot password?</a>
-      </div>
-    </div>
-  
-    <!-- Sign in button -->
-    <button mdbBtn color="info" class="my-4" type="submit">Sign in</button>
-  
-    <!-- Register -->
-    <p>Not a member?
-      <a href="">Register</a>
-    </p>
-  
-    <!-- Social login -->
-    <p>or sign in with:</p>
-  
-    <a type="button" class="light-blue-text mx-2">
-      <mdb-icon fab icon="facebook"></mdb-icon>
-    </a>
-    <a type="button" class="light-blue-text mx-2">
-      <mdb-icon fab icon="twitter"></mdb-icon>
-    </a>
-    <a type="button" class="light-blue-text mx-2">
-      <mdb-icon fab icon="linkedin"></mdb-icon>
-    </a>
-    <a type="button" class="light-blue-text mx-2">
-      <mdb-icon fab icon="github"></mdb-icon>
-    </a>
-  
-  </form>
-  <!-- Default form login -->
+  <!-- Collapsible content -->
+  <links>
+    <!-- Links -->
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link waves-light" mdbWavesEffect
+          >Home<span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" mdbWavesEffect>Features</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" mdbWavesEffect>Pricing</a>
+      </li>
+
+      <!-- Dropdown -->
+      <li class="nav-item dropdown" dropdown>
+        <a
+          dropdownToggle
+          mdbWavesEffect
+          type="button"
+          class="nav-link dropdown-toggle waves-light"
+          mdbWavesEffect
+        >
+          Basic dropdown<span class="caret"></span
+        ></a>
+        <div
+          *dropdownMenu
+          class="dropdown-menu dropdown dropdown-primary"
+          role="menu"
+        >
+          <a class="dropdown-item waves-light" mdbWavesEffect href="#"
+            >Action</a
+          >
+          <a class="dropdown-item waves-light" mdbWavesEffect href="#"
+            >Another action</a
+          >
+          <a class="dropdown-item waves-light" mdbWavesEffect href="#"
+            >Something else here</a
+          >
+          <div class="divider dropdown-divider"></div>
+          <a class="dropdown-item waves-light" mdbWavesEffect href="#"
+            >Separated link</a
+          >
+        </div>
+      </li>
+    </ul>
+    <!-- Links -->
+
+    <ul class="navbar-nav ml-auto nav-flex-icons">
+      <li class="nav-item">
+        <a class="nav-link">1 <mdb-icon fas icon="envelope"></mdb-icon></a>
+      </li>
+      <li class="nav-item avatar dropdown" dropdown>
+        <a
+          dropdownToggle
+          mdbWavesEffect
+          type="button"
+          class="nav-link dropdown-toggle waves-light"
+          mdbWavesEffect
+        >
+          <img
+            src="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg"
+            alt=""
+            class="img-fluid rounded-circle z-depth-0 imgg"
+        /></a>
+        <div
+          *dropdownMenu
+          class="dropdown-menu dropdown-menu-right dropdown dropdown-primary"
+          role="menu"
+        >
+          <a class="dropdown-item waves-light" mdbWavesEffect href="#"
+            >My account</a
+          >
+          <a class="dropdown-item waves-light" mdbWavesEffect href="#"
+            >Log out</a
+          >
+        </div>
+      </li>
+    </ul>
+  </links>
+  <!-- Collapsible content -->
+</mdb-navbar>
+<!--/.Navbar-->
 
 <router-outlet></router-outlet>
