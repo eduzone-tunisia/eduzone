@@ -1,13 +1,13 @@
 const router = require("express").Router();
 const cours = require("../database/models/course");
-
+// get all courses in the database 
 router.get('/Get', (req, res) => {
     cours.find()
         .then( course=> res.json(course))
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
-
+// add new couses in the database 
 router.post('/addCourse', (req, res)=>{
     
     const title = req.body.title;
