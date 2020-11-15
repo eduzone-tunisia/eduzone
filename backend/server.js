@@ -4,6 +4,7 @@ const db = require("./database/index.js");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const app = express();
+const student = require("./routes/students");
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -13,9 +14,9 @@ app.use(express.static(`../eduzone/dist/eduzone`));
 //   res.sendFile(path.join(__dirname + "../dist/eduzone/index.html"));
 // });
 
-
 const Course = require("./routes/courses");
-app.use("/Course", Course)
+app.use("/Course", Course);
+app.use("/student", student);
 
 const port = process.env.PORT || 8080;
 app.listen(port, () => {
