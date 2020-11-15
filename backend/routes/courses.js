@@ -1,13 +1,13 @@
 const router = require("express").Router();
-const Cours = require("../database/models/course");
-
+const cours = require("../database/models/course");
+// get all courses in the database 
 router.get('/Get', (req, res) => {
-    Cours.find()
+    cours.find()
         .then( course=> res.json(course))
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
-
+// add new couses in the database 
 router.post('/addCourse', (req, res)=>{
     
     const title = req.body.title;
@@ -21,7 +21,7 @@ router.post('/addCourse', (req, res)=>{
 
     
     
-    const newCourse = new Cours({
+    const newCourse = new cours({
         title,
         description,
         videoUrl,
