@@ -1,15 +1,26 @@
 const router = require("express").Router();
-const cours = require("../database/models/course");
-const Teacher = require("../database/models/teacher");
-// get all courses in the database
+const Course = require("../database/models/course");
+
+//get all courses
+
 router.get("/", async (req, res) => {
-  const courses = await cours.find().populate("teacher");
-  res.json(courses);
+  await Course.find({}, (err, data) => {
+    res.json(data);
+  });
+});
+
+// get courses in the database by teacher
+router.post("/getCourses", async (req, res) => {
+  console.log(req.body);
+  const courses = await Course.find({ teacher: req.body.teacherId })
+    .populate("teacher")
+    .exec();
+  console.log(courses);
+  res.send(courses);
 });
 
 // add new couses in the database
 router.post("/addCourse", async (req, res) => {
-  console.log(req.body);
   const {
     teacher,
     title,
@@ -20,7 +31,7 @@ router.post("/addCourse", async (req, res) => {
     sections,
   } = req.body;
 
-  const newCourse = new cours({
+  const newCourse = new Course({
     teacher,
     title,
     description,
