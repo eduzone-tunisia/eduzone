@@ -32,12 +32,5 @@ const teacher = new Schema({
   experience: {
     type: String,
   },
-
-  videos: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "course",
-    },
-  ],
 });
 module.exports = mongoose.model("teacher", teacher);
