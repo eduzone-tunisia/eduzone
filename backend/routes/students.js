@@ -7,6 +7,13 @@ const verify = require("./verifyToken.js");
 const dotenv = require("dotenv");
 dotenv.config();
 
+//getting all students
+router.get("/", async (req, res) => {
+  await Student.find({}, (err, data) => {
+    res.json(data);
+  });
+});
+
 //validation for registration of a student
 const schema = Joi.object({
   firstName: Joi.string().required(),
@@ -15,7 +22,7 @@ const schema = Joi.object({
   password: Joi.string().min(6).required(),
   phoneNumber: Joi.number(),
   dateOfBirth: Joi.date(),
-  imgUrl: Joi.string(),
+  imageUrl: Joi.string(),
 });
 
 
@@ -37,7 +44,7 @@ router.post("/studentRegistration", async (req, res, next) => {
       password: hashedPassword,
       phoneNumber: req.body.phoneNumber,
       dateOfBirth: req.body.dateOfBirth,
-      imgUrl: req.body.imgUrl,
+      imageUrl: req.body.imageUrl,
     });
 
     const { error } = await schema.validateAsync(req.body);
@@ -77,6 +84,12 @@ router.post("/login", async (req, res, next) => {
     if (error.isJoi === true) res.status(400).send(error.details[0].message);
     next(error);
   }
+});
+
+//update a student
+router.put("/:id", async (req, res) => {
+  await Student.findByIdAndUpdate(req.params.id, req.body);
+  res.json({ message: "specific data updated" });
 });
 
 module.exports = router;

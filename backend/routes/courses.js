@@ -1,38 +1,49 @@
 const router = require("express").Router();
-const cours = require("../database/models/course");
-// get all courses in the database 
-router.get('/Get', (req, res) => {
-    cours.find()
-        .then( course=> res.json(course))
-        .catch(err => res.status(400).json('Error: ' + err));
+const Course = require("../database/models/course");
+
+//get all courses
+
+router.get("/", async (req, res) => {
+  await Course.find({}, (err, data) => {
+    res.json(data);
+  });
 });
 
-// add new couses in the database 
-router.post('/addCourse', (req, res)=>{
-    
-    const title = req.body.title;
-    const description = req.body.description;
-    const videoUrl = req.body.videoUrl ;
-    const price = req.body.price;
-    const numberOfViews = req.body.numberOfViews;
-    
-    const sections = req.body.sections;
-    
+// get courses in the database by teacher
+router.post("/getCourses", async (req, res) => {
+  console.log(req.body);
+  const courses = await Course.find({ teacher: req.body.teacherId })
+    .populate("teacher")
+    .exec();
+  console.log(courses);
+  res.send(courses);
+});
 
-    
-    
-    const newCourse = new cours({
-        title,
-        description,
-        videoUrl,
-        price,
-        numberOfViews,
-        sections
-        
-    });
-    
-    newCourse.save()
-        .then(() => res.json('new Course added'))
-        .catch(err => res.status(400).json('Err ' + err))
-})
+// add new couses in the database
+router.post("/addCourse", async (req, res) => {
+  const {
+    teacher,
+    title,
+    description,
+    videoUrl,
+    price,
+    numberOfViews,
+    sections,
+  } = req.body;
+
+  const newCourse = new Course({
+    teacher,
+    title,
+    description,
+    videoUrl,
+    price,
+    numberOfViews,
+    sections,
+  });
+
+  const newCourseAdded = await newCourse.save();
+  console.log("cours", newCourseAdded);
+
+  res.send(newCourseAdded);
+});
 module.exports = router;
