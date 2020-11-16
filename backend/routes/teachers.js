@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const Teacher = require("../database/models/teacher");
+const cours = require("../database/models/course");
 const Joi = require("joi");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
