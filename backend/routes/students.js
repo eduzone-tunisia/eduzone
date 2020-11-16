@@ -18,8 +18,9 @@ const schema = Joi.object({
   imgUrl: Joi.string(),
 });
 
+
 //create a student
-router.post("/add", async (req, res, next) => {
+router.post("/studentRegistration", async (req, res, next) => {
   console.log(req.body);
   //check if student exists
   const emailExist = await Student.findOne({ email: req.body.email });
