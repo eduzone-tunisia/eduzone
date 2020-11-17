@@ -7,13 +7,17 @@ import { AppComponent } from './app.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
+import { MiddleComponent } from './middle/middle.component';
+import { AboutUsComponent } from './About-us/About-us.component';
 
 @NgModule({
-  declarations: [			
+  declarations: [					
       AppComponent,
       LandingPageComponent,
       NavbarComponent,
-      FooterComponent
+      FooterComponent,
+      MiddleComponent,
+      AboutUsComponent
    ],
   imports: [BrowserModule, MDBBootstrapModule.forRoot(), AppRoutingModule],
   providers: [],

@@ -1,22 +1,21 @@
 .carousel-item{
     box-sizing: border-box;
-    width: 1890px;
-    height: 850px; 
+    width: 1790px;
+    height: 650px;
+    border-radius: 8px;
+    margin-left:55px;
 }
 .a{
+    color:black;
     margin-top:-350px;
     margin-left: 635px;
-    font-weight: 700;
-    font-size: 90px;
+    font-weight: 500;
+    font-size: 50px;
 }
 .b{
+    color:black;
     margin-left: 800px;
-    font-size: 70px; 
-}
-.c{
-    margin-top:-650px;
-    margin-left: -900px;
-    font-size: 35px;
+    font-size: 35px; 
 }
 .d{
     color: black;
@@ -31,13 +30,13 @@
 }
 
 .f {
-    margin-top: -650px;
-    font-size: 50px;
-    margin-left: -1260px;
+    margin-top: -380px;
+    font-size: 30px;
+    margin-left: -800px;
     font-weight: 500;
 }
 .g{
-    font-size: 40px;
+    font-size: 20px;
 }
 
 .h{
@@ -50,4 +49,14 @@
 .i{
     margin-left: 1120px;
     font-size: 40px;
+}
+.btn.btn-primary.btn-lg.active{
+    height: 45px;
+    width: 110px;
+    padding: 10px;
+    border-radius: 12px;
+    text-align: center;
+    margin: 4px 2px;
+    margin-left: 900px;
+    margin-top:40px;
 }
