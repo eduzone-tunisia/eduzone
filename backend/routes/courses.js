@@ -16,7 +16,7 @@ router.post("/getCourses", async (req, res) => {
     .populate("teacher")
     .exec();
   console.log(courses);
-  res.send(courses);
+  res.json(courses);
 });
 
 // add new couses in the database
