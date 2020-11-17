@@ -13,8 +13,8 @@ export class RegisterComponent implements OnInit {
     email : '',
     password : ''
   };
-
-  validationError=""
+  registred=false;
+  validationError="";
 
   constructor( private StudentService: StudentService) { }
 
@@ -27,6 +27,7 @@ export class RegisterComponent implements OnInit {
     this.StudentService.studentRegister(studentInfo)
     .subscribe(
       res=>{
+        this.registred=!this.registred
         console.log(res)
       },
       error=>{

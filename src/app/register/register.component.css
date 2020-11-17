@@ -1,15 +1,6 @@
-  .row{
-    background-color: whitesmoke;
-    color: black;
-  }
-  
 
-  
-  .quote{
-        font-family: italic ;
-  }
-  .btnn {
-    background-color : rgb(0, 225, 255);
+  .btn  {
+    background-color : rgb(4, 0, 255);
     margin: .375rem;
     color: inherit;
     text-transform: uppercase;

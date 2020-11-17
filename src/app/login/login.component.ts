@@ -10,12 +10,14 @@ export class LoginComponent implements OnInit {
     email : '',
     password : ''
   };
+  loggedIn=false;
 
   validationError=""
 
   constructor( private StudentService: StudentService) { }
 
   ngOnInit(): void {
+    
    
   }
 
@@ -25,6 +27,7 @@ export class LoginComponent implements OnInit {
     this.StudentService.login(userInfo)
     .subscribe(
       res=>{
+        this.loggedIn=!this.loggedIn
         console.log(res)
       },
       error=>{

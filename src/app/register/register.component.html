@@ -1,9 +1,10 @@
+
 <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
   aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Register</h4>
+        <h4 class="modal-title w-100 font-weight-bold">Sign Up</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -30,18 +31,17 @@
           <input type="password" id="orangeForm-pass" class="form-control validate"   [(ngModel)]="student.password">
           <label data-error="wrong" data-success="right" for="orangeForm-pass">Your password</label>
         </div>
-
+        <div *ngIf="validationError && !registred" class="alert alert-danger" role="alert">
+          {{validationError}}
+        </div>
+        <div  *ngIf="registred"class="alert alert-success" role="alert">
+          Registration is successful!
+        </div>
       </div>
       <div class="modal-footer d-flex justify-content-center">
-        <button class="btn btn-deep-orange" (click)="register()">Sign up</button>
+        <button class="btn" (click)="register()">Register</button>
       </div>
     </div>
   </div>
 </div>
-<div *ngIf="validationError" class="alert alert-danger" role="alert">
-  {{validationError}}
-</div>
-<div class="text-center">
-  <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalRegisterForm">Launch
-    Modal Register Form</a>
-</div>
+

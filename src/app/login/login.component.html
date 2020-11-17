@@ -20,18 +20,18 @@
           <input type="password" id="defaultForm-pass" class="form-control validate" [(ngModel)]="user.password">
           <label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label>
         </div>
-
+        <div *ngIf="validationError && !loggedIn" class="alert alert-danger" role="alert">
+          {{validationError}}
+        </div>
+        <div  *ngIf="loggedIn"class="alert alert-success" role="alert">
+          WELCOME!
+        </div>
       </div>
       <div class="modal-footer d-flex justify-content-center">
-        <button class="btn btn-default" (click)="login()">Login</button>
+        <button class="btn" (click)="login()">Log in</button>
       </div>
     </div>
   </div>
 </div>
-<div *ngIf="validationError" class="alert alert-danger" role="alert">
-  {{validationError}}
-</div>
-<div class="text-center">
-  <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm">Launch
-    Modal Login Form</a>
-</div>
+
+
