@@ -16,5 +16,7 @@ const serverUrl = 'http://localhost:8080/student/';
    studentRegister(studentInfo : any ) : Observable <any> {
        return this.http.post( serverUrl + "studentRegistration",studentInfo)
    }
-
+       login(userInfo :any) :Observable <any>{
+         return this.http.post( serverUrl + "login",userInfo )
+       }
   }
