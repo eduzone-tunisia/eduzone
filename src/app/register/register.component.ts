@@ -7,43 +7,39 @@ import {StudentService } from '../services/student.service'
 })
 export class RegisterComponent implements OnInit {
 
-  user = {
+  student = {
     firstName : '',
     lastName : '',
     email : '',
     password : '',
     dateOfBirth: '',
     phoneNumber : '',
-    imgUrl : ''
+   
   };
+
+  emailExsits=""
 
   constructor( private StudentService: StudentService) { }
 
   ngOnInit(): void {
+   
   }
 
   register(){
-    const studentInfo={
-      firstName:this.user.firstName,
-      lastName:this.user.lastName,
-      email:this.user.email,
-      password:this.user.password,
-      dateOfBirth:this.user.dateOfBirth,
-      phoneNumber:this.user.phoneNumber,
-      imgUrl:this.user.imgUrl
-    }
+    const studentInfo=this.student
     this.StudentService.studentRegister(studentInfo)
     .subscribe(
       res=>{
         console.log(res)
       },
       error=>{
-        console.log(error)
+        this.emailExsits=error.error;
+        console.log(this.emailExsits)
+        alert(this.emailExsits)
       }
     )
-    console.log(studentInfo)
-   }
-
  
+    
+   }
 
 }

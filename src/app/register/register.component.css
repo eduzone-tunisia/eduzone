@@ -1,6 +1,15 @@
+  .row{
+    background-color: whitesmoke;
+    color: black;
+  }
+  
 
+  
+  .quote{
+        font-family: italic ;
+  }
   .btnn {
-    background-color: black;
+    background-color : rgb(0, 225, 255);
     margin: .375rem;
     color: inherit;
     text-transform: uppercase;
@@ -18,4 +27,5 @@
     padding: .84rem 2.14rem;
     font-size: .81rem;
     color: #fff;
+    float: right;
 }

@@ -3,6 +3,12 @@
     <div class="col-md-6 offset-md-3 mt-4">
       <form #f="ngForm">
         <div class="form-group">
+          <div class="quote">
+            <h3> "An investment in knowledge pays the best interest."</h3>
+            <h5 style="float: right;"> - Benjamin Franklin</h5>
+          </div>
+          <br>
+          <br>
           <label >First Name</label>
           <input
           name="first"
@@ -10,7 +16,7 @@
           class="form-control"
           placeholder="First name"
           required
-          [(ngModel)]="user.firstName"
+          [(ngModel)]="student.firstName"
             class="form-control"
           />
         </div>
@@ -22,7 +28,7 @@
           class="form-control"
           placeholder="Last name"
           required
-          [(ngModel)]="user.lastName"
+          [(ngModel)]="student.lastName"
             class="form-control"
            
           />
@@ -35,7 +41,7 @@
           class="form-control mb-4"
           placeholder="E-mail"
           required
-          [(ngModel)]="user.email"
+          [(ngModel)]="student.email"
             class="form-control"
           />
         </div>
@@ -47,7 +53,7 @@
             class="form-control mb-4"
             placeholder="Password"
             required
-            [(ngModel)]="user.password"
+            [(ngModel)]="student.password"
               class="form-control"
              
             />
@@ -61,7 +67,7 @@
           class="form-control mb-4"
           placeholder="Phone Number"
           required
-          [(ngModel)]="user.phoneNumber"
+          [(ngModel)]="student.phoneNumber"
             class="form-control"
           />
         </div>
@@ -72,30 +78,15 @@
             type="date"
             class="form-control mb-4"
             required
-            [(ngModel)]="user.dateOfBirth"
+            [(ngModel)]="student.dateOfBirth"
               class="form-control"
              
             />
           </div>
-   
-        <div class="form-group">
-          <label >img Url</label>
-          <input
-          name="img"
-          type="text"
-          class="form-control mb-4"
-          placeholder="Your Image Url"
-          required
-          [(ngModel)]="user.imgUrl"
-            class="form-control"
-           
-          />
-        </div>
         <button (click)="register()"  [disabled]="f.invalid" class="btnn btn-primaryy">
-  
-  
-          Register <i class="fas fa-sign-in-alt"></i>
+          Register   <i class="fas fa-user-plus"></i>
         </button>
       </form>
     </div>
+  
   </div>
