@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
@@ -16,17 +17,22 @@ import { AboutUsComponent } from './About-us/About-us.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+    
+
+
 @NgModule({
-  declarations: [					
-      AppComponent,
-      LandingPageComponent,
-      NavbarComponent,
-      FooterComponent,
-      MiddleComponent,
-      AboutUsComponent,
-      RegisterComponent
-   ],
-   imports: [
+
+  declarations: [
+    AppComponent,
+    LandingPageComponent,
+    NavbarComponent,
+    FooterComponent,
+    MiddleComponent,
+    AboutUsComponent,
+    RegisterComponent,
+    LoginComponent
+  ],
+  imports: [
     BrowserModule,
     MDBBootstrapModule.forRoot(), 
     AppRoutingModule,
