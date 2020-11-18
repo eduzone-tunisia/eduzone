@@ -5,6 +5,8 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const course = require("./routes/courses");
 const app = express();
+const student = require("./routes/students");
+const teacher = require("./routes/teachers");
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -15,12 +17,10 @@ app.use(express.static(`../eduzone/dist/eduzone`));
 //   res.sendFile(path.join(__dirname + "../dist/eduzone/index.html"));
 // });
 
-
-
-app.use("/course", course)
-
+app.use("/course", course);
+app.use("/student", student);
+app.use("/teacher", teacher);
 const port = process.env.PORT || 8080;
 app.listen(port, () => {
   console.log(`listening at port at http://localhost:${port}`);
 });
-
