@@ -1,0 +1,22 @@
+#img1{
+    width: 3.8rem;
+}
+.navbar.navbar-expand-lg.navbar-light.bg-white{
+    height: 75px;
+}
+.btn.btn-primary.btn-lg.active{
+    height: 45px;
+    width: 110px;
+    padding: 10px;
+    border-radius: 12px;
+    text-align: center;
+    margin: 4px 2px;
+}
+.btn.btn-primary{
+    height: 45px;
+    width: 90px;
+    padding: 10px;
+    border-radius: 12px;
+    text-align: center;
+    margin: 4px 2px;
+}
