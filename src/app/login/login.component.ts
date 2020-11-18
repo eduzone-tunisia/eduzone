@@ -1,33 +1,33 @@
 import { Component, OnInit } from '@angular/core';
 import {StudentService } from '../services/student.service'
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
 })
-export class RegisterComponent implements OnInit {
-
-  student = {
-    firstName : '',
-    lastName : '',
+export class LoginComponent implements OnInit {
+  user= {
     email : '',
     password : ''
   };
-  registred=false;
-  validationError="";
+  loggedIn=false;
+
+  validationError=""
 
   constructor( private StudentService: StudentService) { }
 
   ngOnInit(): void {
+    
    
   }
 
-  register(){
-    const studentInfo=this.student
-    this.StudentService.studentRegister(studentInfo)
+  login(){
+
+    const userInfo=this.user
+    this.StudentService.login(userInfo)
     .subscribe(
       res=>{
-        this.registred=!this.registred
+        this.loggedIn=!this.loggedIn
         console.log(res)
       },
       error=>{
