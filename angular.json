@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "eduzone"
+  "defaultProject": "eduzone",
+  "cli": {
+    "analytics": "7dc84885-2356-417c-9d2d-99e0da903698"
+  }
 }

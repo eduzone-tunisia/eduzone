@@ -1,0 +1,28 @@
+<h2 class="title-course">Front-End</h2>
+
+<div class="list-course">
+<mdb-carousel [isControls]="true" class="" [type]="slides"
+              [animation]="'slide'">
+  <mdb-carousel-item *ngFor="let item of slides;">
+    
+    <div class="col-md-4 "  *ngFor="let course of item;">
+      <mdb-card >
+        <mdb-card-img src="{{course.bannerurl}}" alt="Card image cap"></mdb-card-img>
+        <mdb-card-body>
+          <mdb-card-title>
+            <h4>{{course.name}}</h4>
+          </mdb-card-title>
+           <!-- <p>{{course.name}}</p> -->
+          <a mdbBtn color="primary" class="waves-light" mdbWavesEffect>get this course</a>
+        </mdb-card-body>
+      
+      </mdb-card>
+    </div>
+    
+  </mdb-carousel-item>
+</mdb-carousel>
+
+</div>
+
+
+

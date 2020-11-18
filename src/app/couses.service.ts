@@ -1,0 +1,151 @@
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class CousesService {
+
+constructor() { }
+  courses = [
+  {
+      bannerurl: "../../../assets/images/course-banner/html.jpg",
+      
+      name: "HTML: Hypertext Markup Language",
+      title: "What is HTML ?",
+      rating: 4,
+      duration: "20 min",
+      cate: "front-end",
+      cpath: "what-is-html"
+  },
+  {
+      bannerurl: "../../../assets/images/course-banner/css.jpg",
+      
+      name: "CSS: Cascading Style Sheets",
+      title: "What is CSS ?",
+      rating: 5,
+      duration: "40 min",
+      cate: "front-end",
+      cpath: "what-is-css"
+  },
+  {
+      bannerurl: "../../../assets/images/course-banner/javascript.jpg",
+     
+      name: "Javascript: Learn to Program JS",
+      title: "What is Javascript ?",
+      rating: 5,
+      duration: "1 Hours",
+      cate: "front-end",
+      cpath: "what-is-javascript"
+  },
+  {
+      bannerurl: "../../../assets/images/course-banner/angular.jpg",
+     
+      name: "Angular: By Google",
+      title: "What is Angular ?",
+      rating: 5,
+      duration: "45 Hours",
+      cate: "front-end",
+      cpath: "what-is-angular"
+  },
+  {
+      bannerurl: "../../../assets/images/course-banner/bootstrap.jpg",
+      
+      name: "Bootstrap: Powerfull CSS Framework",
+      title: "What is Bootstrap ?",
+      rating: 5,
+      duration: "4 Hours",
+      cate: "front-end",
+      cpath: "what-is-bootstrap"
+  },
+  {
+      bannerurl: "../../../assets/images/course-banner/react.jpg",
+      
+      name: "React: The Most Popular Front End Framework",
+      title: "What is React ?",
+      rating: 5,
+      duration: "35 Hours",
+      cate: "front-end",
+      cpath: "what-is-react"
+  },
+  {
+      bannerurl: "../../../assets/images/course-banner/vue.jpg",
+     
+      name: "Vue.js: Build an App With Vue.js",
+      title: "What is Vue.js ?",
+      rating: 5,
+      duration: "34 Hours",
+      cate: "front-end",
+      cpath: "what-is-vuejs"
+  },
+  {
+      bannerurl: "../../../assets/images/course-banner/nodejs.jpg",
+    
+      name: "NodeJS: JS Back-end",
+      title: "What is NodeJS ?",
+      rating: 5,
+      duration: "50 Hours",
+      cate: "back-end",
+      cpath: "what-is-nodejs"
+  },
+  {
+      bannerurl: "../../../assets/images/course-banner/csharp.jpg",
+      
+      name: "C#: Powerfull languge",
+      title: "What is C# ?",
+      rating: 5,
+      duration: "70 Hours",
+      cate: "back-end",
+      cpath: "what-is-c#"
+  },
+  {
+      bannerurl: "../../../assets/images/course-banner/java.jpg",
+     
+      name: "Java: By Oracle",
+      title: "What is Java ?",
+      rating: 5,
+      duration: "60 Hours",
+      cate: "back-end",
+      cpath: "what-is-java"
+  },
+  {
+      bannerurl: "../../../assets/images/course-banner/php.jpg",
+     
+      name: "PHP: Popular web backend language",
+      title: "What is PHP ?",
+      rating: 5,
+      duration: "60 Hours",
+      cate: "back-end",
+      cpath: "what-is-php"
+  },
+  {
+      bannerurl: "../../../assets/images/course-banner/ruby.jpg",
+      
+      name: "Ruby On Rails: Blink Blink",
+      title: "What is ROR ?",
+      rating: 5,
+      duration: "35 Hours",
+      cate: "back-end",
+      cpath: "what-is-ror"
+  },
+  {
+      bannerurl: "../../../assets/images/course-banner/python.jpg",
+      
+      name: "Python: Hello, World!",
+      title: "What is Python ?",
+      rating: 5,
+      duration: "60 Hours",
+      cate: "back-end",
+      cpath: "what-is-python"
+  },
+  {
+      bannerurl: "../../../assets/images/course-banner/asp.jpg",
+   
+      name: "Asp.net: By Microsoft",
+      title: "What is asp.net ?",
+      rating: 5,
+      duration: "60 Hours",
+      cate: "back-end",
+      cpath: "what-is-asp"
+  }
+]
+}
