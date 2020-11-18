@@ -2,7 +2,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-white"> 
   <a class="navbar-brand" href="#">
-    <img src="../../assets/image/logo-eduZone.png" width="110" height="110" alt="" loading="lazy">
+    <img src="../../assets/image/logo-eduZone.png" width="110" height="110" alt="" loading="lazy" >
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -15,9 +15,7 @@
       </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
      
       <li class="nav-item dropdown">
-        <a class="btn btn-primary btn-lg active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         Courses
-        </a>
+        <a class="btn btn-primary btn-lg active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Courses</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="#">Psychology</a>
           <div class="dropdown-divider"></div>
@@ -32,17 +30,50 @@
       </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     </ul>
     <form class="form-inline my-2 my-lg-0">
+      <i class="fas fa-search" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-primary" data-toggle="button" aria-pressed="false" type="submit">Search</button>
+      <button class="btn btn-primary active" data-toggle="button" aria-pressed="false" type="submit">Search</button>
     </form>
     
     <ul class="navbar-nav ml-auto nav-flex-icons"> 
-      <li class="nav-item">
-        <a  class="btn btn-primary btn-lg active" role="button" aria-pressed="true" data-toggle="modal" data-target="#modalLoginForm" routerLink="/login">SignIn</a>
-      </li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <li class="nav-item">
-        <a   class="btn btn-primary btn-lg active" role="button" aria-pressed="true" data-toggle="modal" data-target="#modalRegisterForm" routerLink="/teacherRegister">SignUp</a>
-      </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+      <!-- <li class="nav-item">
+        <a  class="btn btn-primary btn-lg active" role="button" aria-pressed="true" href="#" >SignIn</a>
+      </li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+      <div class="dropdown">
+
+        <!--Trigger-->
+        <button class="btn btn-primary btn-lg active dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">Log In</button>
+      
+      
+        <!--Menu-->
+        <div class="dropdown-menu dropdown-primary">
+          <a class="dropdown-item" href="#">Student</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Teacher</a>
+        </div>
+      </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <div class="dropdown">
+
+        <!--Trigger-->
+        <button class="btn btn-primary btn-lg active dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">Sign Up</button>
+      
+      
+        <!--Menu-->
+        <div class="dropdown-menu dropdown-primary">
+          <a class="dropdown-item" href="#">Student</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Teacher</a>
+        </div>
+      </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <!-- <li class="nav-item">
+        <a   class="btn btn-primary btn-lg active" role="button" aria-pressed="true" href="#">SignUp</a>
+      </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+
+
       <li class="nav-item avatar dropdown">
         <a class="nav-link1 dropdown-toggle" id="navbarDropdownMenuLink-55" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
@@ -52,10 +83,6 @@
         <div class="dropdown-menu dropdown-menu-lg-right dropdown-secondary"
           aria-labelledby="navbarDropdownMenuLink-55">
           <a class="dropdown-item" href="#">My profil</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">My courses</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">My card</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">logOut</a>
         </div>

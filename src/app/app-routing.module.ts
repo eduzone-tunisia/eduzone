@@ -10,6 +10,7 @@ import {TeacherLoginComponent} from './teacher-login/teacher-login.component'
 
 const routes: Routes = [
   {path:'', component:LandingPageComponent },
+
   {path:'home',component:AppComponent},
   {path:'register',component:RegisterComponent},
   {path :"login" ,component:LoginComponent},
