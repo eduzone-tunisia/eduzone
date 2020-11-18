@@ -7,6 +7,7 @@ import {LandingPageComponent} from './landing-page/landing-page.component'
 import {AboutUsComponent} from './About-us/About-us.component'
 
 const routes: Routes = [
+
    {path:'', component:LandingPageComponent },
   {path:'home',component:AppComponent},
   {path:'register',component:RegisterComponent},
