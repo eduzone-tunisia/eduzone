@@ -12,12 +12,14 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { MiddleComponent } from './middle/middle.component';
 import { AboutUsComponent } from './About-us/About-us.component';
+import { TeacherRegisterComponent } from './teacher-register/teacher-register.component';
+import { TeacherLoginComponent } from './teacher-login/teacher-login.component';
 
     
 
 
 @NgModule({
-  declarations: [
+  declarations: [		
     AppComponent,
     LandingPageComponent,
     NavbarComponent,
@@ -25,8 +27,10 @@ import { AboutUsComponent } from './About-us/About-us.component';
     MiddleComponent,
     AboutUsComponent,
     RegisterComponent,
-    LoginComponent
-  ],
+    LoginComponent,
+    TeacherRegisterComponent,
+      TeacherLoginComponent
+   ],
   imports: [
     BrowserModule,
     MDBBootstrapModule.forRoot(),
