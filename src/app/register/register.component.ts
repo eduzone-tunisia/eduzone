@@ -11,13 +11,10 @@ export class RegisterComponent implements OnInit {
     firstName : '',
     lastName : '',
     email : '',
-    password : '',
-    dateOfBirth: '',
-    phoneNumber : '',
-   
+    password : ''
   };
-
-  emailExsits=""
+  registred=false;
+  validationError="";
 
   constructor( private StudentService: StudentService) { }
 
@@ -30,12 +27,13 @@ export class RegisterComponent implements OnInit {
     this.StudentService.studentRegister(studentInfo)
     .subscribe(
       res=>{
+        this.registred=!this.registred
         console.log(res)
       },
       error=>{
-        this.emailExsits=error.error;
-        console.log(this.emailExsits)
-        alert(this.emailExsits)
+        this.validationError=error.error;
+        console.log(this.validationError)
+        
       }
     )
  

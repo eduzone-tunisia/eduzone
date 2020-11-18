@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-const studentUrl = 'http://localhost:8080/student/';
+const serverUrl = 'http://localhost:8080/student/';
 const teacherUrl = 'http://localhost:8080/teacher/';
 
 @Injectable({
@@ -12,10 +12,9 @@ export class StudentService {
   constructor(private http: HttpClient) {}
 
   studentRegister(studentInfo: any): Observable<any> {
-    return this.http.post(studentUrl + 'studentRegistration', studentInfo);
+    return this.http.post(serverUrl + 'studentRegistration', studentInfo);
   }
-
-  teacherRegister(teacherInfo: any): Observable<any> {
-    return this.http.post(teacherUrl + 'add', teacherInfo);
+  login(userInfo: any): Observable<any> {
+    return this.http.post(serverUrl + 'login', userInfo);
   }
 }

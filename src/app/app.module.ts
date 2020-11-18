@@ -6,11 +6,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { MiddleComponent } from './middle/middle.component';
 import { AboutUsComponent } from './About-us/About-us.component';
+
+    
+
 
 @NgModule({
   declarations: [
@@ -20,7 +24,8 @@ import { AboutUsComponent } from './About-us/About-us.component';
     FooterComponent,
     MiddleComponent,
     AboutUsComponent,
-    RegisterComponent
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
