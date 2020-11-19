@@ -78,7 +78,7 @@ router.post("/login", async (req, res, next) => {
     if (!validPass) return res.status(400).send("password not valid");
 
     //create and assign a token
-    const token = jwt.sign({ _id: teacher._id }, process.env.SECRET_TOKEN);
+    const token = jwt.sign({ _id: teacher._id }, "123456");
     res.header("auth-token", token).send({ token: token, id: teacher.id });
   } catch (error) {
     if (error.isJoi === true) res.status(400).send(error.details[0].message);

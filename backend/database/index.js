@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost/eduzone", {
+const url ="mongodb+srv://oussamaheni:oussama23146875@eduzone.blopr.mongodb.net/eduzone?retryWrites=true&w=majority"
+//mongodb://localhost/eduzone
+mongoose.connect(url, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false,
