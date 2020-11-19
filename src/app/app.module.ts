@@ -16,6 +16,7 @@ import { FooterComponent } from './footer/footer.component';
 import { MiddleComponent } from './middle/middle.component';
 import { AboutUsComponent } from './About-us/About-us.component';
 
+
 import { TeacherRegisterComponent } from './teacher-register/teacher-register.component';
 import { TeacherLoginComponent } from './teacher-login/teacher-login.component';
 import { CousesService } from './couses.service';
