@@ -4,7 +4,7 @@ import { TeacherService } from '../services/teacher.service';
 @Component({
   selector: 'app-teacher-login',
   templateUrl: './teacher-login.component.html',
-  styleUrls: ['./teacher-login.component.css']
+  styleUrls: ['./teacher-login.component.css'],
 })
 export class TeacherLoginComponent implements OnInit {
   teacher = {
@@ -14,17 +14,18 @@ export class TeacherLoginComponent implements OnInit {
   loggedIn = false;
 
   validationError = '';
-  constructor( private teacherService : TeacherService) { }
+  constructor(private teacherService: TeacherService) {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 
   login() {
     const userInfo = this.teacher;
     this.teacherService.teacherLogin(userInfo).subscribe(
       (res) => {
+        console.log(res);
         this.loggedIn = !this.loggedIn;
+        window.localStorage.setItem('token', res.token);
+        window.localStorage.setItem('id', res.id);
         console.log(res);
       },
       (error) => {
@@ -33,4 +34,8 @@ export class TeacherLoginComponent implements OnInit {
       }
     );
   }
+  closeModal(){
+    location.reload()
+  }
+  
 }
