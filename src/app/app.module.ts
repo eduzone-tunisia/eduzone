@@ -18,6 +18,7 @@ import { AboutUsComponent } from './About-us/About-us.component';
 
 import { TeacherRegisterComponent } from './teacher-register/teacher-register.component';
 import { TeacherLoginComponent } from './teacher-login/teacher-login.component';
+import { HomeComponent } from './home/home.component';
 
 
     
@@ -36,7 +37,8 @@ import { TeacherLoginComponent } from './teacher-login/teacher-login.component';
     RegisterComponent,
     LoginComponent,
     TeacherRegisterComponent,
-      TeacherLoginComponent
+      TeacherLoginComponent,
+      HomeComponent
    ],
   imports: [
     BrowserModule,
