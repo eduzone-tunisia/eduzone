@@ -1,12 +1,12 @@
 const express = require("express");
 const path = require("path");
-const db = require("./backend/database/index.js");
+const db = require("./database/index.js");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const course = require("./backend/routes/courses");
+const course = require("./routes/courses");
 const app = express();
-const student = require("./backend/routes/students");
-const teacher = require("./backend/routes/teachers");
+const student = require("./routes/students");
+const teacher = require("./routes/teachers");
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
