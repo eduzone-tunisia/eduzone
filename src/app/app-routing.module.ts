@@ -8,11 +8,12 @@ import {LandingPageComponent} from './landing-page/landing-page.component'
 import {AboutUsComponent} from './About-us/About-us.component';
 import {TeacherRegisterComponent} from './teacher-register/teacher-register.component'
 import {TeacherLoginComponent} from './teacher-login/teacher-login.component'
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {path:'', component:LandingPageComponent },
 
-  {path:'home',component:AppComponent},
+  {path:'home',component:HomeComponent},
   {path:'register',component:RegisterComponent},
   {path :"login" ,component:LoginComponent},
   {path :"aboutUs" ,component:AboutUsComponent},
