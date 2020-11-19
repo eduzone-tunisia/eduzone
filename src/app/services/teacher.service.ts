@@ -8,12 +8,19 @@ const teacherUrl = 'http://localhost:8080/teacher/';
   providedIn: 'root',
 })
 export class TeacherService {
+  loggedIn: boolean = false;
   constructor(private http: HttpClient) {}
 
   teacherRegister(teacherInfo: any): Observable<any> {
     return this.http.post(teacherUrl + 'add', teacherInfo);
   }
   teacherLogin(teacherInfo: any): Observable<any> {
-    return this.http.post(teacherUrl + 'login', teacherInfo);
+    return this.http.post(teacherUrl + 'login', teacherInfo)
   }
+
+ 
+
+    
 }
+
+
