@@ -1,47 +1,38 @@
 import { Component, OnInit } from '@angular/core';
-import {StudentService } from '../services/student.service'
+import { StudentService } from '../services/student.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent implements OnInit {
-
   student = {
-    firstName : '',
-    lastName : '',
-    email : '',
-    password : ''
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: '',
   };
-  registred=false;
-  validationError="";
+  registred = false;
+  validationError = '';
 
-  constructor( private StudentService: StudentService) { }
+  constructor(private studentService: StudentService) {}
 
-  ngOnInit(): void {
-   
-  }
+  ngOnInit(): void {}
 
-  register(){
-    const studentInfo=this.student
-    this.StudentService.studentRegister(studentInfo)
-    .subscribe(
-      res=>{
-        this.registred=!this.registred
-        console.log(res)
+  register() {
+    const studentInfo = this.student;
+    this.studentService.studentRegister(studentInfo).subscribe(
+      (res) => {
+        this.registred = !this.registred;
+        console.log(res);
       },
-      error=>{
-        this.validationError=error.error;
-        console.log(this.validationError)
-        
+      (error) => {
+        this.validationError = error.error;
+        console.log(this.validationError);
       }
-    )
- 
-    
-   }
-
+    );
+  }
 }
-
 
 // import { Component, OnInit } from '@angular/core';
 // import { FormBuilder } from '@angular/forms';
@@ -70,7 +61,7 @@ export class RegisterComponent implements OnInit {
 //   }
 
 //   ngOnInit(): void {
-    
+
 //   }
 
 //   onSubmit(userInfo) {
@@ -113,7 +104,7 @@ export class RegisterComponent implements OnInit {
 //         this.router.navigate(['login'])
 //       })
 //     }
-    
+
 //   }
 
 // }

@@ -6,6 +6,7 @@ import {RegisterComponent} from './register/register.component'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
@@ -16,11 +17,16 @@ import { MiddleComponent } from './middle/middle.component';
 import { AboutUsComponent } from './About-us/About-us.component';
 
 
+import { TeacherRegisterComponent } from './teacher-register/teacher-register.component';
+import { TeacherLoginComponent } from './teacher-login/teacher-login.component';
+import { CousesService } from './couses.service';
 
+import { HomeComponent } from './home/home.component';
     
 
 
 @NgModule({
+
 
   declarations: [
     AppComponent,
@@ -30,20 +36,21 @@ import { AboutUsComponent } from './About-us/About-us.component';
     MiddleComponent,
     AboutUsComponent,
     RegisterComponent,
-    LoginComponent
-  ],
+    LoginComponent,
+    TeacherRegisterComponent,
+      TeacherLoginComponent,HomeComponent
+   ],
   imports: [
     BrowserModule,
     MDBBootstrapModule.forRoot(), 
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-   
 
 
     ],
 
-  providers: [],
-  bootstrap: [AppComponent],
+  providers: [CousesService],
+  bootstrap: [AppComponent,HomeComponent],
 })
 export class AppModule {}
