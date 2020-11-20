@@ -23,6 +23,8 @@ export class LoginComponent implements OnInit {
     this.studentService.studentLogin(userInfo).subscribe(
       (res) => {
         this.loggedIn = !this.loggedIn;
+        window.localStorage.setItem('token', res.token);
+        window.localStorage.setItem('id', res.id);
         console.log(res);
       },
       (error) => {
@@ -30,6 +32,9 @@ export class LoginComponent implements OnInit {
         console.log(this.validationError);
       }
     );
+  
+  }
+  closeModal(){
     location.reload()
   }
   
