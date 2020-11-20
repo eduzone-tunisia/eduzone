@@ -6,6 +6,7 @@ import {RegisterComponent} from './register/register.component'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
@@ -15,10 +16,12 @@ import { FooterComponent } from './footer/footer.component';
 import { MiddleComponent } from './middle/middle.component';
 import { AboutUsComponent } from './About-us/About-us.component';
 
+
 import { TeacherRegisterComponent } from './teacher-register/teacher-register.component';
 import { TeacherLoginComponent } from './teacher-login/teacher-login.component';
+import { CousesService } from './couses.service';
 
-
+import { HomeComponent } from './home/home.component';
     
 
 
@@ -35,7 +38,8 @@ import { TeacherLoginComponent } from './teacher-login/teacher-login.component';
     RegisterComponent,
     LoginComponent,
     TeacherRegisterComponent,
-      TeacherLoginComponent
+      TeacherLoginComponent,
+      HomeComponent
    ],
   imports: [
     BrowserModule,
@@ -43,12 +47,11 @@ import { TeacherLoginComponent } from './teacher-login/teacher-login.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-   
 
 
     ],
 
-  providers: [],
-  bootstrap: [AppComponent],
+  providers: [CousesService],
+  bootstrap: [AppComponent,HomeComponent],
 })
 export class AppModule {}

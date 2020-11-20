@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TeacherService } from '../services/teacher.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-teacher-login',
@@ -14,7 +15,7 @@ export class TeacherLoginComponent implements OnInit {
   loggedIn = false;
 
   validationError = '';
-  constructor(private teacherService: TeacherService) {}
+  constructor(private teacherService: TeacherService, private router: Router) {}
 
   ngOnInit() {}
 
@@ -27,6 +28,7 @@ export class TeacherLoginComponent implements OnInit {
         window.localStorage.setItem('token', res.token);
         window.localStorage.setItem('id', res.id);
         console.log(res);
+        this.router.navigateByUrl('/home')
       },
       (error) => {
         this.validationError = error.error;
@@ -34,8 +36,5 @@ export class TeacherLoginComponent implements OnInit {
       }
     );
   }
-  closeModal(){
-    location.reload()
-  }
-  
+
 }

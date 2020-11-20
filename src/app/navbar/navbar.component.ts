@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , AfterContentChecked } from '@angular/core';
 import { TeacherService } from '../services/teacher.service';
 @Component({
   selector: 'app-navbar',
@@ -9,10 +9,12 @@ export class NavbarComponent implements OnInit {
   loggedIn: boolean = false;
   constructor(private teacherService: TeacherService) {}
 
-  ngOnInit() {
-      if (typeof localStorage.getItem('token') === 'string') {
-        this.loggedIn = true;
-      }
+  ngOnInit() { }
+      ngAfterContentChecked() {
+        if (typeof localStorage.getItem('token') === 'string') {
+            this.loggedIn = true;
+          }
+        
   }
 
   clearStorage() {
