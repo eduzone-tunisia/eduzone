@@ -36,8 +36,10 @@ import { UpdateTeacherComponent } from './update-teacher/update-teacher.componen
     RegisterComponent,
     LoginComponent,
     TeacherRegisterComponent,
+
       TeacherLoginComponent,HomeComponent,
       UpdateTeacherComponent
+
    ],
   imports: [
     BrowserModule,
