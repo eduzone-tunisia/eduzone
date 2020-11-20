@@ -22,13 +22,14 @@ import { TeacherLoginComponent } from './teacher-login/teacher-login.component';
 import { CousesService } from './couses.service';
 
 import { HomeComponent } from './home/home.component';
+import { UpdateTeacherComponent } from './update-teacher/update-teacher.component';
     
 
 
 @NgModule({
 
 
-  declarations: [
+  declarations: [	
     AppComponent,
     LandingPageComponent,
     NavbarComponent,
@@ -38,7 +39,8 @@ import { HomeComponent } from './home/home.component';
     RegisterComponent,
     LoginComponent,
     TeacherRegisterComponent,
-      TeacherLoginComponent,HomeComponent
+      TeacherLoginComponent,HomeComponent,
+      UpdateTeacherComponent
    ],
   imports: [
     BrowserModule,
