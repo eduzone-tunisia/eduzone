@@ -12,21 +12,21 @@ import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {path:'', component:LandingPageComponent },
-
   {path:'home',component:HomeComponent},
   {path:'register',component:RegisterComponent},
   {path :"login" ,component:LoginComponent},
   {path :"aboutUs" ,component:AboutUsComponent},
   {path :"teacherRegister" ,component: TeacherRegisterComponent},
+
   {path :"teacherLogin" ,component: TeacherLoginComponent},
   {path :"Profile" , component:StudentProfileComponent}
+
 
 
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-  
+  exports: [RouterModule]  
 })
 export class AppRoutingModule { }

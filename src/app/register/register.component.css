@@ -29,3 +29,10 @@
   margin: 4px 2px;
   
 }
+
+.modal.fade{
+  background-image: url(../../assets/background/background.jpg);
+}
+.modal-content{
+  margin-top: 180px;
+}
