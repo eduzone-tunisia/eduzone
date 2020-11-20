@@ -28,6 +28,7 @@ export class TeacherLoginComponent implements OnInit {
         window.localStorage.setItem('token', res.token);
         window.localStorage.setItem('id', res.id);
         console.log(res);
+        this.router.navigateByUrl('/home')
       },
       (error) => {
         this.validationError = error.error;
@@ -35,7 +36,5 @@ export class TeacherLoginComponent implements OnInit {
       }
     );
   }
-  closeModal() {
-    location.reload();
-  }
+
 }

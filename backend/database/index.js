@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
-const url ="mongodb+srv://oussamaheni:oussama23146875@eduzone.blopr.mongodb.net/eduzone?retryWrites=true&w=majority"
+const url = "mongodb://localhost/eduzone";
 //mongodb://localhost/eduzone
+//mongodb+srv://oussamaheni:oussama23146875@eduzone.blopr.mongodb.net/eduzone?retryWrites=true&w=majority
 mongoose.connect(url, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
