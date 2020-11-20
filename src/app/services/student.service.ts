@@ -16,4 +16,7 @@ export class StudentService {
   studentLogin(userInfo: any): Observable<any> {
     return this.http.post(serverUrl + 'login', userInfo);
   }
+  studentProfile(id :any) :Observable <any> {
+  return this.http.get(serverUrl +id)
+  }
 }
