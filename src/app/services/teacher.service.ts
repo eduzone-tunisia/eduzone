@@ -18,6 +18,10 @@ export class TeacherService {
     return this.http.post(teacherUrl + 'login', teacherInfo)
   }
 
+  teacherUpdate(teacherInfo:any):Observable<any> {
+    return this.http.put(teacherUrl + ':id', teacherInfo);
+  }
+
  
 
     
