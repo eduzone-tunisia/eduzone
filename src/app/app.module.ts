@@ -19,10 +19,11 @@ import { CousesService } from './couses.service';
 import {StudentProfileComponent} from  './student-profile/student-profile.component'
 import { HomeComponent } from './home/home.component';
 import { UpdateTeacherComponent } from './update-teacher/update-teacher.component';
+import { TermOfServiceComponent } from './termOfService/termOfService.component';
 
 @NgModule({
 
-  declarations: [
+  declarations: [	
 
     AppComponent,
     LandingPageComponent,
@@ -40,8 +41,7 @@ import { UpdateTeacherComponent } from './update-teacher/update-teacher.componen
     StudentProfileComponent,
       UpdateTeacherComponent,
       UpdateTeacherComponent,
-
-
+      TermOfServiceComponent
    ],
   imports: [
     BrowserModule,

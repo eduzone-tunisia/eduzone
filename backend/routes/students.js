@@ -6,12 +6,6 @@ const jwt = require("jsonwebtoken");
 const verify = require("./verifyToken.js");
 const dotenv = require("dotenv");
 dotenv.config();
-
-router.get("/:id", async (req, res) => {
-  const student =await Student.findById(req.params.id);
-  res.json(student);
-});
-
 //getting all students
 router.get("/", async (req, res) => {
   await Student.find({}, (err, data) => {
@@ -29,13 +23,7 @@ const schema = Joi.object({
   dateOfBirth: Joi.date(),
   imageUrl: Joi.string(),
 });
-//validation for updating info
-// const updateValidation={
-//   email: Joi.string().min(6).required().email(),
-//   password: Joi.string().min(6).required(),
-//   phoneNumber: Joi.number(),
-//   dateOfBirth: Joi.date(),
-// }
+
 
 //create a student
 router.post("/studentRegistration", async (req, res, next) => {
@@ -99,25 +87,50 @@ router.post("/login", async (req, res, next) => {
 
 //update a student
 router.put("/:id", async (req, res) => {
-    //check if email exists
-    const emailExist = await Student.findOne({ email: req.body.email });
-    if (emailExist) return res.status(400).send("email already exists")
-      //hash password
-      const salt = await bcrypt.genSalt(10);
-      const hashedPassword = await bcrypt.hash(req.body.password, salt);
-      const newInfo ={
-        email: req.body.email,
-        password: hashedPassword,
-        phoneNumber: req.body.phoneNumber,
-        dateOfBirth: req.body.dateOfBirth,
-      }
-   // still joi validation for the update form   
-  //  const {error}  = await updateValidation.validateAsync(req.body)
-   
-       const updatedInfo= await Student.findByIdAndUpdate(req.params.id, newInfo);
-       console.log(updatedInfo)
-       res.send(updatedInfo)
-   
+  await Student.findByIdAndUpdate(req.params.id, req.body);
+  res.json({ message: "specific data updated" });
 });
+
+///////////////////////////
+//sending mail to student 
+
+//const nodemailer = require("nodemailer");
+// const smtpTransport = require("nodemailer-smtp-transport"); 
+
+
+// router.post('/sendemail', async (req, res) => {
+//   await Drivers.findAll({ where: { email: req.body.email } }).then((obj) => {
+//       nodemailer.createTestAccount((err, email) => {
+//           var transporter = nodemailer.createTransport(
+//               smtpTransport({
+//                   service: "gmail",
+//                   port: 465,
+//                   secure: false,
+//                   host: "smtp.gmail.com",
+//                   auth: {
+//                       user: "Eduzone.Tunisia@gmail.com",
+//                       pass: "eduzone12112020"
+//                   },
+//                   tls: {
+//                       rejectUnauthorized: false,
+//                   },
+//               })
+//           );
+
+//           let mailOptions = {
+//               from: "Eduzone.Tunisia@gmail.com",
+//               to: `${req.body.email}`,
+//               subject: "eduZone Application",
+//               text: `thanks u for sign in .`,
+//           };
+//           transporter.sendMail(mailOptions, (err, info) => {
+//               if (err) {
+//                   console.log(err);
+//               }
+//               res.send(info);
+//           });
+//       });
+//   });
+// });
 
 module.exports = router;
