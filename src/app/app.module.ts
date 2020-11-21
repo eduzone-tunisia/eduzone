@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
-import {RegisterComponent} from './register/register.component'
+import { RegisterComponent } from './register/register.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
@@ -19,8 +19,6 @@ import { CousesService } from './couses.service';
 import {StudentProfileComponent} from  './student-profile/student-profile.component'
 import { HomeComponent } from './home/home.component';
 import { UpdateTeacherComponent } from './update-teacher/update-teacher.component';
-    
-
 
 @NgModule({
 
@@ -40,21 +38,20 @@ import { UpdateTeacherComponent } from './update-teacher/update-teacher.componen
     HomeComponent,
     StudentInfoComponent,
     StudentProfileComponent,
-      UpdateTeacherComponent
+      UpdateTeacherComponent,
+      UpdateTeacherComponent,
 
 
    ],
   imports: [
     BrowserModule,
-    MDBBootstrapModule.forRoot(), 
+    MDBBootstrapModule.forRoot(),
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-
-
-    ],
+  ],
 
   providers: [CousesService],
-  bootstrap: [AppComponent,HomeComponent],
+  bootstrap: [AppComponent, HomeComponent],
 })
 export class AppModule {}
