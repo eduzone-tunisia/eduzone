@@ -1,6 +1,9 @@
 const router = require("express").Router();
 const Course = require("../database/models/course");
-const cloudinary = require('cloudinary').v2;
+const cloudinary = require('cloudinary');
+// cloudinary config :
+
+
 //get all courses
 
 router.get("/", async (req, res) => {
@@ -9,9 +12,9 @@ router.get("/", async (req, res) => {
   });
 });
 
-router.get("/", async (req, res)=>{
-  res.status(200).send('Hello world')
-})
+// router.get("/", async (req, res)=>{
+//   res.status(200).send('Hello world')
+// })
 
 // get courses in the database by teacher
 router.post("/getCourses", async (req, res) => {
@@ -52,17 +55,29 @@ router.post("/addCourse", async (req, res) => {
 });
 
 
+
+// cloudinary config :
+cloudinary.config({
+    cloud_name: 'dxg5qywkt',
+    api_key: '588828191331743',
+    api_secret: '_ULtjv0vM7MuZ30m2tPja2a1Oe4'
+  });
+
+
+
+
 router.post("/upload", async (req, res,next) => {
-  const file = req.files.photo
-  // console.log(file);
-cloudinary.uploader.upload(file.tempFilePath,(err,result) => {
-  // console.log("Error",err);
-  // console.log("Resulet",result);
-  res.send(result)
+    const file = req.files.photo
+      // console.log(file);
+   cloudinary.uploader.upload(file.tempFilePath,(err,result) => {
+     console.log("Error",err);
+     console.log("Resulet",result);
+    
+ 
+    //  res.send({ 
+    //   success:true,
+    //    message:"video uploaded !"
+    //  })
+  })
 })
-  // res.send({ 
-  //   success:true,
-  //   message:"video uploaded !"
-  // })
-})
-module.exports = router;
+module.exports = router
