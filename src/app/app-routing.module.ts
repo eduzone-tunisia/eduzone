@@ -9,7 +9,7 @@ import {AboutUsComponent} from './About-us/About-us.component';
 import {TeacherRegisterComponent} from './teacher-register/teacher-register.component'
 import {TeacherLoginComponent} from './teacher-login/teacher-login.component'
 import { HomeComponent } from './home/home.component';
-
+import {StudentInfoComponent } from "./student-update-info/student-update-info.component"
 const routes: Routes = [
   {path:'', component:LandingPageComponent },
 
@@ -19,7 +19,8 @@ const routes: Routes = [
   {path :"aboutUs" ,component:AboutUsComponent},
   {path :"teacherRegister" ,component: TeacherRegisterComponent},
   {path :"teacherLogin" ,component: TeacherLoginComponent},
-  {path :"Profile" , component:StudentProfileComponent}
+  {path :"Profile" , component:StudentProfileComponent} ,
+  {path : "updateStudentInfo" , component:StudentInfoComponent }
 
 
 ];
