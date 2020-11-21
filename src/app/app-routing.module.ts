@@ -9,6 +9,7 @@ import { AboutUsComponent } from './About-us/About-us.component';
 import { TeacherRegisterComponent } from './teacher-register/teacher-register.component';
 import { TeacherLoginComponent } from './teacher-login/teacher-login.component';
 import { HomeComponent } from './home/home.component';
+import {StudentInfoComponent } from "./student-update-info/student-update-info.component"
 import { UpdateTeacherComponent } from './update-teacher/update-teacher.component';
 
 const routes: Routes = [
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'teacherLogin', component: TeacherLoginComponent },
   { path: 'Profile', component: StudentProfileComponent },
   { path: 'updateTeacher', component: UpdateTeacherComponent },
+  {path : "updateStudentInfo" , component:StudentInfoComponent }
 ];
 
 @NgModule({

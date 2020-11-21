@@ -12,16 +12,18 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { MiddleComponent } from './middle/middle.component';
 import { AboutUsComponent } from './About-us/About-us.component';
-
+import {StudentInfoComponent} from './student-update-info/student-update-info.component'
 import { TeacherRegisterComponent } from './teacher-register/teacher-register.component';
 import { TeacherLoginComponent } from './teacher-login/teacher-login.component';
 import { CousesService } from './couses.service';
-
+import {StudentProfileComponent} from  './student-profile/student-profile.component'
 import { HomeComponent } from './home/home.component';
 import { UpdateTeacherComponent } from './update-teacher/update-teacher.component';
 
 @NgModule({
+
   declarations: [
+
     AppComponent,
     LandingPageComponent,
     NavbarComponent,
@@ -34,8 +36,13 @@ import { UpdateTeacherComponent } from './update-teacher/update-teacher.componen
 
     TeacherLoginComponent,
     HomeComponent,
-    UpdateTeacherComponent,
-  ],
+    StudentInfoComponent,
+    StudentProfileComponent,
+      UpdateTeacherComponent,
+      UpdateTeacherComponent,
+
+
+   ],
   imports: [
     BrowserModule,
     MDBBootstrapModule.forRoot(),

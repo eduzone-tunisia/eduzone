@@ -19,4 +19,7 @@ export class StudentService {
   studentProfile(id :any) :Observable <any> {
   return this.http.get(serverUrl +id)
   }
+  updateInfo(id:any , updatedInfo : any): Observable <any> {
+    return this.http.put(serverUrl+id,updatedInfo)
+  }
 }
