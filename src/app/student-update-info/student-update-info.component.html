@@ -59,10 +59,14 @@
              
             />
           </div>
-        <button (click)="updateInfo()" [disabled]="f.invalid" class="btnn btn-primaryy">
-          Update  <i class="fas fa-edit"></i>
-        </button>
+          <a routerLink="/Profile">
+            <button (click)="updateInfo()" [disabled]="f.invalid" class="btnn btn-primaryy">
+              Update  <i class="fas fa-edit"></i>
+            </button>
+          </a>
+      
       </form>
     </div>
   
   </div>
+<router-outlet></router-outlet>
