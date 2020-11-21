@@ -18,11 +18,14 @@ import { TeacherLoginComponent } from './teacher-login/teacher-login.component';
 import { CousesService } from './couses.service';
 import {StudentProfileComponent} from  './student-profile/student-profile.component'
 import { HomeComponent } from './home/home.component';
+import { UpdateTeacherComponent } from './update-teacher/update-teacher.component';
     
 
 
 @NgModule({
+
   declarations: [
+
     AppComponent,
     LandingPageComponent,
     NavbarComponent,
@@ -32,10 +35,14 @@ import { HomeComponent } from './home/home.component';
     RegisterComponent,
     LoginComponent,
     TeacherRegisterComponent,
+
     TeacherLoginComponent,
     HomeComponent,
     StudentInfoComponent,
-    StudentProfileComponent
+    StudentProfileComponent,
+      UpdateTeacherComponent
+
+
    ],
   imports: [
     BrowserModule,
