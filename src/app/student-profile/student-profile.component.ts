@@ -11,6 +11,7 @@ import { StudentService } from '../services/student.service';
 export class StudentProfileComponent implements OnInit{
 student={}
 id=window.localStorage.id
+loggedIn=false
 constructor( private studentService : StudentService){}
 
 ngOnInit(){
@@ -21,6 +22,7 @@ getStudentProfile(){
     this.studentService.studentProfile(this.id).subscribe(
         (res) => {
           this.student=res
+          this.loggedIn=!this.loggedIn
           console.log(this.student);
         },
         (error) => {
