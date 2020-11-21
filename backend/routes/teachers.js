@@ -8,6 +8,14 @@ const verify = require("./verifyToken.js");
 const dotenv = require("dotenv");
 dotenv.config();
 
+//getting one teacher
+router.get("/:id", async (req, res) => {
+  console.log(req)
+  const teacher = await Teacher.findById(req.params.id);
+  res.json(teacher);
+});
+
+
 //getting all Teachers
 router.get("/", async (req, res) => {
   await Teacher.find({}, (err, data) => {
@@ -78,7 +86,7 @@ router.post("/login", async (req, res, next) => {
     if (!validPass) return res.status(400).send("password not valid");
 
     //create and assign a token
-    const token = jwt.sign({ _id: teacher._id }, process.env.SECRET_TOKEN);
+    const token = jwt.sign({ _id: teacher._id }, "123456");
     res.header("auth-token", token).send({ token: token, id: teacher.id });
   } catch (error) {
     if (error.isJoi === true) res.status(400).send(error.details[0].message);
@@ -88,8 +96,9 @@ router.post("/login", async (req, res, next) => {
 
 //update a Teacher
 router.put("/:id", async (req, res) => {
+  console.log(req.body)
   await Teacher.findByIdAndUpdate(req.params.id, req.body);
-  res.json({ message: "specific data updated" });
+  res.json({ message: "teacher updated" });
 });
 
 module.exports = router;

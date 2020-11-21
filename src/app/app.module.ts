@@ -1,12 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
-
-import {RegisterComponent} from './register/register.component'
-
+import { RegisterComponent } from './register/register.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
@@ -15,21 +12,18 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { MiddleComponent } from './middle/middle.component';
 import { AboutUsComponent } from './About-us/About-us.component';
-
-
+import {StudentInfoComponent} from './student-update-info/student-update-info.component'
 import { TeacherRegisterComponent } from './teacher-register/teacher-register.component';
 import { TeacherLoginComponent } from './teacher-login/teacher-login.component';
 import { CousesService } from './couses.service';
-
+import {StudentProfileComponent} from  './student-profile/student-profile.component'
 import { HomeComponent } from './home/home.component';
 import { UpdateTeacherComponent } from './update-teacher/update-teacher.component';
-    
-
 
 @NgModule({
 
+  declarations: [
 
-  declarations: [	
     AppComponent,
     LandingPageComponent,
     NavbarComponent,
@@ -39,20 +33,25 @@ import { UpdateTeacherComponent } from './update-teacher/update-teacher.componen
     RegisterComponent,
     LoginComponent,
     TeacherRegisterComponent,
-      TeacherLoginComponent,HomeComponent,
-      UpdateTeacherComponent
+
+    TeacherLoginComponent,
+    HomeComponent,
+    StudentInfoComponent,
+    StudentProfileComponent,
+      UpdateTeacherComponent,
+      UpdateTeacherComponent,
+
+
    ],
   imports: [
     BrowserModule,
-    MDBBootstrapModule.forRoot(), 
+    MDBBootstrapModule.forRoot(),
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-
-
-    ],
+  ],
 
   providers: [CousesService],
-  bootstrap: [AppComponent,HomeComponent],
+  bootstrap: [AppComponent, HomeComponent],
 })
 export class AppModule {}
