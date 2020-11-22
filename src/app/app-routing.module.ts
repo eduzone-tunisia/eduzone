@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import {StudentInfoComponent } from "./student-update-info/student-update-info.component"
 import { UpdateTeacherComponent } from './update-teacher/update-teacher.component';
 import { TermOfServiceComponent } from './termOfService/termOfService.component';
+import { VideoPlayerComponent } from './videoPlayer/videoPlayer.component';
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
   { path: 'home', component: HomeComponent },
@@ -23,7 +24,8 @@ const routes: Routes = [
   { path: 'Profile', component: StudentProfileComponent },
   { path: 'updateTeacher', component: UpdateTeacherComponent },
   {path : "updateStudentInfo" , component:StudentInfoComponent },
-  {path : "servicesTerms", component:TermOfServiceComponent}
+  {path : "servicesTerms", component:TermOfServiceComponent},
+  {path: "videoPlayer", component:VideoPlayerComponent}
 ];
 
 @NgModule({
