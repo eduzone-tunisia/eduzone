@@ -12,7 +12,6 @@ import { HomeComponent } from './home/home.component';
 import {StudentInfoComponent } from "./student-update-info/student-update-info.component"
 const routes: Routes = [
   {path:'', component:LandingPageComponent },
-
   {path:'home',component:HomeComponent},
   {path:'register',component:RegisterComponent},
   {path :"login" ,component:LoginComponent},

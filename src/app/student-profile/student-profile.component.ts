@@ -9,21 +9,25 @@ import { CousesService} from  '../couses.service'
 
 
 export class StudentProfileComponent implements OnInit{
-student={}
-id=window.localStorage.id
-loggedIn=false
+student :any ={}
+id : any =window.localStorage.id
+loggedIn :any=false
 constructor( private studentService : StudentService ,private coursesService:CousesService ){}
 //dummy data to display in the profile
 myCourses = this.coursesService.courses.filter(cate => cate.cate==="front-end")
 ngOnInit(){
 this.getStudentProfile()
 
+
 }
 getStudentProfile(){
     this.studentService.studentProfile(this.id).subscribe(
         (res) => {
           this.student=res
-          this.loggedIn=!this.loggedIn
+          this.loggedIn=true
+          console.log(this.id)
+        console.log(this.loggedIn)
+        console.log(this.student)
         
         },
         (error) => {
