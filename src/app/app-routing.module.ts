@@ -16,10 +16,16 @@ import { HomeComponent } from './home/home.component';
 import {StudentInfoComponent } from "./student-update-info/student-update-info.component"
 import { UpdateTeacherComponent } from './update-teacher/update-teacher.component';
 import { TermOfServiceComponent } from './termOfService/termOfService.component';
+import { StudentProfileComponent } from './student-profile/student-profile.component';
+import { FilterComponent } from './filter/filter.component';
+import { TypeComponent } from './type/type.component';
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
   { path: 'home', component: HomeComponent },
+  {path:'type', component:FilterComponent},
+  { path:'design', component:TypeComponent},
   { path: 'register', component: RegisterComponent },
+  {path:'addcourses', component: CourseFormComponent},
   { path: 'login', component: LoginComponent },
   { path: 'aboutUs', component: AboutUsComponent },
   { path: 'teacherRegister', component: TeacherRegisterComponent },
