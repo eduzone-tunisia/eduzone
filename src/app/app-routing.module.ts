@@ -19,6 +19,7 @@ import { TermOfServiceComponent } from './termOfService/termOfService.component'
 import { StudentProfileComponent } from './student-profile/student-profile.component';
 import { FilterComponent } from './filter/filter.component';
 import { TypeComponent } from './type/type.component';
+
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
   { path: 'home', component: HomeComponent },
@@ -33,7 +34,8 @@ const routes: Routes = [
   { path: 'Profile', component: StudentProfileComponent },
   { path: 'updateTeacher', component: UpdateTeacherComponent },
   {path : "updateStudentInfo" , component:StudentInfoComponent },
-  {path : "servicesTerms", component:TermOfServiceComponent}
+  {path : "servicesTerms", component:TermOfServiceComponent},
+  {path : "addCourse", component:CourseFormComponent}
 
 ];
 
