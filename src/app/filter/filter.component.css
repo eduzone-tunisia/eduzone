@@ -1,18 +1,4 @@
-
-
-  body
-  {
-    background:#00bcd4;
-  }
-  
-  h1
-  {
-    color:#fff;
-    margin:40px 0 60px 0;
-    font-weight:300;
-  }
-  
-  .our-team-main
+.our-team-main
   {
     width:100%;
     height:238px;
@@ -24,6 +10,7 @@
     position:relative;
     transition:0.5s;
     margin-bottom:28px;
+    
   }
   
   
@@ -144,5 +131,9 @@
   margin: 4px 2px;
   margin-left: 900px;
   margin-top:40px;
+}
+h2{
+    margin-left: 3%;
+
 }
 
