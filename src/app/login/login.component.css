@@ -19,3 +19,18 @@
     color: #fff;
     float: right;
 }
+.btn.btn-primary.btn-lg.active{
+    height: 45px;
+    width: 110px;
+    padding: 10px;
+    border-radius: 12px;
+    text-align: center;
+    margin: 4px 2px;
+    
+}
+.modal.fade{
+    background-image: url(../../assets/background/background.jpg);
+}
+.modal-content{
+    margin-top: 180px;
+}

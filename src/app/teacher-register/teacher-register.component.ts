@@ -25,6 +25,8 @@ export class TeacherRegisterComponent implements OnInit {
       (res) => {
         this.registred = !this.registred;
         console.log(res);
+        //send email to teacher
+        this.teacherService.sendEmail({email:this.teacher.email})
       },
       (error) => {
         this.validationError = error.error;

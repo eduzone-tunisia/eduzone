@@ -19,8 +19,9 @@ dotenv.config();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
-app.use(express.static(`../eduzone/dist/eduzone`));
- 
+
+app.use(express.static(`../dist/eduzone`));
+
 
 
 app.use("/file",file)
