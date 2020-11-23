@@ -21,20 +21,16 @@ import {UploadService} from './services/upload.service';
 import { HomeComponent } from './home/home.component';
 import { CourseFormComponent } from './course-form/course-form.component';
 import {FileUploadModule} from 'ng2-file-upload';
-
-
-    
-
-
 import {StudentProfileComponent} from  './student-profile/student-profile.component'
-
 import { UpdateTeacherComponent } from './update-teacher/update-teacher.component';
 import { TermOfServiceComponent } from './termOfService/termOfService.component';
+import { FilterComponent } from './filter/filter.component';
+import { TypeComponent } from './type/type.component';
 
 
 @NgModule({
 
-  declarations: [	
+  declarations: [			
 
 
 
@@ -55,8 +51,9 @@ import { TermOfServiceComponent } from './termOfService/termOfService.component'
     StudentProfileComponent,
       UpdateTeacherComponent,
       UpdateTeacherComponent,
-      TermOfServiceComponent
-
+      TermOfServiceComponent,
+      FilterComponent,
+      TypeComponent
    ],
   imports: [
     BrowserModule,
