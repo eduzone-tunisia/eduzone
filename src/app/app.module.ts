@@ -19,15 +19,19 @@ import { AboutUsComponent } from './About-us/About-us.component';
 import { TeacherRegisterComponent } from './teacher-register/teacher-register.component';
 import { TeacherLoginComponent } from './teacher-login/teacher-login.component';
 import { CousesService } from './couses.service';
-
+import {UploadService} from './services/upload.service';
 import { HomeComponent } from './home/home.component';
+import { CourseFormComponent } from './course-form/course-form.component';
+import {FileUploadModule} from 'ng2-file-upload';
+
+
     
 
 
 @NgModule({
 
 
-  declarations: [
+  declarations: [	
     AppComponent,
     LandingPageComponent,
     NavbarComponent,
@@ -37,7 +41,8 @@ import { HomeComponent } from './home/home.component';
     RegisterComponent,
     LoginComponent,
     TeacherRegisterComponent,
-      TeacherLoginComponent,HomeComponent
+      TeacherLoginComponent,HomeComponent,
+     
    ],
   imports: [
     BrowserModule,
@@ -45,11 +50,12 @@ import { HomeComponent } from './home/home.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-
+    FileUploadModule
+    
 
     ],
 
-  providers: [CousesService],
-  bootstrap: [AppComponent,HomeComponent],
+  providers: [CousesService,UploadService],
+  bootstrap: [AppComponent,HomeComponent,CourseFormComponent],
 })
 export class AppModule {}
