@@ -1,5 +1,30 @@
+
 <div class="sidenav">
-    <a >Update My info</a>
-    <a >My Courses</a>
-    <a >My Teachers</a>
+   <a routerLink="/Profile">My Courses</a>
+   <a routerLink="/updateStudentInfo">Update My info</a>
+  <a >My Teachers</a>
   </div>
+ 
+  <h1 style="float:right; margin-right: 50%;"> My Courses</h1>
+  <div class="row" style="float:right">
+    <div class="col-lg-4" *ngFor="let course of myCourses">
+      <div class="our-team-main" st>
+
+        <div class="team-front">
+          <img src="{{course.bannerurl}}" class="img-fluid" />
+          <h3>{{course.name}}</h3>
+          <p>{{course.title}}</p>
+        </div>
+
+        <div class="team-back">
+          <span>
+            {{course.description}}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+   <router-outlet></router-outlet>
+  

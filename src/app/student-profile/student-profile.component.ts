@@ -1,6 +1,6 @@
 import { Component , OnInit } from '@angular/core';
 import { StudentService } from '../services/student.service';
-
+import { CousesService} from  '../couses.service'
 @Component({
   selector: 'app-student-profile',
   templateUrl: './student-profile.component.html',
@@ -11,8 +11,10 @@ import { StudentService } from '../services/student.service';
 export class StudentProfileComponent implements OnInit{
 student={}
 id=window.localStorage.id
-constructor( private studentService : StudentService){}
-
+loggedIn=false
+constructor( private studentService : StudentService ,private coursesService:CousesService ){}
+//dummy data to display in the profile
+myCourses = this.coursesService.courses.filter(cate => cate.cate==="front-end")
 ngOnInit(){
 this.getStudentProfile()
 
@@ -21,10 +23,10 @@ getStudentProfile(){
     this.studentService.studentProfile(this.id).subscribe(
         (res) => {
           this.student=res
-          console.log(this.student);
+          this.loggedIn=!this.loggedIn
+        
         },
         (error) => {
-         
           console.log(error);
         }
       );
