@@ -16,14 +16,27 @@ import {StudentInfoComponent} from './student-update-info/student-update-info.co
 import { TeacherRegisterComponent } from './teacher-register/teacher-register.component';
 import { TeacherLoginComponent } from './teacher-login/teacher-login.component';
 import { CousesService } from './couses.service';
-import {StudentProfileComponent} from  './student-profile/student-profile.component'
+
+import {UploadService} from './services/upload.service';
 import { HomeComponent } from './home/home.component';
+import { CourseFormComponent } from './course-form/course-form.component';
+import {FileUploadModule} from 'ng2-file-upload';
+
+
+    
+
+
+import {StudentProfileComponent} from  './student-profile/student-profile.component'
+
 import { UpdateTeacherComponent } from './update-teacher/update-teacher.component';
 import { TermOfServiceComponent } from './termOfService/termOfService.component';
+
 
 @NgModule({
 
   declarations: [	
+
+
 
     AppComponent,
     LandingPageComponent,
@@ -35,6 +48,7 @@ import { TermOfServiceComponent } from './termOfService/termOfService.component'
     LoginComponent,
     TeacherRegisterComponent,
 
+
     TeacherLoginComponent,
     HomeComponent,
     StudentInfoComponent,
@@ -42,16 +56,19 @@ import { TermOfServiceComponent } from './termOfService/termOfService.component'
       UpdateTeacherComponent,
       UpdateTeacherComponent,
       TermOfServiceComponent
+
    ],
   imports: [
     BrowserModule,
     MDBBootstrapModule.forRoot(),
     AppRoutingModule,
     FormsModule,
-    HttpClientModule,
+    HttpClientModule,FileUploadModule
+
   ],
 
-  providers: [CousesService],
-  bootstrap: [AppComponent, HomeComponent],
+providers: [CousesService,UploadService],
+  bootstrap: [AppComponent,HomeComponent,CourseFormComponent],
+
 })
 export class AppModule {}
