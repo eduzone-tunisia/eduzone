@@ -111,6 +111,7 @@ router.put("/:id", async (req, res) => {
     imageUrl: req.body.imageUrl,
   };
   await Teacher.findByIdAndUpdate(req.params.id, newInfo);
+
   res.json({ message: "teacher updated" });
 });
 

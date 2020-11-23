@@ -8,7 +8,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 router.get("/:id", async (req, res) => {
-  const student =await Student.findById(req.params.id);
+  const student = await Student.findById(req.params.id);
   res.json(student);
 });
 
@@ -99,25 +99,24 @@ router.post("/login", async (req, res, next) => {
 
 //update a student
 router.put("/:id", async (req, res) => {
-    //check if email exists
-    const emailExist = await Student.findOne({ email: req.body.email });
-    if (emailExist) return res.status(400).send("email already exists")
-      //hash password
-      const salt = await bcrypt.genSalt(10);
-      const hashedPassword = await bcrypt.hash(req.body.password, salt);
-      const newInfo ={
-        email: req.body.email,
-        password: hashedPassword,
-        phoneNumber: req.body.phoneNumber,
-        dateOfBirth: req.body.dateOfBirth,
-      }
-   // still joi validation for the update form   
+  //check if email exists
+  const emailExist = await Student.findOne({ email: req.body.email });
+  if (emailExist) return res.status(400).send("email already exists");
+  //hash password
+  const salt = await bcrypt.genSalt(10);
+  const hashedPassword = await bcrypt.hash(req.body.password, salt);
+  const newInfo = {
+    email: req.body.email,
+    password: hashedPassword,
+    phoneNumber: req.body.phoneNumber,
+    dateOfBirth: req.body.dateOfBirth,
+  };
+  // still joi validation for the update form
   //  const {error}  = await updateValidation.validateAsync(req.body)
-   
-       const updatedInfo= await Student.findByIdAndUpdate(req.params.id, newInfo);
-       console.log(updatedInfo)
-       res.send(updatedInfo)
-   
+
+  const updatedInfo = await Student.findByIdAndUpdate(req.params.id, newInfo);
+  console.log(updatedInfo);
+  res.send(updatedInfo);
 });
 
 module.exports = router;
