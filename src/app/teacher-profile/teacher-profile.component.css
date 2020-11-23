@@ -1,0 +1,177 @@
+/* The sidebar menu */
+.sidenav {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 160px; /* Set the width of the sidebar */
+    position: absolute; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 2; /* Stay on top */
+    top: 1; /* Stay at the top */
+    left: 0;
+    background-color:#0062cc; /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 100px;
+    margin-top: -1px;
+  
+
+  }
+  
+  /* The navigation menu links */
+  .sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 15px;
+    color:white;
+    display: block;
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .sidenav a:hover {
+    color:black;
+  }
+  
+  /* Style page content */
+  .main {
+    margin-left: 160px; /* Same as the width of the sidebar */
+    padding: 0px 10px;
+  }
+ 
+
+
+  
+  .our-team-main
+  {
+    width:50%;
+    height:200px;
+    border-bottom:5px #323233 solid;
+    background:#fff;
+    text-align:center;
+    border-radius:5px;
+    overflow:hidden;
+    position:relative;
+    transition:0.5s;
+    margin-bottom:28px;
+    float: right;
+  }
+  
+  
+  .our-team-main img
+  {
+    border-radius:50%;
+    margin-bottom:20px;
+    width: 70px;
+  }
+  
+  .our-team-main h3
+  {
+    font-size:20px;
+    font-weight:700;
+  }
+  
+  .our-team-main p
+  {
+    margin-bottom:0;
+  }
+  
+  .team-back
+  {
+    width:100%;
+    height:auto;
+    position:absolute;
+    top:0;
+    left:0;
+    padding:5px 15px 0 15px;
+    text-align:left;
+    background:#fff;
+    
+  }
+  
+  .team-front
+  {
+    width:100%;
+    height:auto;
+    position:relative;
+    z-index:10;
+    background:#fff;
+    padding:15px;
+    bottom:0px;
+    transition: all 0.5s ease;
+  }
+  
+  .our-team-main:hover .team-front
+  {
+    bottom:-200px;
+    transition: all 0.5s ease;
+  }
+  
+  .our-team-main:hover
+  {
+    border-color:#777;
+    transition:0.5s;
+  }
+
+
+/*our-team-main*/
+.carousel-item{
+  box-sizing: border-box;
+  width: 1790px;
+  height: 650px;
+  border-radius: 8px;
+  margin-left:55px;
+}
+.a{
+  color:black;
+  margin-top:-350px;
+  margin-left: 635px;
+  font-weight: 500;
+  font-size: 50px;
+}
+.b{
+  color:black;
+  margin-left: 800px;
+  font-size: 35px; 
+}
+.d{
+  color: black;
+  margin-top:-200px;
+  font-weight: 500;
+  font-size: 70px;
+}
+.e{
+  color: black;
+  font-size: 40px;
+  margin-left: 300px;
+}
+
+.f {
+  margin-top: -380px;
+  font-size: 30px;
+  margin-left: -800px;
+  font-weight: 500;
+}
+.g{
+  font-size: 20px;
+}
+
+.h{
+  margin-top:-650px;
+  margin-left: 950px;
+  font-weight: 700;
+  font-size: 50px;
+}
+
+.i{
+  margin-left: 1120px;
+  font-size: 40px;
+}
+.btn.btn-primary.btn-lg.active{
+  height: 45px;
+  width: 110px;
+  padding: 10px;
+  border-radius: 12px;
+  text-align: center;
+  margin: 4px 2px;
+  margin-left: 900px;
+  margin-top:40px;
+}
+
+
+ 

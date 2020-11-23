@@ -20,7 +20,7 @@ import {StudentProfileComponent} from  './student-profile/student-profile.compon
 import { HomeComponent } from './home/home.component';
 import { UpdateTeacherComponent } from './update-teacher/update-teacher.component';
 import { TermOfServiceComponent } from './termOfService/termOfService.component';
-
+import {TeacherProfileComponent} from './teacher-profile/teacher-profile.component'
 @NgModule({
 
   declarations: [	
@@ -34,7 +34,7 @@ import { TermOfServiceComponent } from './termOfService/termOfService.component'
     RegisterComponent,
     LoginComponent,
     TeacherRegisterComponent,
-
+    TeacherProfileComponent,
     TeacherLoginComponent,
     HomeComponent,
     StudentInfoComponent,

@@ -25,9 +25,7 @@ getStudentProfile(){
         (res) => {
           this.student=res
           this.loggedIn=true
-          console.log(this.id)
-        console.log(this.loggedIn)
-        console.log(this.student)
+        
         
         },
         (error) => {
