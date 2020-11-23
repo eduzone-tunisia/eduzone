@@ -1,3 +1,4 @@
+
 <form
   class="text-center border border-light p-5"
   #f="ngForm"
@@ -90,6 +91,7 @@
     class="form-control"
     placeholder="Enter image"
   />
+  <i class="far fa-image"></i>
   <small class="form-text text-muted mb-4"> </small>
   <!-- Date of birth -->
   <div class="md-form md-outline input-with-post-icon datepicker">
@@ -102,6 +104,7 @@
       #dateOfBirth="ngModel"
       class="form-control"
     />
+    <i class="fas fa-birthday-cake"></i>
     <label for="example">Date of birth</label>
   </div>
   <!-- Experience -->
@@ -112,8 +115,9 @@
     required
     #experience="ngModel"
     class="form-control"
-    placeholder="Enter username"
+    placeholder="Enter your experience"
   />
+  <i class="fas fa-user-check"></i>
   <small class="form-text text-muted mb-4"> </small>
   <!--update button -->
   <button class="btn btn-primary btn-lg active" type="submit">
@@ -123,6 +127,7 @@
   <!-- Terms of service -->
   <p>
     By clicking <em>Update your information</em> you agree to our
-    <a href="" target="_blank">terms of service</a>
+    <a   routerLink="/servicesTerms" >terms of service</a>
   </p>
 </form>
+<router-outlet></router-outlet>

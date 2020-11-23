@@ -6,6 +6,9 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const verify = require("./verifyToken.js");
 const dotenv = require("dotenv");
+const nodemailer = require("nodemailer");
+const smtpTransport = require("nodemailer-smtp-transport");
+
 dotenv.config();
 
 //getting one teacher
@@ -53,6 +56,52 @@ router.post("/add", async (req, res, next) => {
       dateOfBirth: req.body.dateOfBirth,
       imageUrl: req.body.imageUrl,
     });
+///send mail to teacher after sign up
+    nodemailer.createTestAccount((err, email) => {
+      var transporter = nodemailer.createTransport(
+          smtpTransport({
+              service: "gmail",
+              port: 465,
+              secure: false,
+              host: "smtp.gmail.com",
+              auth: {
+                  user: "Eduzone.Tunisia@gmail.com",
+                  pass: "eduzone12112020"
+              },
+              tls: {
+                  rejectUnauthorized: false,
+              },
+          })
+      );
+  
+      let mailOptions = {
+          from: "Eduzone.Tunisia@gmail.com",
+          to: `${req.body.email}`,
+          subject: "eduZone Application",
+          text: `welcome ${req.body.lastName} ${req.body.firstName},
+
+          Congratulation! you've successfuliy signed up for eduZone.
+          Now it's time to access your account so you can start uploading your courses online.
+          
+          -Sign in to your account at : http://localhost:8080/teacherLogin
+          -Access to your account.
+          -Upload your courses on video format.
+          -Check your balance.
+          -check your comments and answer to possible questions.
+
+          We're delighted to welcome you to eduZone.
+          
+          See you online.
+          The eduZone team.`,
+      };
+      transporter.sendMail(mailOptions, (err, info) => {
+          if (err) {
+              console.log(err);
+          }
+      });
+  })
+
+
 
     const { error } = await schema.validateAsync(req.body);
     const savedTeacher = await newTeacher.save();
@@ -84,12 +133,14 @@ router.post("/login", async (req, res, next) => {
     if (!validPass) return res.status(400).send("password not valid");
 
     //create and assign a token
+
     const token = jwt.sign({ _id: teacher._id }, "123456");
     res.header("auth-token", token).send({ token: token, id: teacher.id });
   } catch (error) {
     if (error.isJoi === true) res.status(400).send(error.details[0].message);
     next(error);
   }
+  
 });
 
 //update a Teacher
