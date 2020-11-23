@@ -19,9 +19,11 @@ import { AboutUsComponent } from './About-us/About-us.component';
 import { TeacherRegisterComponent } from './teacher-register/teacher-register.component';
 import { TeacherLoginComponent } from './teacher-login/teacher-login.component';
 import { CousesService } from './couses.service';
-
+import {UploadService} from './services/upload.service';
 import { HomeComponent } from './home/home.component';
 import { CourseFormComponent } from './course-form/course-form.component';
+import {FileUploadModule} from 'ng2-file-upload';
+
 
     
 
@@ -48,11 +50,12 @@ import { CourseFormComponent } from './course-form/course-form.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-
+    FileUploadModule
+    
 
     ],
 
-  providers: [CousesService],
+  providers: [CousesService,UploadService],
   bootstrap: [AppComponent,HomeComponent,CourseFormComponent],
 })
 export class AppModule {}

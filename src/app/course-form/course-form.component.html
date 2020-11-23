@@ -80,21 +80,9 @@
         accept=".mp4"
         required
       />
-      <!-- <div class="progress">
-        <div
-          class="progress-bar progress-bar-striped-bg-success"
-          role="progressbar"
-          [style.width]="(uploadProgress | async) + '%'"
-          [attr.aria-valuenow]="(uploadProgress | async) + '%'"
-          aria-valuemin="0"
-          aria-valuemax="100"
-        ></div>
-      </div> -->
-      <!-- <a [href]="downloadURL | async" name="download">{{
-        downloadURL | async
-      }}</a> -->
+     
       <p></p>
-      <button type="submit"  mdbBtn color="black" (click)="share()">
+      <button type="button" class="btn btn-dark" >
         Add <i class="fas fa-sign-in-alt"></i>
       </button>
     </form>

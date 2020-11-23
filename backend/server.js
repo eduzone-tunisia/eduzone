@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const fileupload = require("express-fileupload")
 const course = require("./routes/courses");
+const file = require("./routes/upload");
 const app = express();
 
 const student = require("./routes/students");
@@ -22,7 +23,7 @@ app.use(express.static(`../eduzone/dist/eduzone`));
  
 
 
-
+app.use("/file",file)
 app.use("/course", course);
 app.use("/student", student);
 app.use("/teacher", teacher);
