@@ -22,8 +22,8 @@ export class TeacherService {
     return this.http.put(teacherUrl + `${id}`, teacherInfo);
   }
 
-  getConnectedTeacher(id : any) {
-    return this.http.get(teacherUrl + `${id}`)
+  getConnectedTeacher(id: any): Observable<any> {
+    return this.http.get(teacherUrl + id);
   }
 
   //send mail to teacher
