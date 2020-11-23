@@ -13,11 +13,9 @@ dotenv.config();
 
 //getting one teacher
 router.get("/:id", async (req, res) => {
-  console.log(req)
   const teacher = await Teacher.findById(req.params.id);
   res.json(teacher);
 });
-
 
 //getting all Teachers
 router.get("/", async (req, res) => {
@@ -147,8 +145,23 @@ router.post("/login", async (req, res, next) => {
 
 //update a Teacher
 router.put("/:id", async (req, res) => {
-  console.log(req.body)
-  await Teacher.findByIdAndUpdate(req.params.id, req.body);
+  console.log(req.body);
+  //check if email exists
+  const emailExist = await Teacher.findOne({ email: req.body.email });
+  if (!emailExist) return res.status(400).send("email doesn't exist");
+  //hash password
+  const salt = await bcrypt.genSalt(10);
+  const hashedPassword = await bcrypt.hash(req.body.password, salt);
+  const newInfo = {
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    password: hashedPassword,
+    phoneNumber: req.body.phoneNumber,
+    dateOfBirth: req.body.dateOfBirth,
+    imageUrl: req.body.imageUrl,
+  };
+  await Teacher.findByIdAndUpdate(req.params.id, newInfo);
   res.json({ message: "teacher updated" });
 });
 
