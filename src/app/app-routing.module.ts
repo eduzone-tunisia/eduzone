@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import{StudentProfileComponent} from './student-profile/student-profile.component'
+import { StudentProfileComponent } from './student-profile/student-profile.component';
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
@@ -10,30 +10,25 @@ import { TeacherRegisterComponent } from './teacher-register/teacher-register.co
 import { TeacherLoginComponent } from './teacher-login/teacher-login.component';
 import { HomeComponent } from './home/home.component';
 import {StudentInfoComponent } from "./student-update-info/student-update-info.component"
+import { UpdateTeacherComponent } from './update-teacher/update-teacher.component';
+import { TermOfServiceComponent } from './termOfService/termOfService.component';
 const routes: Routes = [
-
-
-  {path:'', component:LandingPageComponent },
-  {path:'home',component:HomeComponent},
-  {path:'register',component:RegisterComponent},
-  {path :"login" ,component:LoginComponent},
-  {path :"aboutUs" ,component:AboutUsComponent},
-  {path :"teacherRegister" ,component: TeacherRegisterComponent},
-
-  {path :"teacherLogin" ,component: TeacherLoginComponent},
-  {path :"Profile" , component:StudentProfileComponent} ,
-  {path : "updateStudentInfo" , component:StudentInfoComponent }
-
-
-
-
-  
+  { path: '', component: LandingPageComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'aboutUs', component: AboutUsComponent },
+  { path: 'teacherRegister', component: TeacherRegisterComponent },
+  { path: 'teacherLogin', component: TeacherLoginComponent },
+  { path: 'Profile', component: StudentProfileComponent },
+  { path: 'updateTeacher', component: UpdateTeacherComponent },
+  {path : "updateStudentInfo" , component:StudentInfoComponent },
+  {path : "servicesTerms", component:TermOfServiceComponent}
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
 
   exports: [RouterModule],
-
 })
 export class AppRoutingModule {}

@@ -1,18 +1,18 @@
-.text-center.border.border-light.p-5{
-
-    width: 900px;
+.btn.btn-primary.btn-lg.active {
+  height: 45px;
+  width: 250px;
+  padding: 10px;
+  border-radius: 12px;
+  text-align: center;
+  margin: 4px 2px;
 }
-
-.btn.btn-primary.btn-lg.active{
-    height: 45px;
-    width: 250px;
-    padding: 10px;
-    border-radius: 12px;
-    text-align: center;
-    margin: 4px 2px;
-    
+.modal.fade {
+  background-image: url(../../assets/background/background.jpg);
 }
-
-.text-center.border.border-light.p-5{
-    margin-left: 150px;
+.modal-content {
+  margin-top: 180px;
+}
+.h4.mb-4{
+  font-weight: bolder;
+  font-size: 50px;
 }
