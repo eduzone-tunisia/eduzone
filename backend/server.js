@@ -13,9 +13,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 app.use(express.static(`../dist/eduzone`));
 
-// app.get("/*", function (req, res) {
-//   res.sendFile(path.join(__dirname + "../dist/eduzone/index.html"));
-// });
+app.get("/*", function (req, res) {
+  res.sendFile(path.join(__dirname + "../dist/eduzone/index.html"));
+});
 
 app.use("/course", course);
 app.use("/student", student);

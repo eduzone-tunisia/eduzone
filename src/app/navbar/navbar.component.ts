@@ -18,7 +18,10 @@ export class NavbarComponent implements OnInit {
     private studentService: StudentService
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getConnectedTeacher();
+    this.getStudentProfile();
+  }
 
   getConnectedTeacher() {
     console.log('id', this.id);
@@ -46,8 +49,7 @@ export class NavbarComponent implements OnInit {
 
   ngAfterContentChecked() {
     this.isLoggedIn();
-    this.getConnectedTeacher();
-    this.getStudentProfile();
+   
   }
 
   isLoggedIn(){
