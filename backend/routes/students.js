@@ -5,6 +5,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const verify = require("./verifyToken.js");
 const dotenv = require("dotenv");
+
 dotenv.config();
 
 router.get("/:id", async (req, res) => {
@@ -12,6 +13,11 @@ router.get("/:id", async (req, res) => {
   res.json(student);
 });
 
+const nodemailer = require("nodemailer");
+const smtpTransport = require("nodemailer-smtp-transport");
+
+
+dotenv.config();
 //getting all students
 router.get("/", async (req, res) => {
   await Student.find({}, (err, data) => {
@@ -29,13 +35,7 @@ const schema = Joi.object({
   dateOfBirth: Joi.date(),
   imageUrl: Joi.string(),
 });
-//validation for updating info
-// const updateValidation={
-//   email: Joi.string().min(6).required().email(),
-//   password: Joi.string().min(6).required(),
-//   phoneNumber: Joi.number(),
-//   dateOfBirth: Joi.date(),
-// }
+
 
 //create a student
 router.post("/studentRegistration", async (req, res, next) => {
@@ -57,6 +57,51 @@ router.post("/studentRegistration", async (req, res, next) => {
       dateOfBirth: req.body.dateOfBirth,
       imageUrl: req.body.imageUrl,
     });
+///send mail to student after sign up
+    nodemailer.createTestAccount((err, email) => {
+      var transporter = nodemailer.createTransport(
+          smtpTransport({
+              service: "gmail",
+              port: 465,
+              secure: false,
+              host: "smtp.gmail.com",
+              auth: {
+                  user: "Eduzone.Tunisia@gmail.com",
+                  pass: "eduzone12112020"
+              },
+              tls: {
+                  rejectUnauthorized: false,
+              },
+          })
+      );
+  
+      let mailOptions = {
+          from: "Eduzone.Tunisia@gmail.com",
+          to: `${req.body.email}`,
+          subject: "eduZone Application",
+          text: `
+          welcome ${req.body.lastName} ${req.body.firstName},
+          
+                    Congratulation! you've successfuliy signed up for eduZone.
+                    Now it's time to access your account so you can start dowloading your courses online.
+                    
+                    -Sign in to your account at : http://localhost:8080/login
+                    -Access to your account.
+                    -dowload your courses on video format.
+                    -Check your purchases.
+                    - comment,rate and ask questions to teacher.
+          
+                    We're delighted to welcome you to eduZone.
+                    
+                    See you online.
+                    The eduZone team.`,
+      };
+      transporter.sendMail(mailOptions, (err, info) => {
+          if (err) {
+              console.log(err);
+          }
+      });
+  })
 
     const { error } = await schema.validateAsync(req.body);
     const savedStudent = await newStudent.save();
@@ -99,6 +144,7 @@ router.post("/login", async (req, res, next) => {
 
 //update a student
 router.put("/:id", async (req, res) => {
+
   //check if email exists
   const emailExist = await Student.findOne({ email: req.body.email });
   if (emailExist) return res.status(400).send("email already exists");
@@ -117,6 +163,7 @@ router.put("/:id", async (req, res) => {
   const updatedInfo = await Student.findByIdAndUpdate(req.params.id, newInfo);
   console.log(updatedInfo);
   res.send(updatedInfo);
+
 });
 
 module.exports = router;

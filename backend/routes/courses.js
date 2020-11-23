@@ -1,6 +1,9 @@
 const router = require("express").Router();
 const Course = require("../database/models/course");
 
+// cloudinary config :
+
+
 //get all courses
 
 router.get("/", async (req, res) => {
@@ -9,7 +12,7 @@ router.get("/", async (req, res) => {
   });
 });
 
-// get courses in the database by teacher
+
 router.post("/getCourses", async (req, res) => {
   console.log(req.body);
   const courses = await Course.find({ teacher: req.body.teacherId })
@@ -46,4 +49,7 @@ router.post("/addCourse", async (req, res) => {
 
   res.send(newCourseAdded);
 });
-module.exports = router;
+
+
+
+module.exports = router
