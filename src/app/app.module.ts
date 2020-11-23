@@ -20,16 +20,22 @@ import { CousesService } from './couses.service';
 import { UploadService } from './services/upload.service';
 import { HomeComponent } from './home/home.component';
 import { CourseFormComponent } from './course-form/course-form.component';
+
 import { FileUploadModule } from 'ng2-file-upload';
 
 import { StudentProfileComponent } from './student-profile/student-profile.component';
 import { NgxDropzoneModule } from 'ngx-dropzone';
 
+
 import { UpdateTeacherComponent } from './update-teacher/update-teacher.component';
 import { TermOfServiceComponent } from './termOfService/termOfService.component';
+import { FilterComponent } from './filter/filter.component';
+import { TypeComponent } from './type/type.component';
 
 @NgModule({
+
   declarations: [
+
     AppComponent,
     LandingPageComponent,
     NavbarComponent,
@@ -44,11 +50,15 @@ import { TermOfServiceComponent } from './termOfService/termOfService.component'
     HomeComponent,
     StudentInfoComponent,
     StudentProfileComponent,
-    UpdateTeacherComponent,
-    UpdateTeacherComponent,
-    TermOfServiceComponent,
-    CourseFormComponent,
-  ],
+
+      UpdateTeacherComponent,
+      UpdateTeacherComponent,
+      TermOfServiceComponent,
+      FilterComponent,
+      CourseFormComponent,
+      TypeComponent
+   ],
+
   imports: [
     BrowserModule,
     MDBBootstrapModule.forRoot(),
