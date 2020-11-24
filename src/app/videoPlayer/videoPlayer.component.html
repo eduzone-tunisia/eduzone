@@ -1,14 +1,21 @@
 
-<!--Carousel Wrapper-->
-<h3>Title:</h3>
-
-<video class="video-fluid z-depth-1" autoplay loop controls muted>
-  <source src="" type="video/mp4" />
-</video>
-<h3>Description:</h3>&nbsp;&nbsp;&nbsp;&nbsp;
-
-
-<div class="dropdown-divider"></div>
-
-
-<app-footer></app-footer>
+<button type="button" mdbBtn color="primary" class="waves-light" data-toggle="modal" data-target="#basicExample" (click)="frame.show()"
+  mdbWavesEffect>Launch Modal</button>
+<div mdbModal #frame="mdbModal" class="modal fade"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-notify modal-info" role="document">
+    <div class="modal-content text-center">
+      <div class="modal-header d-flex justify-content-center">
+        <h2 class="heading">Title:</h2>
+      </div>
+      <div class="modal-body">
+        <iframe  class="embed-responsive-item" src="https://www.youtube.com/embed/A3PDXmYoF5U" allowfullscreen></iframe>
+        <h2>Description:</h2>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <button type="button" mdbBtn color="primary"   class="btn btn-primary btn-lg active" mdbWavesEffect data-dismiss="modal"
+        (click)="frame.hide()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

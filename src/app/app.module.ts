@@ -35,7 +35,6 @@ import { VideoPlayerComponent } from './videoPlayer/videoPlayer.component';
     RegisterComponent,
     LoginComponent,
     TeacherRegisterComponent,
-
     TeacherLoginComponent,
     HomeComponent,
     StudentInfoComponent,

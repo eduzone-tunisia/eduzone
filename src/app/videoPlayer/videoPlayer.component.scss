@@ -19,4 +19,34 @@ h3{
 .row{
     margin-top: 60px;
 }
-
+.modal.fade{
+    margin-top: 100px;
+  
+}
+.modal-body{
+    height: 500px;
+    
+    
+}
+.embed-responsive-item{
+    width: 880px;
+    height: 465px;
+     margin-left: -13px;
+}
+.modal-content.text-center{
+    height: 690px;
+    width: 900px;
+    margin-left: -200px;
+    border-radius: 8px;
+}
+.btn.btn-primary.btn-lg.active{
+    height: 45px;
+    width: 110px;
+    padding: 10px;
+    border-radius: 12px;
+    text-align: center;
+    margin: 4px 2px;
+}
+.modal-dialog.modal-notify.modal-info .modal-header {
+    background-color: #0d47a1;
+}
