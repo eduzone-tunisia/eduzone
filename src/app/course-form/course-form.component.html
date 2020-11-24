@@ -33,13 +33,26 @@
         <!-- email -->
         <label for="section">Section</label>
         <input
-          type="section"
+          type="text"
           name="section"
           [(ngModel)]="course.sections"
           id="section"
           required
           class="form-control"
           placeholder="section"
+        />
+      </div>
+      <div class="form-group">
+        <!-- email -->
+        <label for="section">image</label>
+        <input
+          type="text"
+          name="imgUrl"
+          [(ngModel)]="course.imgUrl"
+          id="imgUrl"
+          required
+          class="form-control"
+          placeholder="image"
         />
       </div>
 
