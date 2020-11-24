@@ -49,10 +49,10 @@ export class NavbarComponent implements OnInit {
 
   ngAfterContentChecked() {
     this.isLoggedIn();
-   
+
   }
 
-  isLoggedIn(){
+  isLoggedIn() {
     if (typeof localStorage.getItem('token') === 'string') {
       this.loggedIn = true;
     }

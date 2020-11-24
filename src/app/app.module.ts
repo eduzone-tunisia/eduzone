@@ -12,19 +12,32 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { MiddleComponent } from './middle/middle.component';
 import { AboutUsComponent } from './About-us/About-us.component';
-import {StudentInfoComponent} from './student-update-info/student-update-info.component'
+import { StudentInfoComponent } from './student-update-info/student-update-info.component';
 import { TeacherRegisterComponent } from './teacher-register/teacher-register.component';
 import { TeacherLoginComponent } from './teacher-login/teacher-login.component';
-import { CousesService } from './couses.service';
-import {StudentProfileComponent} from  './student-profile/student-profile.component'
+// import { CousesService } from './couses.service';
+
+import { UploadService } from './services/upload.service';
 import { HomeComponent } from './home/home.component';
+import { CourseFormComponent } from './course-form/course-form.component';
+
+import { FileUploadModule } from 'ng2-file-upload';
+
+import { StudentProfileComponent } from './student-profile/student-profile.component';
+import { NgxDropzoneModule } from 'ngx-dropzone';
+
 import { UpdateTeacherComponent } from './update-teacher/update-teacher.component';
 import { TermOfServiceComponent } from './termOfService/termOfService.component';
+
 import { VideoPlayerComponent } from './videoPlayer/videoPlayer.component';
 
-@NgModule({
 
-  declarations: [		
+import { FilterComponent } from './filter/filter.component';
+import { TypeComponent } from './type/type.component';
+import { TeacherProfileComponent } from './teacher-profile/teacher-profile.component';
+
+@NgModule({
+  declarations: [
 
     AppComponent,
     LandingPageComponent,
@@ -39,20 +52,28 @@ import { VideoPlayerComponent } from './videoPlayer/videoPlayer.component';
     HomeComponent,
     StudentInfoComponent,
     StudentProfileComponent,
-      UpdateTeacherComponent,
-      UpdateTeacherComponent,
-      TermOfServiceComponent,
-      VideoPlayerComponent
-   ],
+
+    UpdateTeacherComponent,
+    TermOfServiceComponent,
+    FilterComponent,
+    CourseFormComponent,
+    TypeComponent,
+    TeacherProfileComponent,
+   VideoPlayerComponent
+  ],
+
+
   imports: [
     BrowserModule,
     MDBBootstrapModule.forRoot(),
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    FileUploadModule,
+    NgxDropzoneModule,
   ],
 
-  providers: [CousesService],
-  bootstrap: [AppComponent, HomeComponent],
+  providers: [UploadService],
+  bootstrap: [AppComponent, HomeComponent, CourseFormComponent],
 })
 export class AppModule {}
