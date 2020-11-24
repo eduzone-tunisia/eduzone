@@ -22,6 +22,7 @@ import { UpdateTeacherComponent } from './update-teacher/update-teacher.componen
 import { TermOfServiceComponent } from './termOfService/termOfService.component';
 import { VideoPlayerComponent } from './videoPlayer/videoPlayer.component';
 
+
 @NgModule({
 
   declarations: [		
@@ -50,6 +51,7 @@ import { VideoPlayerComponent } from './videoPlayer/videoPlayer.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    
   ],
 
   providers: [CousesService],
