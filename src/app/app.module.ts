@@ -20,10 +20,11 @@ import {StudentProfileComponent} from  './student-profile/student-profile.compon
 import { HomeComponent } from './home/home.component';
 import { UpdateTeacherComponent } from './update-teacher/update-teacher.component';
 import { TermOfServiceComponent } from './termOfService/termOfService.component';
+import { VideoPlayerComponent } from './videoPlayer/videoPlayer.component';
 
 @NgModule({
 
-  declarations: [	
+  declarations: [		
 
     AppComponent,
     LandingPageComponent,
@@ -34,14 +35,14 @@ import { TermOfServiceComponent } from './termOfService/termOfService.component'
     RegisterComponent,
     LoginComponent,
     TeacherRegisterComponent,
-
     TeacherLoginComponent,
     HomeComponent,
     StudentInfoComponent,
     StudentProfileComponent,
       UpdateTeacherComponent,
       UpdateTeacherComponent,
-      TermOfServiceComponent
+      TermOfServiceComponent,
+      VideoPlayerComponent
    ],
   imports: [
     BrowserModule,
