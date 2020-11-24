@@ -1,0 +1,10 @@
+
+<!-- <div class="rating">
+    <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+  </div> -->
+<button class="stars" mat-icon-button color="accent" *ngFor="let r of ratingArr; index as i" 
+    (click)="onClick(i)">
+    <mat-icon  class="fa fa-star" >
+        {{returnStar(i)}}
+    </mat-icon>
+</button>

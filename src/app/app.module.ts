@@ -16,7 +16,7 @@ import {StudentInfoComponent} from './student-update-info/student-update-info.co
 import { TeacherRegisterComponent } from './teacher-register/teacher-register.component';
 import { TeacherLoginComponent } from './teacher-login/teacher-login.component';
 import { CousesService } from './couses.service';
-
+import { MatIconModule } from "@angular/material/icon";
 import {UploadService} from './services/upload.service';
 import { HomeComponent } from './home/home.component';
 import { CourseFormComponent } from './course-form/course-form.component';
@@ -26,11 +26,14 @@ import { UpdateTeacherComponent } from './update-teacher/update-teacher.componen
 import { TermOfServiceComponent } from './termOfService/termOfService.component';
 import { FilterComponent } from './filter/filter.component';
 import { TypeComponent } from './type/type.component';
-
+import { RatingComponent } from './rating/rating.component';
+import { CommonModule } from '@angular/common';
+import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
 
-  declarations: [			
+  declarations: [				
 
 
 
@@ -53,19 +56,24 @@ import { TypeComponent } from './type/type.component';
       UpdateTeacherComponent,
       TermOfServiceComponent,
       FilterComponent,
-      TypeComponent
+      TypeComponent,
+      RatingComponent
    ],
   imports: [
     BrowserModule,
     MDBBootstrapModule.forRoot(),
     AppRoutingModule,
     FormsModule,
-    HttpClientModule,FileUploadModule
+    HttpClientModule,FileUploadModule,
+  MatIconModule,
+  CommonModule,
+  MatSnackBarModule,
+  BrowserAnimationsModule
 
   ],
 
 providers: [CousesService,UploadService],
-  bootstrap: [AppComponent,HomeComponent,CourseFormComponent],
+  bootstrap: [AppComponent,HomeComponent,CourseFormComponent,RatingComponent],
 
 })
 export class AppModule {}

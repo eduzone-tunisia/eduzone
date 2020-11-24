@@ -19,8 +19,10 @@ import { TermOfServiceComponent } from './termOfService/termOfService.component'
 import { StudentProfileComponent } from './student-profile/student-profile.component';
 import { FilterComponent } from './filter/filter.component';
 import { TypeComponent } from './type/type.component';
+import { RatingComponent } from './rating/rating.component';
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
+  {path: 'rating', component: RatingComponent },
   { path: 'home', component: HomeComponent },
   {path:'type', component:FilterComponent},
   { path:'design', component:TypeComponent},
