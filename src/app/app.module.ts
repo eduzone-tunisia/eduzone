@@ -15,7 +15,7 @@ import { AboutUsComponent } from './About-us/About-us.component';
 import { StudentInfoComponent } from './student-update-info/student-update-info.component';
 import { TeacherRegisterComponent } from './teacher-register/teacher-register.component';
 import { TeacherLoginComponent } from './teacher-login/teacher-login.component';
-import { CousesService } from './couses.service';
+// import { CousesService } from './couses.service';
 
 import { UploadService } from './services/upload.service';
 import { HomeComponent } from './home/home.component';
@@ -26,16 +26,14 @@ import { FileUploadModule } from 'ng2-file-upload';
 import { StudentProfileComponent } from './student-profile/student-profile.component';
 import { NgxDropzoneModule } from 'ngx-dropzone';
 
-
 import { UpdateTeacherComponent } from './update-teacher/update-teacher.component';
 import { TermOfServiceComponent } from './termOfService/termOfService.component';
 import { FilterComponent } from './filter/filter.component';
 import { TypeComponent } from './type/type.component';
+import { TeacherProfileComponent } from './teacher-profile/teacher-profile.component';
 
 @NgModule({
-
   declarations: [
-
     AppComponent,
     LandingPageComponent,
     NavbarComponent,
@@ -45,19 +43,17 @@ import { TypeComponent } from './type/type.component';
     RegisterComponent,
     LoginComponent,
     TeacherRegisterComponent,
-
     TeacherLoginComponent,
     HomeComponent,
     StudentInfoComponent,
     StudentProfileComponent,
-
-      UpdateTeacherComponent,
-      UpdateTeacherComponent,
-      TermOfServiceComponent,
-      FilterComponent,
-      CourseFormComponent,
-      TypeComponent
-   ],
+    UpdateTeacherComponent,
+    TermOfServiceComponent,
+    FilterComponent,
+    CourseFormComponent,
+    TypeComponent,
+    TeacherProfileComponent,
+  ],
 
   imports: [
     BrowserModule,
@@ -65,10 +61,11 @@ import { TypeComponent } from './type/type.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    FileUploadModule,NgxDropzoneModule
+    FileUploadModule,
+    NgxDropzoneModule,
   ],
 
-  providers: [CousesService, UploadService],
+  providers: [UploadService],
   bootstrap: [AppComponent, HomeComponent, CourseFormComponent],
 })
 export class AppModule {}
