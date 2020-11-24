@@ -13,13 +13,14 @@ const uri = 'http://localhost:3000/file/upload';
   styleUrls: ['./course-form.component.scss'],
 })
 export class CourseFormComponent implements OnInit {
-  downloadURL: Observable<string> | undefined
+  downloadURL: Observable<string> | undefined;
   files: File[] = [];
   course: any = {
     teacher: '',
     title: '',
     description: '',
     videoUrl: '',
+    imgUrl: '',
     price: '',
     sections: '',
   };
@@ -57,49 +58,47 @@ export class CourseFormComponent implements OnInit {
     data.append('file', file_data);
     data.append('upload_preset', 'dev_setups');
     data.append('cloud_name', 'dxg5qywkt');
+    console.log('elyes', data);
     this._fileService.uploadVideo(data).subscribe((res) => {
       console.log(res);
-      this.downloadURL = res
-     
-
+      this.downloadURL = res;
     });
   }
 
   onSubmit() {
     const data = {
-      teacher:localStorage.getItem('id'),
+      teacher: localStorage.getItem('id'),
       title: this.course.title,
       description: this.course.description,
       price: this.course.price,
       sections: this.course.sections,
-      videoUrl: this.downloadURL
+      videoUrl: this.downloadURL,
+      imgUrl: this.course.imgUrl,
     };
     console.log(data);
-    this._fileService.createCourse(data).subscribe( res => {
-      console.log(res)
-    })  
+    this._fileService.createCourse(data).subscribe((res) => {
+      console.log(res);
+    });
   }
-   
 
-   
-    // var img = document.getElementsByTagName('a');
-    // f.value.imgUrl = img[img.length - 1].innerHTML;
+  // var img = document.getElementsByTagName('a');
+  // f.value.imgUrl = img[img.length - 1].innerHTML;
 
-    // if (f.value.imgUrl === '') {
-    //   alert('must upload a picture');
-    //   location.reload();
-    // }
-    // console.log('here');
-    // this.UserService.createRegister(f.value).subscribe(
-    //   (res) => {
-    //     console.log(res);
-    //     this.router.navigateByUrl('/');
-    //   },
-    //   (error) => {
-    //     console.log(error);
-    //   }
-    // );
-  
+  // if (f.value.imgUrl === '') {
+  //   alert('must upload a picture');
+  //   location.reload();
+  // }
+  // console.log('here');
+  // this.UserService.createRegister(f.value).subscribe(
+  //   (res) => {
+  //     console.log(res);
+  //     this.router.navigateByUrl('/');
+  //   },
+  //   (error) => {
+  //     console.log(error);
+  //   }
+  // );
+
   onRemove(event: any) {
     console.log(event);
     this.files.splice(this.files.indexOf(event), 1);

@@ -19,6 +19,7 @@ import { TermOfServiceComponent } from './termOfService/termOfService.component'
 import { StudentProfileComponent } from './student-profile/student-profile.component';
 import { FilterComponent } from './filter/filter.component';
 import { TypeComponent } from './type/type.component';
+import { TeacherProfileComponent } from './teacher-profile/teacher-profile.component';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
@@ -35,7 +36,8 @@ const routes: Routes = [
   { path: 'updateTeacher', component: UpdateTeacherComponent },
   {path : "updateStudentInfo" , component:StudentInfoComponent },
   {path : "servicesTerms", component:TermOfServiceComponent},
-  {path : "addCourse", component:CourseFormComponent}
+  {path : "addCourse", component:CourseFormComponent},
+  {path : "dashboard", component: TeacherProfileComponent}
 
 ];
 
