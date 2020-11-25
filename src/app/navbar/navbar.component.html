@@ -45,9 +45,9 @@
           >Courses</a
         >
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Psychology</a>
+          <a class="dropdown-item" routerLink="/type">Back-End</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Graphic Design</a>
+          <a class="dropdown-item" routerLink="/design">Front-End</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Computer Science</a>
           <div class="dropdown-divider"></div>
@@ -60,20 +60,21 @@
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <i class="fas fa-search" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
-      <input
+      <!-- <input
         class="form-control mr-sm-2"
         type="search"
         placeholder="Search"
         aria-label="Search"
-      />
-      <button
+      /> -->
+      <app-search></app-search>
+      <!-- <button
         class="btn btn-primary active"
         data-toggle="button"
         aria-pressed="false"
         type="submit"
       >
         Search
-      </button>
+      </button> -->
     </form>
 
     <ul class="navbar-nav ml-auto nav-flex-icons">
@@ -165,26 +166,26 @@
           aria-haspopup="true"
           aria-expanded="false"
         >
-        <div *ngIf="user.imageUrl" >
-          <img
-            id="img1"
-            src="{{ user.imageUrl }} "
-            class="rounded-circle z-depth-0"
-          />
-        </div>
-        <div *ngIf= " !user.imageUrl">
-          <img
-            id="img1"
-            src="https://www.w3schools.com/howto/img_avatar.png"
-            class="rounded-circle z-depth-0"
-          />
+          <div *ngIf="user.imageUrl">
+            <img
+              id="img1"
+              src="{{ user.imageUrl }} "
+              class="rounded-circle z-depth-0"
+            />
+          </div>
+          <div *ngIf="!user.imageUrl">
+            <img
+              id="img1"
+              src="https://www.w3schools.com/howto/img_avatar.png"
+              class="rounded-circle z-depth-0"
+            />
           </div>
         </a>
         <div
           class="dropdown-menu dropdown-menu-lg-right dropdown-secondary"
           aria-labelledby="navbarDropdownMenuLink-55"
         >
-          <a class="dropdown-item">My profil</a>
+          <a class="dropdown-item" routerLink="/dashboard">My profil</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" (click)="clearStorage()"
             ><i class="fas fa-sign-out-alt"></i> logOut</a
@@ -199,20 +200,20 @@
           aria-haspopup="true"
           aria-expanded="false"
         >
-        <div *ngIf= " !student.imageUrl">
-          <img
-            id="img1"
-            src=" https://previews.123rf.com/images/hvostik/hvostik1603/hvostik160300358/54767450-graduate-student-avatar-student-student-icon-flat-design-style-education-graduation-isolated-student.jpg"
-            class="rounded-circle z-depth-0"
-          />
-          </div>
-          <div *ngIf= "student.imageUrl">
+          <div *ngIf="!student.imageUrl">
             <img
               id="img1"
-              src="{{student.imageUrl}}"
+              src=" https://previews.123rf.com/images/hvostik/hvostik1603/hvostik160300358/54767450-graduate-student-avatar-student-student-icon-flat-design-style-education-graduation-isolated-student.jpg"
               class="rounded-circle z-depth-0"
             />
-            </div>
+          </div>
+          <div *ngIf="student.imageUrl">
+            <img
+              id="img1"
+              src="{{ student.imageUrl }}"
+              class="rounded-circle z-depth-0"
+            />
+          </div>
         </a>
         <div
           class="dropdown-menu dropdown-menu-lg-right dropdown-secondary"
