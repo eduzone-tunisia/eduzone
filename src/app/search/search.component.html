@@ -9,7 +9,7 @@
 
       <li (click)="clickOnMe(item)" class="list-group-item" *ngFor="let item of courses | appFilter: searchText" 
         appHighlight [searchedWord]="searchText" [content]="item.title"  
-        [classToApply]="'font-weight-bold'" [setTitle]="true">
+        [classToApply]="'font-weight-bold'" [setTitle]="true" >
         {{item}}
       </li>
     </ul>

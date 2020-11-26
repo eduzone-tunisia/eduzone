@@ -23,7 +23,8 @@ import { StudentProfileComponent } from './student-profile/student-profile.compo
 import { FilterComponent } from './filter/filter.component';
 import { TypeComponent } from './type/type.component';
 import { TeacherProfileComponent } from './teacher-profile/teacher-profile.component';
-import { SearchComponent } from './search/search.component'
+import { SearchComponent } from './search/search.component';
+import { SearchResultComponent } from './searchResult/searchResult.component';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
@@ -42,7 +43,8 @@ const routes: Routes = [
   {path: "videoPlayer", component:VideoPlayerComponent},
   {path : "addCourse", component:CourseFormComponent},
   {path : "dashboard", component: TeacherProfileComponent},
-  {path : "search", component: SearchComponent }
+  {path : "search", component: SearchComponent },
+  {path : "searchResult", component: SearchResultComponent }
 
 
 ];

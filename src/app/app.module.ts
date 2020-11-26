@@ -33,8 +33,9 @@ import { TeacherProfileComponent } from './teacher-profile/teacher-profile.compo
 import { FilterPipe  } from './search/filter.pipe';
 import { SearchComponent } from './search/search.component';
 import { HighlightDirective } from './search/highlight.directive'
+import { SearchResultComponent } from './searchResult/searchResult.component';
 @NgModule({
-  declarations: [	
+  declarations: [		
 
     AppComponent,
     LandingPageComponent,
@@ -59,8 +60,9 @@ import { HighlightDirective } from './search/highlight.directive'
       SearchComponent,
       //search/pipe
       FilterPipe,
-      HighlightDirective 
-  ],
+      HighlightDirective,
+      SearchResultComponent
+   ],
 
 
   imports: [
