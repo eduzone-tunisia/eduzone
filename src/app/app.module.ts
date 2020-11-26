@@ -26,14 +26,20 @@ import { UpdateTeacherComponent } from './update-teacher/update-teacher.componen
 import { TermOfServiceComponent } from './termOfService/termOfService.component';
 import { FilterComponent } from './filter/filter.component';
 import { TypeComponent } from './type/type.component';
-import { RatingComponent } from './rating/rating.component';
+
 import { CommonModule } from '@angular/common';
 import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { StarRatingModule } from 'angular-star-rating';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { TestStarComponent } from './test-star/test-star.component';
+// import { RatingComponent } from './rating/rating.component';
+
 @NgModule({
 
-  declarations: [				
+  declarations: [					
 
 
 
@@ -57,7 +63,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       TermOfServiceComponent,
       FilterComponent,
       TypeComponent,
-      RatingComponent
+      TestStarComponent,
+      // RatingComponent
+
+     
    ],
   imports: [
     BrowserModule,
@@ -68,12 +77,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   MatIconModule,
   CommonModule,
   MatSnackBarModule,
-  BrowserAnimationsModule
+  BrowserAnimationsModule,
+  StarRatingModule,
+  MatTooltipModule,
+  MatIconModule,
+  MatFormFieldModule
+
 
   ],
 
 providers: [CousesService,UploadService],
-  bootstrap: [AppComponent,HomeComponent,CourseFormComponent,RatingComponent],
+  bootstrap: [AppComponent],
 
 })
 export class AppModule {}
