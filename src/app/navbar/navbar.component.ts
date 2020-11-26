@@ -49,6 +49,7 @@ export class NavbarComponent implements OnInit {
 
   ngAfterContentChecked() {
     this.isLoggedIn();
+
   }
 
   isLoggedIn() {

@@ -81,13 +81,20 @@
         </div>
 
         <div class="team-back">
-          <span (click)="onClick(course)">
+          <span>
             {{ course.description }}
           </span>
         </div>
       </div>
+      <button
+        class="btn.btn-primary.btn-lg.active"
+        (click)="clickToBuy(course)"
+      >
+        hello
+      </button>
     </div>
   </div>
+
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
   <h2 class="title-course">Math :</h2>

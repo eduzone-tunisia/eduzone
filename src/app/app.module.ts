@@ -28,12 +28,17 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
 
 import { UpdateTeacherComponent } from './update-teacher/update-teacher.component';
 import { TermOfServiceComponent } from './termOfService/termOfService.component';
+
+import { VideoPlayerComponent } from './videoPlayer/videoPlayer.component';
+
+
 import { FilterComponent } from './filter/filter.component';
 import { TypeComponent } from './type/type.component';
 import { TeacherProfileComponent } from './teacher-profile/teacher-profile.component';
 
 @NgModule({
   declarations: [
+
     AppComponent,
     LandingPageComponent,
     NavbarComponent,
@@ -47,13 +52,16 @@ import { TeacherProfileComponent } from './teacher-profile/teacher-profile.compo
     HomeComponent,
     StudentInfoComponent,
     StudentProfileComponent,
+
     UpdateTeacherComponent,
     TermOfServiceComponent,
     FilterComponent,
     CourseFormComponent,
     TypeComponent,
     TeacherProfileComponent,
+   VideoPlayerComponent
   ],
+
 
   imports: [
     BrowserModule,

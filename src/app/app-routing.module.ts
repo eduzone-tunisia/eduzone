@@ -16,10 +16,14 @@ import { HomeComponent } from './home/home.component';
 import {StudentInfoComponent } from "./student-update-info/student-update-info.component"
 import { UpdateTeacherComponent } from './update-teacher/update-teacher.component';
 import { TermOfServiceComponent } from './termOfService/termOfService.component';
+
+import { VideoPlayerComponent } from './videoPlayer/videoPlayer.component';
+
 import { StudentProfileComponent } from './student-profile/student-profile.component';
 import { FilterComponent } from './filter/filter.component';
 import { TypeComponent } from './type/type.component';
 import { TeacherProfileComponent } from './teacher-profile/teacher-profile.component';
+
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
@@ -27,7 +31,6 @@ const routes: Routes = [
   {path:'type', component:FilterComponent},
   { path:'design', component:TypeComponent},
   { path: 'register', component: RegisterComponent },
-  {path:'addcourses', component: CourseFormComponent},
   { path: 'login', component: LoginComponent },
   { path: 'aboutUs', component: AboutUsComponent },
   { path: 'teacherRegister', component: TeacherRegisterComponent },
@@ -36,8 +39,12 @@ const routes: Routes = [
   { path: 'updateTeacher', component: UpdateTeacherComponent },
   {path : "updateStudentInfo" , component:StudentInfoComponent },
   {path : "servicesTerms", component:TermOfServiceComponent},
+
+  {path: "videoPlayer", component:VideoPlayerComponent},
+
   {path : "addCourse", component:CourseFormComponent},
   {path : "dashboard", component: TeacherProfileComponent}
+
 
 ];
 
