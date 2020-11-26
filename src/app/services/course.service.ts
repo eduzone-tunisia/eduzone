@@ -10,6 +10,10 @@ const serverUrl = 'http://localhost:8080/course/';
 export class CousesService {
   constructor(private http: HttpClient) {}
 
+  getOne(id:any):Observable<any>{
+    return this.http.get(serverUrl+id)
+  } 
+
   getAllcourses(): Observable<any> {
     return this.http.get(serverUrl);
   }

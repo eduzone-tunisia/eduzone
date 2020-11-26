@@ -6,6 +6,7 @@ import { filter } from 'rxjs/operators';
 import { VideoPlayerComponent } from '../videoPlayer/videoPlayer.component';
 import { Router } from '@angular/router';
 import { StudentService } from '../services/student.service';
+import { ObjectUnsubscribedError } from 'rxjs';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -20,6 +21,7 @@ export class HomeComponent implements OnInit {
   sciencecourse: any;
   gDcourse: any;
   course: any;
+  ObjectId: any;
   constructor(
     private coursesService: CousesService,
     private router: Router,
@@ -58,22 +60,14 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  onClick(item: any) {
-    console.log('item', item);
-    this.course = item;
-    if (this.course) {
-      this.sharedService.sendCourse(this.course);
-    }
-    // console.log('course', this.course)
-    this.router.navigateByUrl('/videoPlayer');
-  }
+ 
   clickToBuy(item: any) {
     console.log('hi', item);
     this.studentService.studentProfile(this.id).subscribe(
       (res) => {
         this.student = res;
         if (this.student) {
-          this.student.videos.push({ ObjectId: item._id });
+          this.student.videos.push(item._id);
           this.studentService
             .buyCourse(this.id, this.student)
             .subscribe((res) => {
