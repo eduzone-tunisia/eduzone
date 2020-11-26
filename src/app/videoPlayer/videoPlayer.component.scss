@@ -20,7 +20,7 @@ margin-left: 500px;
     margin-top: 60px;
 }
 .modal.fade{
-    margin-top: 100px;
+    margin-top: 78px;
 }
 
 .embed-responsive-item{
@@ -33,6 +33,7 @@ margin-left: 500px;
     width: 900px;
     margin-left: -200px;
     border-radius: 8px;
+    margin-top: 100px;
 }
 .btn.btn-primary.btn-lg.active{
     height: 45px;
@@ -47,3 +48,21 @@ margin-left: 500px;
     border-radius: 12px;
     margin-top: -08px;
 }
+
+// .modal.fade{
+//     background-image: url(../../assets/background/background.jpg);
+// }
+ body{
+ background: url("../../assets/background/video-play-button-ss-1920.jpg") no-repeat;
+overflow: hidden;
+background-size: cover;
+width: 100%;
+min-height: 100vh;
+ }
+.waves-light{
+margin-top: 580px;
+margin-left: 1015px;
+width: 100px;
+// border: rgb(0,0,);
+}
+
