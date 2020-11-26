@@ -31,7 +31,6 @@ const routes: Routes = [
   {path:'type', component:FilterComponent},
   { path:'design', component:TypeComponent},
   { path: 'register', component: RegisterComponent },
-  {path:'addcourses', component: CourseFormComponent},
   { path: 'login', component: LoginComponent },
   { path: 'aboutUs', component: AboutUsComponent },
   { path: 'teacherRegister', component: TeacherRegisterComponent },
@@ -41,7 +40,7 @@ const routes: Routes = [
   {path : "updateStudentInfo" , component:StudentInfoComponent },
   {path : "servicesTerms", component:TermOfServiceComponent},
 
-  {path: "videoPlayer", component:VideoPlayerComponent}
+  {path: "videoPlayer", component:VideoPlayerComponent},
 
   {path : "addCourse", component:CourseFormComponent},
   {path : "dashboard", component: TeacherProfileComponent}
