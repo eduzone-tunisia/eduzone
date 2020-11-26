@@ -8,7 +8,7 @@ import { MatSnackBar, MatSnackBarModule  } from '@angular/material/snack-bar';
 export class TestStarComponent  {
     stars: number[] = [1, 2, 3, 4, 5];
     selectedValue: any;
-    snackBarDuration: number = 2000;
+    snackBarDuration: number = 3000;
     constructor(private snackBar: MatSnackBar) { }
     
     ngOnInit() {
@@ -17,7 +17,8 @@ export class TestStarComponent  {
     countStar(star: number | undefined) {
       this.selectedValue = star;
       this.snackBar.open('You rated ' + star + ' / ' + this.selectedValue, '', {
-        duration: this.snackBarDuration
+        duration: this.snackBarDuration,
+        panelClass: ['snack-bar']
       });
     }
 }
