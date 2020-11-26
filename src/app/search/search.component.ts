@@ -7,28 +7,35 @@ import { CousesService } from '../services/course.service';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
-  characters = [];
+  courses: Array<any> = []
+  allcourses: any;
+  searchText:string = "";
   constructor(private readonly courseServie: CousesService) {
 
   }
+  // this is  a life cycle method ruun after changing text in the search text 
+  modelChangeFn(value: string) {
+    this.searchText = value
+  if (this.searchText.length < 1){
+      this.courses = this.allcourses
+  }
+}
 
   ngOnInit() {
-   this.getCourses()
+    this.courseServie.getAllcourses().subscribe( (res) => {
+      this.courses = res
+      this.allcourses=res
+      console.log("courses",this.courses)
+    })
   }
 
-  getCourses(){
+ 
     // send the section to the server 
-    this.courseServie.getAllcourses().subscribe( (res) => {
-      this.characters = res
-      console.log("courses",this.characters)
-      
-    })
+  
 
     // this.character = // response;
-  }
+  
   title = 'angular-text-search-highlight';
-
-  searchText = '';
   // characters = [
   //   'Ant-Man',
   //   'Aquaman',
@@ -39,4 +46,8 @@ export class SearchComponent implements OnInit {
   //   'Batman',
   //   'Batwoman',
   // ]
+  clickOnMe(item : any){
+    let filter = this.courses.filter((course) =>  course.title === item.title)
+    this.courses = filter
+  }
 }
