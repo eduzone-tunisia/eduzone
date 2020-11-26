@@ -1,24 +1,15 @@
-<button
-  type="button"
-  mdbBtn
-  color="primary"
-  class="waves-light"
-  data-toggle="modal"
-  data-target="#basicExample"
-  (click)="frame.show()"
-  mdbWavesEffect
->
-  Launch Modal
-</button>
-<div
-  mdbModal
-  #frame="mdbModal"
-  class="modal fade"
-  tabindex="-1"
-  role="dialog"
-  aria-labelledby="myModalLabel"
-  aria-hidden="true"
->
+
+
+<body>
+ 
+<div class = "videoPlayer">
+ <button type="button" mdbBtn color="primary active" class="waves-light" data-toggle="modal" data-target="#basicExample" (click)="frame.show()"
+  mdbWavesEffect>Play</button> 
+
+
+<div mdbModal #frame="mdbModal" class="modal fade"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+
   <div class="modal-dialog modal-notify modal-info" role="document">
     <div class="modal-content text-center">
       <div class="modal-header d-flex justify-content-center">
@@ -48,3 +39,8 @@
     </div>
   </div>
 </div>
+
+</div>
+
+</body>
+

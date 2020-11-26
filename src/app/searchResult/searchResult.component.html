@@ -1,0 +1,21 @@
+<!-- Card -->
+<div class="card">
+
+  <!-- Card image -->
+  <img class="card-img-top" src="{{course.imgUrl}}" alt="Card image cap">
+
+  <!-- Card content -->
+  <div class="card-body">
+
+    <!-- Title -->
+    <h4 class="card-title"><a>{{course.title}}</a></h4>
+    <!-- Text -->
+    <p class="card-text">{{course.description}}</p>
+    <!-- Button -->
+    <a  class="btn btn-primary" routerLink= "/home" >Buy</a>
+
+  </div>
+
+</div>
+<!-- Card -->
+<router-outlet></router-outlet>
