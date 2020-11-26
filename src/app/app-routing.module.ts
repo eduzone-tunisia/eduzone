@@ -12,7 +12,7 @@ import { TeacherRegisterComponent } from './teacher-register/teacher-register.co
 import { TeacherLoginComponent } from './teacher-login/teacher-login.component';
 import { HomeComponent } from './home/home.component';
 
-  import {CourseFormComponent} from './course-form/course-form.component';
+import {CourseFormComponent} from './course-form/course-form.component';
 import {StudentInfoComponent } from "./student-update-info/student-update-info.component"
 import { UpdateTeacherComponent } from './update-teacher/update-teacher.component';
 import { TermOfServiceComponent } from './termOfService/termOfService.component';
@@ -23,7 +23,8 @@ import { StudentProfileComponent } from './student-profile/student-profile.compo
 import { FilterComponent } from './filter/filter.component';
 import { TypeComponent } from './type/type.component';
 import { TeacherProfileComponent } from './teacher-profile/teacher-profile.component';
-
+import { SearchComponent } from './search/search.component';
+import { SearchResultComponent } from './searchResult/searchResult.component';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
@@ -31,7 +32,6 @@ const routes: Routes = [
   {path:'type', component:FilterComponent},
   { path:'design', component:TypeComponent},
   { path: 'register', component: RegisterComponent },
-  {path:'addcourses', component: CourseFormComponent},
   { path: 'login', component: LoginComponent },
   { path: 'aboutUs', component: AboutUsComponent },
   { path: 'teacherRegister', component: TeacherRegisterComponent },
@@ -40,11 +40,11 @@ const routes: Routes = [
   { path: 'updateTeacher', component: UpdateTeacherComponent },
   {path : "updateStudentInfo" , component:StudentInfoComponent },
   {path : "servicesTerms", component:TermOfServiceComponent},
-
-  {path: "videoPlayer", component:VideoPlayerComponent}
-
+  {path: "videoPlayer", component:VideoPlayerComponent},
   {path : "addCourse", component:CourseFormComponent},
-  {path : "dashboard", component: TeacherProfileComponent}
+  {path : "dashboard", component: TeacherProfileComponent},
+  {path : "search", component: SearchComponent },
+  {path : "searchResult", component: SearchResultComponent }
 
 
 ];
