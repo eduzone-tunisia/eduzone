@@ -34,8 +34,9 @@ import { FilterPipe  } from './search/filter.pipe';
 import { SearchComponent } from './search/search.component';
 import { HighlightDirective } from './search/highlight.directive'
 import { SearchResultComponent } from './searchResult/searchResult.component';
+import { CheckOutPayementComponent } from './checkOutPayement/checkOutPayement.component';
 @NgModule({
-  declarations: [		
+  declarations: [			
 
     AppComponent,
     LandingPageComponent,
@@ -61,7 +62,8 @@ import { SearchResultComponent } from './searchResult/searchResult.component';
       //search/pipe
       FilterPipe,
       HighlightDirective,
-      SearchResultComponent
+      SearchResultComponent,
+      CheckOutPayementComponent
    ],
 
 
