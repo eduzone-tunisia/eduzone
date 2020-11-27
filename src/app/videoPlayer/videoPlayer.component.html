@@ -35,16 +35,21 @@
           data-dismiss="modal"
           (click)="frame.hide()"
         >
-        
           Close
         </button>
         
       </div>
+      
+      <my-app [selectedValue] = "selectedValue" (change)="countChange($event)" ></my-app>  
     </div>
+    
+    
   </div>
-</div>
-<my-app [selectedValue] = "selectedValue" (change)="countChange($event)" ></my-app>
+  
 </div>
 
+
+
+</div>
 </body>
 
