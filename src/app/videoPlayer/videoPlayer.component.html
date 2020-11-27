@@ -1,4 +1,5 @@
 
+
 <body>
  
 <div class = "videoPlayer">
@@ -8,22 +9,38 @@
 
 <div mdbModal #frame="mdbModal" class="modal fade"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
   aria-hidden="true">
+
   <div class="modal-dialog modal-notify modal-info" role="document">
     <div class="modal-content text-center">
       <div class="modal-header d-flex justify-content-center">
-        <h2 class="heading">Title:</h2>
+        <h3 class="heading">Title:{{course.title}}</h3>
       </div>
       <div class="modal-body">
-        <iframe  class="embed-responsive-item" src="https://www.youtube.com/embed/A3PDXmYoF5U" allowfullscreen></iframe>
-        <h2>Description:</h2>
+        <iframe
+          class="embed-responsive-item"
+          [src]="Url"
+          allowfullscreen
+        ></iframe>
+       <p>{{course.numberOfViews}} people watched this video</p>
       </div>
       <div class="modal-footer justify-content-center">
-        <button type="button" mdbBtn color="primary"   class="btn btn-primary btn-lg active" mdbWavesEffect data-dismiss="modal"
-        (click)="frame.hide()">Close</button>
+        <button
+          type="button"
+          mdbBtn
+          color="primary"
+          class="btn btn-primary btn-lg active"
+          mdbWavesEffect
+          data-dismiss="modal"
+          (click)="frame.hide()"
+        >
+          Close
+        </button>
       </div>
     </div>
   </div>
 </div>
+
 </div>
 
 </body>
+

@@ -25,7 +25,7 @@ import { TypeComponent } from './type/type.component';
 import { TeacherProfileComponent } from './teacher-profile/teacher-profile.component';
 import { SearchComponent } from './search/search.component';
 import { SearchResultComponent } from './searchResult/searchResult.component';
-
+import { CheckOutPayementComponent } from './checkOutPayement/checkOutPayement.component';
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
   { path: 'home', component: HomeComponent },
@@ -44,7 +44,8 @@ const routes: Routes = [
   {path : "addCourse", component:CourseFormComponent},
   {path : "dashboard", component: TeacherProfileComponent},
   {path : "search", component: SearchComponent },
-  {path : "searchResult", component: SearchResultComponent }
+  {path : "searchResult", component: SearchResultComponent },
+  {path : "payement", component: CheckOutPayementComponent }
 
 
 ];

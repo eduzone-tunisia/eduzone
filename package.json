@@ -54,6 +54,7 @@
     "path": "^0.12.7",
     "rxjs": "~6.6.0",
     "rxjs-compat": "^6.6.3",
+    "sanitizer": "^0.1.3",
     "streamifier": "^0.1.1",
     "style-it": "^2.1.4",
     "tslib": "^2.0.0",
