@@ -28,6 +28,10 @@ export class TeacherService {
 
   //send mail to teacher
   sendEmail(teacherEmail: any): Observable<any> {
-    return this.http.post(teacherUrl + '/sendemail',teacherEmail)
+    return this.http.post(teacherUrl + '/sendemail', teacherEmail);
+  }
+
+  teacherUpdateBalance(id: any, teacherInfo: any): Observable<any> {
+    return this.http.put(teacherUrl + 'balance/' + `${id}`, teacherInfo);
   }
 }

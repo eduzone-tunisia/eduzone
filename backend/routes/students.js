@@ -165,8 +165,6 @@ router.put("/:id", async (req, res) => {
 });
 
 router.put("/likeCourse/:id", async (req, res) => {
-  console.log(req.params.id);
-  console.log(req.body.videos);
   const updatedst = {
     videos: req.body.videos,
   };
