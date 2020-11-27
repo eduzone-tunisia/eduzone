@@ -60,3 +60,12 @@
     margin-left: 900px;
     margin-top:40px;
 }
+
+ .img-fluid.z-depth-1{
+     height: 250px;
+     width: 500px;
+     margin-left: 80px;
+ }
+ h2{
+    margin-left: 40px;
+}

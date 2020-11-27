@@ -1,15 +1,15 @@
-
 <div class="row">
   <div class="col-md-6 offset-md-3 mt-4">
     <h3>Add Courses</h3>
-    <form >
+    <form>
       <div class="form-group">
         <!-- first name -->
-        <label >Title</label>
+        <label>Title</label>
         <input
           type="text"
           name="title"
-          
+          [(ngModel)]="course.title"
+          id="title"
           required
           class="form-control"
           placeholder="Title"
@@ -22,9 +22,9 @@
         <input
           type="text"
           name="description"
-          
+          [(ngModel)]="course.description"
+          id="description"
           required
-          
           class="form-control"
           placeholder="description"
         />
@@ -33,59 +33,60 @@
         <!-- email -->
         <label for="section">Section</label>
         <input
-          type="section"
+          type="text"
           name="section"
-         
+          [(ngModel)]="course.sections"
+          id="section"
           required
-          
           class="form-control"
-         
           placeholder="section"
         />
       </div>
       <div class="form-group">
-        <!-- adress -->
-        <label for="Duration">Duration</label>
+        <!-- email -->
+        <label for="section">image</label>
         <input
-          type="number"
-          name="Duration"
-          
+          type="text"
+          name="imgUrl"
+          [(ngModel)]="course.imgUrl"
+          id="imgUrl"
           required
-          
           class="form-control"
-          placeholder="Duration"
+          placeholder="image"
         />
       </div>
-      
 
       <div class="form-group">
         <!-- adress -->
         <label for="Price">Price</label>
         <input
           type="number"
-          name="Price"
-          
+          name="price"
           required
-          
+          [(ngModel)]="course.price"
+          id="price"
           class="form-control"
           placeholder="Price"
         />
       </div>
 
-      <input
-        name="video"
-        type="file"
-        name="videoname"
-        
-        accept=".mp4"
-        required
-      />
-     
+      <ngx-dropzone (change)="selectedFile($event)">
+        <ngx-dropzone-label>upload</ngx-dropzone-label>
+        <!-- <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+            <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+        </ngx-dropzone-preview> -->
+        <ngx-dropzone-video-preview
+          ngProjectAs="ngx-dropzone-preview"
+          *ngFor="let f of files"
+          [file]="f"
+        >
+          <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+        </ngx-dropzone-video-preview>
+      </ngx-dropzone>
       <p></p>
-      <button type="button" class="btn btn-dark" >
+      <button type="button" class="btn btn-dark" (click)="onSubmit()">
         Add <i class="fas fa-sign-in-alt"></i>
       </button>
     </form>
-    
   </div>
 </div>
