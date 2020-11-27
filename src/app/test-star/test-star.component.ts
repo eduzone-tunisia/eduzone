@@ -16,6 +16,7 @@ export class TestStarComponent  {
     
     countStar(star: number | undefined) {
       this.selectedValue = star;
+      console.log(this.selectedValue)
       this.snackBar.open('You rated ' + star + ' / ' + this.selectedValue, '', {
         duration: this.snackBarDuration,
         panelClass: ['snack-bar']
