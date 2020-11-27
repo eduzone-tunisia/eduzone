@@ -5,9 +5,9 @@ const Course = require("../database/models/course");
 
 router.get("/:id", async (req, res) => {
   console.log(req.params.id);
-  const course = await await Course.findById(req.params.id).populate(
-    "teacher"
-  ).exec();
+  const course = await await Course.findById(req.params.id)
+    .populate("teacher")
+    .exec();
   res.json(course);
 });
 
