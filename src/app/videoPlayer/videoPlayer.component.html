@@ -22,7 +22,9 @@
           allowfullscreen
         ></iframe>
        <p>{{course.numberOfViews}} people watched this video</p>
+       
       </div>
+     
       <div class="modal-footer justify-content-center">
         <button
           type="button"
@@ -35,12 +37,19 @@
         >
           Close
         </button>
+        
       </div>
+      
+      <my-app [selectedValue] = "selectedValue" (change)="countChange($event)" ></my-app>  
     </div>
+    
+    
   </div>
+  
 </div>
 
-</div>
 
+
+</div>
 </body>
 
