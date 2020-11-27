@@ -45,10 +45,9 @@ import { SearchComponent } from './search/search.component';
 import { HighlightDirective } from './search/highlight.directive'
 import { SearchResultComponent } from './searchResult/searchResult.component';
 
+import { CheckOutPayementComponent } from './checkOutPayement/checkOutPayement.component';
 @NgModule({
-
-  declarations: [					
-
+  declarations: [			
 
 
     AppComponent,
@@ -76,7 +75,8 @@ import { SearchResultComponent } from './searchResult/searchResult.component';
       //search/pipe
       FilterPipe,
       HighlightDirective,
-      SearchResultComponent
+      SearchResultComponent,
+      CheckOutPayementComponent
    ],
 
 
