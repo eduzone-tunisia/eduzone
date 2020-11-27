@@ -25,4 +25,7 @@ export class CousesService {
   updateCourse(id:any , updatedInfo : any): Observable <any> {
     return this.http.put(serverUrl+id,updatedInfo)
   }
+  updateCourseRating(id:any , updatedInfo : any): Observable <any> {
+    return this.http.put(serverUrl +'rating/'+id,updatedInfo)
+  }
 }

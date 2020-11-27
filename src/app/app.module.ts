@@ -94,7 +94,7 @@ import { SearchResultComponent } from './searchResult/searchResult.component';
   StarRatingModule,
   MatTooltipModule,
   MatIconModule,
-  MatFormFieldModule
+  MatFormFieldModule,
 
 
   ],
