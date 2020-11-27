@@ -64,6 +64,7 @@ router.post("/addCourse", async (req, res) => {
     imgUrl,
     price,
     numberOfViews,
+    rating,
     sections,
   } = req.body;
 
@@ -75,6 +76,7 @@ router.post("/addCourse", async (req, res) => {
     imgUrl,
     price,
     numberOfViews,
+    rating,
     sections,
   });
 
@@ -85,8 +87,22 @@ router.post("/addCourse", async (req, res) => {
 });
 
 router.put("/:id", async (req, res) => {
+  
   await Course.findByIdAndUpdate(req.params.id, req.body);
   res.json("course updated");
 });
+
+router.put("/rating/:id",async (req, res) => {
+  console.log(req.body) 
+  const cours = await Course.findById(req.params.id);
+  let average = (cours.rating + req.body.rating) /2
+  await Course.findByIdAndUpdate(req.params.id, {rating : average});
+  res.json("course updated");
+})
+
+
+
+
+
 
 module.exports = router;

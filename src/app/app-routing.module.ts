@@ -22,12 +22,15 @@ import { VideoPlayerComponent } from './videoPlayer/videoPlayer.component';
 import { StudentProfileComponent } from './student-profile/student-profile.component';
 import { FilterComponent } from './filter/filter.component';
 import { TypeComponent } from './type/type.component';
+// import { RatingComponent } from './rating/rating.component';
+import { TestStarComponent } from './test-star/test-star.component';
 import { TeacherProfileComponent } from './teacher-profile/teacher-profile.component';
 import { SearchComponent } from './search/search.component';
 import { SearchResultComponent } from './searchResult/searchResult.component';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
+  {path: 'rating', component: TestStarComponent },
   { path: 'home', component: HomeComponent },
   {path:'type', component:FilterComponent},
   { path:'design', component:TypeComponent},
