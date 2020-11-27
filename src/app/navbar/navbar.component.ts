@@ -1,12 +1,14 @@
-import { Component, OnInit, AfterContentChecked } from '@angular/core';
+import { Component, OnInit, AfterContentChecked, Output } from '@angular/core';
 import { TeacherService } from '../services/teacher.service';
 import { StudentService } from '../services/student.service';
+import { SearchComponent } from '../search/search.component';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
+  @Output() filterTerm: any
   loggedIn: boolean = false;
   teacherloggedIn: boolean = false;
   studentloggedIn: boolean = false;
@@ -49,6 +51,7 @@ export class NavbarComponent implements OnInit {
 
   ngAfterContentChecked() {
     this.isLoggedIn();
+
   }
 
   isLoggedIn() {

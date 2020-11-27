@@ -11,13 +11,12 @@
       <div class="our-team-main" st>
 
         <div class="team-front">
-          <img src="{{course.bannerurl}}" class="img-fluid" />
-          <h3>{{course.name}}</h3>
-          <p>{{course.title}}</p>
+          <img src="{{ course.imgUrl }}" class="img-fluid" />
+          <h3>{{ course.title }}</h3>
         </div>
 
         <div class="team-back">
-          <span>
+          <span (click)="onClick(course)" >
             {{course.description}}
           </span>
         </div>
