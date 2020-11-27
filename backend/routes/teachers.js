@@ -34,6 +34,7 @@ const schema = Joi.object({
   dateOfBirth: Joi.date(),
   imageUrl: Joi.string(),
   experience: Joi.string(),
+  balance:Joi.number()
 });
 
 //create a Teacher
@@ -166,4 +167,14 @@ router.put("/:id", async (req, res) => {
   res.json({ message: "teacher updated" });
 });
 
+
+ router.put("/balance/:id" , async (req,res) => {
+   console.log(req.params.id)
+   console.log(req.body)
+  const updatedteacher = {
+    balance: req.body.balance,
+  };
+  await Teacher.findByIdAndUpdate(req.params.id, updatedteacher);
+  res.json("teacher  updated");
+ } )
 module.exports = router;
