@@ -5,7 +5,9 @@ const Course = require("../database/models/course");
 
 router.get("/:id", async (req, res) => {
   console.log(req.params.id);
-  const course = await Course.findById(req.params.id);
+  const course = await await Course.findById(req.params.id).populate(
+    "teacher"
+  ).exec();
   res.json(course);
 });
 
@@ -18,19 +20,11 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/getCourses", async (req, res) => {
-
   const courses = await Course.find({ teacher: req.body.teacherId })
     .populate("teacher")
     .exec();
   res.json(courses);
-
 });
-
-
-
-
-
-
 
 // router.get("/getBySection/:section", async (req, res) => {
 //   const sections = req.params.section;
@@ -49,10 +43,6 @@ router.post("/getCourses", async (req, res) => {
 //   .exec();
 // console.log(courses);
 // res.json(courses);
-
-
-
-
 
 // add new couses in the database
 router.post("/addCourse", async (req, res) => {
