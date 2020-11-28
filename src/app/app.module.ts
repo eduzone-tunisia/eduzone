@@ -33,7 +33,7 @@ import { CommonModule } from '@angular/common';
 import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { StarRatingModule } from 'angular-star-rating';
+// import { StarRatingModule } from 'angular-star-rating';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { TestStarComponent } from './test-star/test-star.component';
@@ -46,8 +46,10 @@ import { HighlightDirective } from './search/highlight.directive'
 import { SearchResultComponent } from './searchResult/searchResult.component';
 
 import { CheckOutPayementComponent } from './checkOutPayement/checkOutPayement.component';
+import { ScienceFilterComponent } from './science-filter/science-filter.component';
+import { GDfilterComponent } from './GDfilter/GDfilter.component';
 @NgModule({
-  declarations: [			
+  declarations: [					
 
 
     AppComponent,
@@ -76,7 +78,9 @@ import { CheckOutPayementComponent } from './checkOutPayement/checkOutPayement.c
       FilterPipe,
       HighlightDirective,
       SearchResultComponent,
-      CheckOutPayementComponent
+      CheckOutPayementComponent,
+      ScienceFilterComponent,
+      GDfilterComponent
    ],
 
 
@@ -91,7 +95,7 @@ import { CheckOutPayementComponent } from './checkOutPayement/checkOutPayement.c
   CommonModule,
   MatSnackBarModule,
   BrowserAnimationsModule,
-  StarRatingModule,
+  
   MatTooltipModule,
   MatIconModule,
   MatFormFieldModule,
