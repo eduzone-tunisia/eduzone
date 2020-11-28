@@ -44,13 +44,16 @@ import { FilterPipe  } from './search/filter.pipe';
 import { SearchComponent } from './search/search.component';
 import { HighlightDirective } from './search/highlight.directive'
 import { SearchResultComponent } from './searchResult/searchResult.component';
+import { BalanceComponent } from './Balance/Balance.component';
+
+
 
 import { CheckOutPayementComponent } from './checkOutPayement/checkOutPayement.component';
 import { ScienceFilterComponent } from './science-filter/science-filter.component';
 import { GDfilterComponent } from './GDfilter/GDfilter.component';
 @NgModule({
-  declarations: [					
 
+  declarations: [					
 
     AppComponent,
     LandingPageComponent,
@@ -78,9 +81,14 @@ import { GDfilterComponent } from './GDfilter/GDfilter.component';
       FilterPipe,
       HighlightDirective,
       SearchResultComponent,
+
+      BalanceComponent,
+     
+
       CheckOutPayementComponent,
       ScienceFilterComponent,
       GDfilterComponent
+
    ],
 
 
@@ -99,6 +107,7 @@ import { GDfilterComponent } from './GDfilter/GDfilter.component';
   MatTooltipModule,
   MatIconModule,
   MatFormFieldModule,
+ 
 
 
   ],
