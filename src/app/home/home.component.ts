@@ -15,6 +15,7 @@ import { TeacherService } from '../services/teacher.service';
 })
 export class HomeComponent implements OnInit {
   id = window.localStorage.id;
+  isstudent: boolean = false;
   balance: any;
   student: any;
   courses: any;
@@ -38,6 +39,15 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.getAllCourses();
+    this.getConnectedStudent();
+  }
+  getConnectedStudent() {
+    this.studentService.studentProfile(this.id).subscribe((res) => {
+      this.student = res;
+      console.log('student in home', this.student);
+      if (this.student !== null) this.isstudent = true;
+      console.log('is logged in ', this.isstudent);
+    });
   }
 
   getAllCourses() {
