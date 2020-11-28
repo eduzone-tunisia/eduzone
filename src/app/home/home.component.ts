@@ -7,6 +7,7 @@ import { VideoPlayerComponent } from '../videoPlayer/videoPlayer.component';
 import { Router } from '@angular/router';
 import { StudentService } from '../services/student.service';
 import { ObjectUnsubscribedError } from 'rxjs';
+import { TeacherService } from '../services/teacher.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -14,6 +15,8 @@ import { ObjectUnsubscribedError } from 'rxjs';
 })
 export class HomeComponent implements OnInit {
   id = window.localStorage.id;
+  isstudent: boolean = false;
+  balance: any;
   student: any;
   courses: any;
   CScourses: any;
@@ -26,6 +29,7 @@ export class HomeComponent implements OnInit {
     private coursesService: CousesService,
     private router: Router,
     private studentService: StudentService,
+    private teacherService: TeacherService,
     private sharedService: SharedService
   ) {
     //console.log(this.coursesService.courses)
@@ -35,6 +39,15 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.getAllCourses();
+    this.getConnectedStudent();
+  }
+  getConnectedStudent() {
+    this.studentService.studentProfile(this.id).subscribe((res) => {
+      this.student = res;
+      console.log('student in home', this.student);
+      if (this.student !== null) this.isstudent = true;
+      console.log('is logged in ', this.isstudent);
+    });
   }
 
   getAllCourses() {
@@ -60,13 +73,25 @@ export class HomeComponent implements OnInit {
     });
   }
 
- 
   clickToBuy(item: any) {
     console.log('hi', item);
     this.studentService.studentProfile(this.id).subscribe(
       (res) => {
         this.student = res;
-        if (this.student) {
+        if (this.student && !this.student.videos.includes(item._id)) {
+          console.log('item ouss', item);
+          this.teacherService
+            .getConnectedTeacher(item.teacher)
+            .subscribe((res) => {
+              console.log(res);
+              this.balance = res.balance + item.price;
+              console.log('new balance is', this.balance);
+              this.teacherService
+                .teacherUpdateBalance(item.teacher, { balance: this.balance })
+                .subscribe((res) => {
+                  console.log(res);
+                });
+            });
           this.student.videos.push(item._id);
           this.studentService
             .buyCourse(this.id, this.student)

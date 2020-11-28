@@ -22,12 +22,23 @@ import { VideoPlayerComponent } from './videoPlayer/videoPlayer.component';
 import { StudentProfileComponent } from './student-profile/student-profile.component';
 import { FilterComponent } from './filter/filter.component';
 import { TypeComponent } from './type/type.component';
+// import { RatingComponent } from './rating/rating.component';
+import { TestStarComponent } from './test-star/test-star.component';
 import { TeacherProfileComponent } from './teacher-profile/teacher-profile.component';
 import { SearchComponent } from './search/search.component';
 import { SearchResultComponent } from './searchResult/searchResult.component';
+import { BalanceComponent } from './Balance/Balance.component';
+
 import { CheckOutPayementComponent } from './checkOutPayement/checkOutPayement.component';
+import { ScienceFilterComponent } from './science-filter/science-filter.component';
+import { GDfilterComponent } from './GDfilter/GDfilter.component';
+
+
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
+  
+  {path:'balance', component:BalanceComponent},
+  {path: 'rating', component: TestStarComponent },
   { path: 'home', component: HomeComponent },
   {path:'type', component:FilterComponent},
   { path:'design', component:TypeComponent},
@@ -45,8 +56,9 @@ const routes: Routes = [
   {path : "dashboard", component: TeacherProfileComponent},
   {path : "search", component: SearchComponent },
   {path : "searchResult", component: SearchResultComponent },
-  {path : "payement", component: CheckOutPayementComponent }
-
+  {path : "payement", component: CheckOutPayementComponent },
+  {path : "sciencefilter", component : ScienceFilterComponent},
+  {path : "gdfilter", component : GDfilterComponent},
 
 ];
 

@@ -1,23 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { CousesService } from '../services/course.service';
-// import {CousesService} from '../couses.service'
+
 @Component({
-  selector: 'app-filter',
-  templateUrl: './filter.component.html',
-  styleUrls: ['./filter.component.css'],
+  selector: 'app-GDfilter',
+  templateUrl: './GDfilter.component.html',
+  styleUrls: ['./GDfilter.component.scss']
 })
-export class FilterComponent implements OnInit {
+export class GDfilterComponent implements OnInit {
   courses: any;
   backcourses: any;
-  constructor(private coursesService: CousesService) {}
+  constructor(private coursesService: CousesService) { }
 
   ngOnInit() {
     this.coursesService.getAllcourses().subscribe((res) => {
       this.courses = res;
       this.backcourses = this.courses.filter(
-        (course: any) => course.sections === 'computer science'
+        (course: any) => course.sections === 'graphic design'
       );
       console.log('math', this.backcourses);
     });
   }
+
 }

@@ -80,6 +80,7 @@
           <img src="{{ course.imgUrl }}" class="img-fluid" />
           <h3>{{ course.title }}</h3>
           <p>price: {{ course.price }} DT</p>
+          <p>rating: {{ course.rating }} out of 5</p>
         </div>
 
         <div class="team-back">
@@ -89,10 +90,11 @@
         </div>
       </div>
       <button
-        class="btn.btn-primary.btn-lg.active"
+        *ngIf="isstudent"
+        class="btn btn-primary"
         (click)="clickToBuy(course)"
       >
-        hello
+        Buy
       </button>
     </div>
   </div>
@@ -109,6 +111,7 @@
           <img src="{{ course.imgUrl }}" class="img-fluid" />
           <h3>{{ course.title }}</h3>
           <p>price: {{ course.price }} DT</p>
+          <p>rating: {{ course.rating }} out of 5</p>
         </div>
 
         <div class="team-back">
@@ -117,6 +120,13 @@
           </span>
         </div>
       </div>
+      <button
+        *ngIf="isstudent"
+        class="btn btn-primary"
+        (click)="clickToBuy(course)"
+      >
+        Buy
+      </button>
     </div>
   </div>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -131,6 +141,7 @@
           <img src="{{ course.imgUrl }}" class="img-fluid" />
           <h3>{{ course.title }}</h3>
           <p>price: {{ course.price }} DT</p>
+          <p>rating: {{ course.rating }} out of 5</p>
         </div>
 
         <div class="team-back">
@@ -139,6 +150,13 @@
           </span>
         </div>
       </div>
+      <button
+        *ngIf="isstudent"
+        class="btn btn-primary"
+        (click)="clickToBuy(course)"
+      >
+        Buy
+      </button>
     </div>
   </div>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -161,7 +179,14 @@
           </span>
         </div>
       </div>
+      <button
+        *ngIf="isstudent"
+        class="btn btn-primary"
+        (click)="clickToBuy(course)"
+      >
+        Buy
+      </button>
     </div>
   </div>
-</div> 
+</div>
 <app-footer></app-footer>
