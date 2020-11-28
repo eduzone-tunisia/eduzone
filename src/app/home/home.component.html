@@ -90,7 +90,8 @@
         </div>
       </div>
       <button
-        class="btn.btn-primary.btn-lg.active"
+        *ngIf="isstudent"
+        class="btn btn-primary"
         (click)="clickToBuy(course)"
       >
         Buy
@@ -120,7 +121,8 @@
         </div>
       </div>
       <button
-        class="btn.btn-primary.btn-lg.active"
+        *ngIf="isstudent"
+        class="btn btn-primary"
         (click)="clickToBuy(course)"
       >
         Buy
@@ -149,7 +151,8 @@
         </div>
       </div>
       <button
-        class="btn.btn-primary.btn-lg.active"
+        *ngIf="isstudent"
+        class="btn btn-primary"
         (click)="clickToBuy(course)"
       >
         Buy
@@ -177,7 +180,8 @@
         </div>
       </div>
       <button
-        class="btn.btn-primary.btn-lg.active"
+        *ngIf="isstudent"
+        class="btn btn-primary"
         (click)="clickToBuy(course)"
       >
         Buy
