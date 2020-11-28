@@ -58,7 +58,6 @@ export class CourseFormComponent implements OnInit {
     data.append('file', file_data);
     data.append('upload_preset', 'dev_setups');
     data.append('cloud_name', 'dxg5qywkt');
-    console.log('elyes', data);
     this._fileService.uploadVideo(data).subscribe((res) => {
       console.log(res);
       this.downloadURL = res;
