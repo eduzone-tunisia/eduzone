@@ -1,119 +1,142 @@
+<div class="payement">
+  <form class="text-center border border-light p-5">
+    <p class="h4 mb-4">Payement amount:</p>
+    <!-- Grid row -->
+    <div class="photo">
+      <div class="row">
+        <!-- Grid column -->
+        <div class="col-xl-3 col-md-4 mb-3">
+          <img
+            src="https://www.presse-citron.net/wordpress_prod/wp-content/uploads/2020/01/visa-1000x600.jpg"
+            class="img-fluid z-depth-1"
+            alt="Responsive image"
+          />
+        </div>
+        <!-- Grid column -->
 
-<div class ='payement'>
-  <form
-  class="text-center border border-light p-5"
-  >
-<p class="h4 mb-4">Payement amount:</p>
-  <!-- Grid row -->
-  <div class='photo'>
-<div class="row">
+        <!-- Grid column -->
+        <div class="col-xl-3 col-md-4 mb-3 text-center">
+          <img
+            src="https://www.techcityng.com/wp-content/uploads/2014/03/Mastercard--e1427370262526.jpg"
+            class="img-fluid z-depth-1"
+            alt="Responsive image"
+          />
+        </div>
+        <!-- Grid column -->
 
-  <!-- Grid column -->
-  <div class="col-xl-3 col-md-4 mb-3">
+        <!-- Grid column -->
+        <div class="col-xl-3 col-md-4 mb-3 text-right">
+          <img
+            src="https://img.generation-nt.com/paypal-logo_0670045701665860.png"
+            class="img-fluid z-depth-1"
+            alt="Responsive image"
+          />
+        </div>
+        <!-- Grid column -->
+      </div>
+    </div>
+    <!-- Grid row -->
+    <p class="h4 mb-4">Checkout</p>
 
-    <img src="https://www.presse-citron.net/wordpress_prod/wp-content/uploads/2020/01/visa-1000x600.jpg" class="img-fluid z-depth-1"
-      alt="Responsive image">
+    <div class="d-block my-3">
+      <div class="custom-control custom-radio">
+        <input
+          id="credit"
+          name="paymentMethod"
+          type="radio"
+          class="custom-control-input"
+          checked
+          required
+        />
+        <label class="custom-control-label" for="credit">Credit card</label>
+      </div>
+      <div class="custom-control custom-radio">
+        <input
+          id="debit"
+          name="paymentMethod"
+          type="radio"
+          class="custom-control-input"
+          required
+        />
+        <label class="custom-control-label" for="debit">Debit card</label>
+      </div>
+      <div class="custom-control custom-radio">
+        <input
+          id="paypal"
+          name="paymentMethod"
+          type="radio"
+          class="custom-control-input"
+          required
+        />
+        <label class="custom-control-label" for="paypal">Paypal</label>
+      </div>
+    </div>
+    <div class="form-row mb-4">
+      <div class="col">
+        <!-- First name -->
+        <label for="fname">Name on card</label>
+        <input
+          type="text"
+          name="Name on card"
+          ngModel
+          required
+          class="form-control"
+          placeholder="Enter Name on card"
+        />
+      </div>
+      <div class="col">
+        <!-- Last name -->
+        <label for="number"
+          >Credit card <i class="far fa-credit-card"></i
+        ></label>
+        <input
+          type="text"
+          name="creditCard"
+          ngModel
+          required
+          class="form-control"
+          placeholder=" credit card number"
+        />
+      </div>
+    </div>
 
-  </div>
-  <!-- Grid column -->
-
-  <!-- Grid column -->
-  <div class="col-xl-3 col-md-4 mb-3 text-center">
-
-    <img src="https://www.techcityng.com/wp-content/uploads/2014/03/Mastercard--e1427370262526.jpg" class="img-fluid z-depth-1"
-    alt="Responsive image">
-
-
-  </div>
-  <!-- Grid column -->
-
-  <!-- Grid column -->
-  <div class="col-xl-3 col-md-4 mb-3 text-right">
-
-    <img src="https://img.generation-nt.com/paypal-logo_0670045701665860.png" class="img-fluid z-depth-1"
-    alt="Responsive image">
-
-
-  </div>
-  <!-- Grid column -->
-
-
+    <div class="form-row mb-4">
+      <div class="col">
+        <!-- CCV-->
+        <label for="CCV">CCV</label>
+        <input
+          type="text"
+          name="CCV"
+          ngModel
+          required
+          class="form-control"
+          placeholder="CCV"
+        />
+      </div>
+      <div class="col">
+        <!-- Date of expiration -->
+        <div class="md-form md-outline input-with-post-icon datepicker">
+          <label for="example">Date of expiration</label
+          ><input
+            placeholder="Select date"
+            type="date"
+            name="Date of expiration"
+            ngModel
+            required
+            class="form-control"
+          />
+        </div>
+      </div>
+    </div>
+    <!--update button -->
+    <button
+      class="btn btn-primary btn-lg active"
+      type="submit"
+      routerLink="/Profile"
+    >
+      <i class="fas fa-lock"></i> Pay
+    </button>
+  </form>
 </div>
-</div>
-<!-- Grid row -->
-  <p class="h4 mb-4">Checkout</p>
-
-  <div class="d-block my-3">
-    <div class="custom-control custom-radio">
-      <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
-      <label class="custom-control-label" for="credit">Credit card</label>
-    </div>
-    <div class="custom-control custom-radio">
-      <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
-      <label class="custom-control-label" for="debit">Debit card</label>
-    </div>
-    <div class="custom-control custom-radio">
-      <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
-      <label class="custom-control-label" for="paypal">Paypal</label>
-    </div>
-  </div>
-  <div class="form-row mb-4">
-    <div class="col">
-      <!-- First name -->
-      <label for="fname">Name on card</label>
-      <input
-        type="text"
-        name="Name on card"
-        ngModel
-        required
-        class="form-control"
-        placeholder="Enter Name on card"
-      />
-    </div>
-    <div class="col">
-      <!-- Last name -->
-      <label for="number">Credit card <i class="far fa-credit-card"></i></label>
-  <input
-    type="text"
-    name="creditCard"
-    ngModel
-    required
-    class="form-control"
-    placeholder=" credit card number"
-  />
-    </div>
-  </div>
-
-  <div class="form-row mb-4">
-  <div class="col">
-    <!-- CCV-->
-    <label for="CCV">CCV</label>
-    <input
-      type="text"
-      name="CCV"
-      ngModel
-      required
-      class="form-control"
-      placeholder="CCV"
-    />
-  </div>
-  <div class="col">
-  <!-- Date of expiration -->
-  <div class="md-form md-outline input-with-post-icon datepicker">
-    <label for="example">Date of expiration</label><input
-      placeholder="Select date"
-      type="date"
-      name="Date of expiration"
-      ngModel
-      required
-      class="form-control"
-    />
-  </div>
-</div>
-</div>
-<!--update button -->
-<button class="btn btn-primary btn-lg active" type="submit"><i class="fas fa-lock"></i> Pay</button>
-</form>
-</div> 
 
 <router-outlet></router-outlet>
