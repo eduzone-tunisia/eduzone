@@ -16,7 +16,7 @@ import { StudentInfoComponent } from './student-update-info/student-update-info.
 import { TeacherRegisterComponent } from './teacher-register/teacher-register.component';
 import { TeacherLoginComponent } from './teacher-login/teacher-login.component';
 // import { CousesService } from './couses.service';
-
+  
 import { UploadService } from './services/upload.service';
 import { HomeComponent } from './home/home.component';
 import { CourseFormComponent } from './course-form/course-form.component';
@@ -29,6 +29,7 @@ import { VideoPlayerComponent } from './videoPlayer/videoPlayer.component';
 import { FilterComponent } from './filter/filter.component';
 import { TypeComponent } from './type/type.component';
 import { TeacherProfileComponent } from './teacher-profile/teacher-profile.component';
+
  //pipe/search/filter
 import { FilterPipe  } from './search/filter.pipe';
 import { SearchComponent } from './search/search.component';
