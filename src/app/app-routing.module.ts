@@ -28,6 +28,10 @@ import { TeacherProfileComponent } from './teacher-profile/teacher-profile.compo
 import { SearchComponent } from './search/search.component';
 import { SearchResultComponent } from './searchResult/searchResult.component';
 import { CheckOutPayementComponent } from './checkOutPayement/checkOutPayement.component';
+import { ScienceFilterComponent } from './science-filter/science-filter.component';
+import { GDfilterComponent } from './GDfilter/GDfilter.component';
+
+
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
   {path: 'rating', component: TestStarComponent },
@@ -48,8 +52,9 @@ const routes: Routes = [
   {path : "dashboard", component: TeacherProfileComponent},
   {path : "search", component: SearchComponent },
   {path : "searchResult", component: SearchResultComponent },
-  {path : "payement", component: CheckOutPayementComponent }
-
+  {path : "payement", component: CheckOutPayementComponent },
+  {path : "sciencefilter", component : ScienceFilterComponent},
+  {path : "gdfilter", component : GDfilterComponent},
 
 ];
 

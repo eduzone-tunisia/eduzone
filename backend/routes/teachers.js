@@ -34,7 +34,7 @@ const schema = Joi.object({
   dateOfBirth: Joi.date(),
   imageUrl: Joi.string(),
   experience: Joi.string(),
-  balance:Joi.number()
+  balance: Joi.number(),
 });
 
 //create a Teacher
@@ -57,29 +57,29 @@ router.post("/add", async (req, res, next) => {
       dateOfBirth: req.body.dateOfBirth,
       imageUrl: req.body.imageUrl,
     });
-///send mail to teacher after sign up
+    ///send mail to teacher after sign up
     nodemailer.createTestAccount((err, email) => {
       var transporter = nodemailer.createTransport(
-          smtpTransport({
-              service: "gmail",
-              port: 465,
-              secure: false,
-              host: "smtp.gmail.com",
-              auth: {
-                  user: "Eduzone.Tunisia@gmail.com",
-                  pass: "eduzone12112020"
-              },
-              tls: {
-                  rejectUnauthorized: false,
-              },
-          })
+        smtpTransport({
+          service: "gmail",
+          port: 465,
+          secure: false,
+          host: "smtp.gmail.com",
+          auth: {
+            user: "Eduzone.Tunisia@gmail.com",
+            pass: "eduzone12112020",
+          },
+          tls: {
+            rejectUnauthorized: false,
+          },
+        })
       );
-  
+
       let mailOptions = {
-          from: "Eduzone.Tunisia@gmail.com",
-          to: `${req.body.email}`,
-          subject: "eduZone Application",
-          text: `welcome ${req.body.lastName} ${req.body.firstName},
+        from: "Eduzone.Tunisia@gmail.com",
+        to: `${req.body.email}`,
+        subject: "eduZone Application",
+        text: `welcome ${req.body.lastName} ${req.body.firstName},
 
           Congratulation! you've successfuliy signed up for eduZone.
           Now it's time to access your account so you can start uploading your courses online.
@@ -96,13 +96,11 @@ router.post("/add", async (req, res, next) => {
           The eduZone team.`,
       };
       transporter.sendMail(mailOptions, (err, info) => {
-          if (err) {
-              console.log(err);
-          }
+        if (err) {
+          console.log(err);
+        }
       });
-  })
-
-
+    });
 
     const { error } = await schema.validateAsync(req.body);
     const savedTeacher = await newTeacher.save();
@@ -141,7 +139,6 @@ router.post("/login", async (req, res, next) => {
     if (error.isJoi === true) res.status(400).send(error.details[0].message);
     next(error);
   }
-  
 });
 
 //update a Teacher
@@ -167,14 +164,13 @@ router.put("/:id", async (req, res) => {
   res.json({ message: "teacher updated" });
 });
 
-
- router.put("/balance/:id" , async (req,res) => {
-   console.log(req.params.id)
-   console.log(req.body)
+router.put("/balance/:id", async (req, res) => {
+  console.log(req.params.id);
+  console.log(req.body);
   const updatedteacher = {
     balance: req.body.balance,
   };
   await Teacher.findByIdAndUpdate(req.params.id, updatedteacher);
   res.json("teacher  updated");
- } )
+});
 module.exports = router;
