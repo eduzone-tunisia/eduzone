@@ -1,0 +1,25 @@
+.photo{
+    margin-left: 250px;
+}
+
+.img-fluid.z-depth-1{
+    height: 150px;
+}
+
+.payement{
+    height: 200px;
+    position: relative;
+    border: 1px solid black;
+    width: 1300px;
+    margin-top: 150px;
+    margin-left: 400px;
+}
+.btn.btn-primary.btn-lg.active{
+    height: 45px;
+    width: 110px;
+    padding: 10px;
+    border-radius: 12px;
+    text-align: center;
+    margin: 4px 2px;
+    
+}

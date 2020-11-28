@@ -15,9 +15,9 @@ import { AboutUsComponent } from './About-us/About-us.component';
 import { StudentInfoComponent } from './student-update-info/student-update-info.component';
 import { TeacherRegisterComponent } from './teacher-register/teacher-register.component';
 import { TeacherLoginComponent } from './teacher-login/teacher-login.component';
-// import { CousesService } from './couses.service';
-
-import { UploadService } from './services/upload.service';
+import { CousesService } from './services/course.service';
+import { MatIconModule } from "@angular/material/icon";
+import {UploadService} from './services/upload.service';
 import { HomeComponent } from './home/home.component';
 import { CourseFormComponent } from './course-form/course-form.component';
 import { FileUploadModule } from 'ng2-file-upload';
@@ -28,14 +28,29 @@ import { TermOfServiceComponent } from './termOfService/termOfService.component'
 import { VideoPlayerComponent } from './videoPlayer/videoPlayer.component';
 import { FilterComponent } from './filter/filter.component';
 import { TypeComponent } from './type/type.component';
+
+import { CommonModule } from '@angular/common';
+import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+// import { StarRatingModule } from 'angular-star-rating';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { TestStarComponent } from './test-star/test-star.component';
+// import { RatingComponent } from './rating/rating.component';
 import { TeacherProfileComponent } from './teacher-profile/teacher-profile.component';
  //pipe/search/filter
 import { FilterPipe  } from './search/filter.pipe';
 import { SearchComponent } from './search/search.component';
 import { HighlightDirective } from './search/highlight.directive'
 import { SearchResultComponent } from './searchResult/searchResult.component';
+
+import { CheckOutPayementComponent } from './checkOutPayement/checkOutPayement.component';
+import { ScienceFilterComponent } from './science-filter/science-filter.component';
+import { GDfilterComponent } from './GDfilter/GDfilter.component';
 @NgModule({
-  declarations: [		
+  declarations: [					
+
 
     AppComponent,
     LandingPageComponent,
@@ -58,10 +73,14 @@ import { SearchResultComponent } from './searchResult/searchResult.component';
     TeacherProfileComponent,
   VideoPlayerComponent,
       SearchComponent,
+      TestStarComponent,
       //search/pipe
       FilterPipe,
       HighlightDirective,
-      SearchResultComponent
+      SearchResultComponent,
+      CheckOutPayementComponent,
+      ScienceFilterComponent,
+      GDfilterComponent
    ],
 
 
@@ -70,13 +89,22 @@ import { SearchResultComponent } from './searchResult/searchResult.component';
     MDBBootstrapModule.forRoot(),
     AppRoutingModule,
     FormsModule,
-    HttpClientModule,
-    FileUploadModule,
-    NgxDropzoneModule,
-    
+    HttpClientModule,FileUploadModule,
+  MatIconModule,
+  NgxDropzoneModule,
+  CommonModule,
+  MatSnackBarModule,
+  BrowserAnimationsModule,
+  
+  MatTooltipModule,
+  MatIconModule,
+  MatFormFieldModule,
+
+
   ],
 
-  providers: [UploadService],
-  bootstrap: [AppComponent, HomeComponent, CourseFormComponent],
+providers: [CousesService,UploadService],
+  bootstrap: [AppComponent],
+
 })
 export class AppModule {}
