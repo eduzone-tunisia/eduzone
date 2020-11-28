@@ -44,10 +44,13 @@ import { FilterPipe  } from './search/filter.pipe';
 import { SearchComponent } from './search/search.component';
 import { HighlightDirective } from './search/highlight.directive'
 import { SearchResultComponent } from './searchResult/searchResult.component';
+import { BalanceComponent } from './Balance/Balance.component';
+
+
 
 @NgModule({
 
-  declarations: [					
+  declarations: [							
 
 
 
@@ -76,7 +79,9 @@ import { SearchResultComponent } from './searchResult/searchResult.component';
       //search/pipe
       FilterPipe,
       HighlightDirective,
-      SearchResultComponent
+      SearchResultComponent,
+      BalanceComponent,
+     
    ],
 
 
@@ -95,6 +100,7 @@ import { SearchResultComponent } from './searchResult/searchResult.component';
   MatTooltipModule,
   MatIconModule,
   MatFormFieldModule,
+ 
 
 
   ],

@@ -27,9 +27,13 @@ import { TestStarComponent } from './test-star/test-star.component';
 import { TeacherProfileComponent } from './teacher-profile/teacher-profile.component';
 import { SearchComponent } from './search/search.component';
 import { SearchResultComponent } from './searchResult/searchResult.component';
+import { BalanceComponent } from './Balance/Balance.component';
+
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
+  
+  {path:'balance', component:BalanceComponent},
   {path: 'rating', component: TestStarComponent },
   { path: 'home', component: HomeComponent },
   {path:'type', component:FilterComponent},
