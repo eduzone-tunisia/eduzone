@@ -1,3 +1,4 @@
+
 <h1>Billing & Credit Card Information</h1>
 <p>let's get your trip'in! Complete the payement form below to confirm your purchase(s).</p>
 
@@ -72,19 +73,37 @@
         class="form-control"
         placeholder="Enter Name on card"
       />
+
     </div>
-    <div class="col">
-      <!-- Last name -->
-      <label for="number">Credit card <i class="far fa-credit-card"></i></label>
-  <input
-    type="text"
-    name="creditCard"
-    ngModel
-    required
-    class="form-control"
-    placeholder=" credit card number"
-  />
+    <div class="form-row mb-4">
+      <div class="col">
+        <!-- First name -->
+        <label for="fname">Name on card</label>
+        <input
+          type="text"
+          name="Name on card"
+          ngModel
+          required
+          class="form-control"
+          placeholder="Enter Name on card"
+        />
+      </div>
+      <div class="col">
+        <!-- Last name -->
+        <label for="number"
+          >Credit card <i class="far fa-credit-card"></i
+        ></label>
+        <input
+          type="text"
+          name="creditCard"
+          ngModel
+          required
+          class="form-control"
+          placeholder=" credit card number"
+        />
+      </div>
     </div>
+
   </div>
 <div class='ce'>
   <div class='form-row'><!-- CCV-->
@@ -133,5 +152,6 @@
 <button class="btn btn-primary btn-lg active" type="submit"><i class="fas fa-lock"></i> Pay</button>
 </form>
 </div> 
+
 
 <router-outlet></router-outlet>

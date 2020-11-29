@@ -183,6 +183,7 @@
         *ngIf="isstudent"
         class="btn btn-primary"
         (click)="clickToBuy(course)"
+        routerLink="/payement"
       >
         Buy
       </button>
@@ -190,3 +191,4 @@
   </div>
 </div>
 <app-footer></app-footer>
+<router-outlet></router-outlet>
