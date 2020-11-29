@@ -1,3 +1,5 @@
+<h1>Billing & Credit Card Information</h1>
+<p>let's get your trip'in! Complete the payement form below to confirm your purchase(s).</p>
 
 <div class ='payement'>
   <form
@@ -41,7 +43,7 @@
 </div>
 </div>
 <!-- Grid row -->
-  <p class="h4 mb-4">Checkout</p>
+  <!-- <p class="h4 mb-4">Checkout</p> -->
 
   <div class="d-block my-3">
     <div class="custom-control custom-radio">
@@ -57,6 +59,7 @@
       <label class="custom-control-label" for="paypal">Paypal</label>
     </div>
   </div>
+  
   <div class="form-row mb-4">
     <div class="col">
       <!-- First name -->
@@ -83,10 +86,25 @@
   />
     </div>
   </div>
-
-  <div class="form-row mb-4">
+<div class='ce'>
+  <div class='form-row'><!-- CCV-->
+    <div class='col-xs-4 form-group cvc required'>
+      <label class='control-label'>CVC</label>
+      <input autocomplete='off' class='form-control card-cvc' placeholder='ex. 311' size='4' type='text'>
+    </div>
+    <div class='col-xs-4 form-group expiration required'><!-- Date of expiration -->
+      <label class='control-label'>Expiration</label>
+      <input class='form-control card-expiry-month' placeholder='MM' size='2' type='text'>
+    </div>
+    <div class='col-xs-4 form-group expiration required'>
+      <label class='control-label'> </label>
+      <input class='form-control card-expiry-year' placeholder='YYYY' size='4' type='text'>
+    </div>
+  </div>
+</div>
+  <!-- <div class="form-row mb-4">
   <div class="col">
-    <!-- CCV-->
+    
     <label for="CCV">CCV</label>
     <input
       type="text"
@@ -96,9 +114,9 @@
       class="form-control"
       placeholder="CCV"
     />
-  </div>
-  <div class="col">
-  <!-- Date of expiration -->
+  </div>  -->
+  
+  <!-- <div class="col">
   <div class="md-form md-outline input-with-post-icon datepicker">
     <label for="example">Date of expiration</label><input
       placeholder="Select date"
@@ -109,8 +127,8 @@
       class="form-control"
     />
   </div>
-</div>
-</div>
+</div> -->
+<!-- </div> -->
 <!--update button -->
 <button class="btn btn-primary btn-lg active" type="submit"><i class="fas fa-lock"></i> Pay</button>
 </form>

@@ -60,9 +60,26 @@ width: 100%;
 min-height: 100vh;
  }
 .waves-light{
-margin-top: 580px;
-margin-left: 1015px;
+margin-top: 408px;
+margin-left: 725px;
 width: 100px;
 // border: rgb(0,0,);
 }
 
+ ::ng-deep {
+  .rating-list li {
+    float: right;
+    color: #ddd;
+    padding: 10px 5px;
+  
+  }
+  
+  .rating-list li:hover,
+  .rating-list li:hover ~ li, .rating-list li.selected {
+    color: #ffd700;
+  }
+  
+  .rating-list {
+    display: inline-block;
+    list-style: none;
+  }}

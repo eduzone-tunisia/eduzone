@@ -8,7 +8,7 @@ import { SearchComponent } from '../search/search.component';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
-  @Output() filterTerm: any
+  @Output() filterTerm: any;
   loggedIn: boolean = false;
   teacherloggedIn: boolean = false;
   studentloggedIn: boolean = false;
@@ -51,7 +51,6 @@ export class NavbarComponent implements OnInit {
 
   ngAfterContentChecked() {
     this.isLoggedIn();
-
   }
 
   isLoggedIn() {

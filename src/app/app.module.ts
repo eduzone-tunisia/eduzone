@@ -33,22 +33,28 @@ import { CommonModule } from '@angular/common';
 import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { StarRatingModule } from 'angular-star-rating';
+// import { StarRatingModule } from 'angular-star-rating';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { TestStarComponent } from './test-star/test-star.component';
 // import { RatingComponent } from './rating/rating.component';
 import { TeacherProfileComponent } from './teacher-profile/teacher-profile.component';
+
  //pipe/search/filter
 import { FilterPipe  } from './search/filter.pipe';
 import { SearchComponent } from './search/search.component';
 import { HighlightDirective } from './search/highlight.directive'
 import { SearchResultComponent } from './searchResult/searchResult.component';
+import { BalanceComponent } from './Balance/Balance.component';
+
+
 
 import { CheckOutPayementComponent } from './checkOutPayement/checkOutPayement.component';
+import { ScienceFilterComponent } from './science-filter/science-filter.component';
+import { GDfilterComponent } from './GDfilter/GDfilter.component';
 @NgModule({
-  declarations: [			
 
+  declarations: [					
 
     AppComponent,
     LandingPageComponent,
@@ -72,11 +78,19 @@ import { CheckOutPayementComponent } from './checkOutPayement/checkOutPayement.c
   VideoPlayerComponent,
       SearchComponent,
       TestStarComponent,
+    
       //search/pipe
       FilterPipe,
       HighlightDirective,
       SearchResultComponent,
-      CheckOutPayementComponent
+
+      BalanceComponent,
+     
+
+      CheckOutPayementComponent,
+      ScienceFilterComponent,
+      GDfilterComponent
+
    ],
 
 
@@ -91,10 +105,10 @@ import { CheckOutPayementComponent } from './checkOutPayement/checkOutPayement.c
   CommonModule,
   MatSnackBarModule,
   BrowserAnimationsModule,
-  StarRatingModule,
   MatTooltipModule,
   MatIconModule,
   MatFormFieldModule,
+ 
 
 
   ],
