@@ -17,7 +17,6 @@
           data-dismiss="modal"
           aria-label="Close"
         >
-
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -59,20 +58,17 @@
         </div>
       </div>
       <div class="modal-footer d-flex justify-content-center">
-
         <button
           class="btn btn-primary btn-lg active"
           data-dismiss="modal"
           (click)="login()"
+          routerLink="/home"
         >
           Log in
         </button>
-
       </div>
     </div>
   </div>
 </div>
-
-
 
 <router-outlet></router-outlet>

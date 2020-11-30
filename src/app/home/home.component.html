@@ -79,7 +79,6 @@
         <div class="team-front">
           <img src="{{ course.imgUrl }}" class="img-fluid" />
           <h3>{{ course.title }}</h3>
-          <p>price: {{ course.price }} DT</p>
           <p>rating: {{ course.rating }} out of 5</p>
         </div>
 
@@ -89,6 +88,19 @@
           </span>
         </div>
       </div>
+      <p class="price">price: {{ course.price }} DT</p>
+      <!-- <div class="row">
+        <div class="col-sm-12">
+            <ul class="list-inline rating-list" 
+            *ngFor="let star of stars" style="display: inline-block" >
+                  <li 
+                      [ngClass]="{'selected': selectedValue}">
+                    <i class="fa fa-star"></i>
+                  </li> 
+            </ul>
+        </div>
+       
+      </div> -->
       <button
         *ngIf="isstudent"
         class="btn btn-primary"
@@ -110,7 +122,6 @@
         <div class="team-front">
           <img src="{{ course.imgUrl }}" class="img-fluid" />
           <h3>{{ course.title }}</h3>
-          <p>price: {{ course.price }} DT</p>
           <p>rating: {{ course.rating }} out of 5</p>
         </div>
 
@@ -120,6 +131,7 @@
           </span>
         </div>
       </div>
+      <p class="price">price: {{ course.price }} DT</p>
       <button
         *ngIf="isstudent"
         class="btn btn-primary"
@@ -140,7 +152,6 @@
         <div class="team-front">
           <img src="{{ course.imgUrl }}" class="img-fluid" />
           <h3>{{ course.title }}</h3>
-          <p>price: {{ course.price }} DT</p>
           <p>rating: {{ course.rating }} out of 5</p>
         </div>
 
@@ -150,6 +161,7 @@
           </span>
         </div>
       </div>
+      <p class="price">price: {{ course.price }} DT</p>
       <button
         *ngIf="isstudent"
         class="btn btn-primary"
@@ -170,7 +182,6 @@
         <div class="team-front">
           <img src="{{ course.imgUrl }}" class="img-fluid" />
           <h3>{{ course.title }}</h3>
-          <p>price: {{ course.price }} DT</p>
         </div>
 
         <div class="team-back">
@@ -179,10 +190,12 @@
           </span>
         </div>
       </div>
+      <p class="price">price: {{ course.price }} DT</p>
       <button
         *ngIf="isstudent"
         class="btn btn-primary"
         (click)="clickToBuy(course)"
+        routerLink="/payement"
       >
         Buy
       </button>
@@ -190,3 +203,4 @@
   </div>
 </div>
 <app-footer></app-footer>
+<router-outlet></router-outlet>
