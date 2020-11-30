@@ -52,13 +52,13 @@ margin-left: 500px;
 // .modal.fade{
 //     background-image: url(../../assets/background/background.jpg);
 // }
- body{
- background: url("../../assets/background/video-play-button-ss-1920.jpg") no-repeat;
+body{
+background: url("../../assets/background/video-play-button-ss-1920.jpg") no-repeat;
 overflow: hidden;
 background-size: cover;
 width: 100%;
 min-height: 100vh;
- }
+}
 .waves-light{
 margin-top: 408px;
 margin-left: 725px;
@@ -66,20 +66,18 @@ width: 100px;
 // border: rgb(0,0,);
 }
 
- ::ng-deep {
-  .rating-list li {
+::ng-deep {
+.rating-list li {
     float: right;
     color: #ddd;
     padding: 10px 5px;
-  
-  }
-  
-  .rating-list li:hover,
-  .rating-list li:hover ~ li, .rating-list li.selected {
+}
+.rating-list li:hover,
+.rating-list li:hover ~ li, .rating-list li.selected {
     color: #ffd700;
-  }
-  
-  .rating-list {
+}
+
+.rating-list {
     display: inline-block;
     list-style: none;
-  }}
+}}
