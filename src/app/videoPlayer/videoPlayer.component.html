@@ -1,4 +1,4 @@
-<body>
+<!-- <body>
   <div class="videoPlayer">
     <button
       type="button"
@@ -34,6 +34,11 @@
               allowfullscreen
             ></iframe>
             <p>{{ course.numberOfViews }} people watched this video</p>
+            <my-app
+              [ngClass]="{ selected: selectedValue }"
+              [selectedValue]="selectedValue"
+              (change)="countChange($event)"
+            ></my-app>
           </div>
 
           <div class="modal-footer justify-content-center">
@@ -49,13 +54,18 @@
               Close
             </button>
           </div>
-          <my-app
-            [ngClass]="{ selected: selectedValue }"
-            [selectedValue]="selectedValue"
-            (change)="countChange($event)"
-          ></my-app>
         </div>
       </div>
     </div>
   </div>
-</body>
+</body> -->
+
+<h3 class="heading">Title:{{ course.title }}</h3>
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" [src]="Url" allowfullscreen></iframe>
+  <p>{{ course.numberOfViews }} people watched this video</p>
+  <my-app
+    [selectedValue]="selectedValue"
+    (change)="countChange($event)"
+  ></my-app>
+</div>

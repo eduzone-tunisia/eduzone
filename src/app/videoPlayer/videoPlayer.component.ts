@@ -8,10 +8,12 @@ import { DomSanitizer } from '@angular/platform-browser';
 @Component({
   selector: 'app-videoPlayer',
   templateUrl: './videoPlayer.component.html',
-  styleUrls: ['./videoPlayer.component.scss','../test-star/test-star.component.css'],
+  styleUrls: [
+    './videoPlayer.component.scss',
+    '../test-star/test-star.component.css',
+  ],
 })
 export class VideoPlayerComponent implements OnInit {
-
   course: any;
   selectedValue: any;
   Url: any;
