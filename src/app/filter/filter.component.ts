@@ -9,6 +9,7 @@ import { CousesService } from '../services/course.service';
 export class FilterComponent implements OnInit {
   courses: any;
   backcourses: any;
+  stars: number[] = [1, 2, 3, 4, 5];
   constructor(private coursesService: CousesService) {}
 
   ngOnInit() {
