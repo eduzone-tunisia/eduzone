@@ -25,6 +25,8 @@ export class HomeComponent implements OnInit {
   gDcourse: any;
   course: any;
   ObjectId: any;
+  selectedValue: any;
+  stars: number[] = [1, 2, 3, 4, 5];
   constructor(
     private coursesService: CousesService,
     private router: Router,
@@ -54,6 +56,7 @@ export class HomeComponent implements OnInit {
     this.coursesService.getAllcourses().subscribe((res) => {
       console.log(res);
       this.courses = res;
+      this.selectedValue = this.courses.rating;
       if (this.courses) {
         this.CScourses = this.courses.filter(
           (cours: any) => cours.sections === 'computer science'
