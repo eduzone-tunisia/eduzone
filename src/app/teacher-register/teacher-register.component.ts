@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { TeacherService } from '../services/teacher.service';
 
 @Component({
@@ -15,7 +16,7 @@ export class TeacherRegisterComponent implements OnInit {
   };
   registred = false;
   validationError = '';
-  constructor(private teacherService: TeacherService) {}
+  constructor(private teacherService: TeacherService , private router :Router ) {}
 
   ngOnInit() {}
 
@@ -27,6 +28,7 @@ export class TeacherRegisterComponent implements OnInit {
         console.log(res);
         //send email to teacher
         this.teacherService.sendEmail({email:this.teacher.email})
+        this.router.navigateByUrl('/home');
       },
       (error) => {
         this.validationError = error.error;
