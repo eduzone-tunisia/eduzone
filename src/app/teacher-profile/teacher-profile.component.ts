@@ -18,6 +18,7 @@ export class TeacherProfileComponent implements OnInit {
 
   ngOnInit() {
     this.getCourses();
+    this.getTeacher();
   }
 
   getCourses() {
