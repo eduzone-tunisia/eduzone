@@ -2,25 +2,31 @@
 <br/>
 <br/><br/>
 <!-- Card -->
+
 <div class= 'container-fluid' >
 <div class="card" style="margin-right: 35%; margin-left: 35%;">
 
+<div class="card">
   <!-- Card image -->
-  <img class="card-img-top" src="{{course.imgUrl}}" alt="Card image cap">
+  <img class="card-img-top" src="{{ course.imgUrl }}" alt="Card image cap" />
 
   <!-- Card content -->
   <div class="card-body">
-
     <!-- Title -->
-    <h4 class="card-title"><a>{{course.title}}</a></h4>
+    <h4 class="card-title">
+      <a>{{ course.title }}</a>
+    </h4>
     <!-- Text -->
-    <p class="card-text">{{course.description}}</p>
+    <p class="card-text">{{ course.description }}</p>
     <!-- Button -->
-    <a  class="btn btn-primary btn-lg active" routerLink= "/home"> Buy <i class="fas fa-shopping-cart"></i></a>
+
+    <a class="btn btn-primary" routerLink="/home">
+      Back <i class="fas fa-shopping-cart"></i
+    ></a>
 
   </div>
-
 </div>
+
 </div>
 <br/>
 <br/>
@@ -29,3 +35,4 @@
 <app-footer></app-footer>
 
 <router-outlet></router-outlet>
+
