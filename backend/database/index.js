@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const url = "mongodb://localhost/eduzone";
+const url = "mongodb+srv://oussamaheni:oussama23146875@eduzone.blopr.mongodb.net/eduzone?retryWrites=true&w=majority";
 //mongodb://localhost/eduzone
 //mongodb+srv://oussamaheni:oussama23146875@eduzone.blopr.mongodb.net/eduzone?retryWrites=true&w=majority
 mongoose.connect(url, {
