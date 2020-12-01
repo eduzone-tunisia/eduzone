@@ -1,3 +1,4 @@
+ 
 <nav class="navbar navbar-expand-lg navbar-light bg-white">
   <a class="navbar-brand" href="#">
     <img
@@ -45,13 +46,13 @@
           >Courses</a
         >
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Psychology</a>
+          <a class="dropdown-item" routerLink="/type">Computer Science</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Graphic Design</a>
+          <a class="dropdown-item" routerLink="/design"> Math</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Computer Science</a>
+          <a class="dropdown-item" routerLink="/sciencefilter">Science</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#"> Web Developpement</a>
+          <a class="dropdown-item" routerLink="/gdfilter">Graphic Design</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#"></a>
         </div>
@@ -59,21 +60,21 @@
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <i class="fas fa-search" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
-      <input
+      <!-- <i class="fas fa-search" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp; -->
+      <!-- <input
         class="form-control mr-sm-2"
         type="search"
         placeholder="Search"
         aria-label="Search"
-      />
-      <button
+      /> -->
+      <!-- <button
         class="btn btn-primary active"
         data-toggle="button"
         aria-pressed="false"
         type="submit"
       >
         Search
-      </button>
+      </button> -->
     </form>
 
     <ul class="navbar-nav ml-auto nav-flex-icons">
@@ -157,7 +158,7 @@
         <a   class="btn btn-primary btn-lg active" role="button" aria-pressed="true" href="#">SignUp</a>
       </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
 
-      <li *ngIf="teacherloggedIn" class="nav-item avatar dropdown">
+      <li *ngIf="loggedIn && teacherloggedIn" class="nav-item avatar dropdown">
         <a
           class="nav-link1 dropdown-toggle"
           id="navbarDropdownMenuLink-55"
@@ -165,33 +166,37 @@
           aria-haspopup="true"
           aria-expanded="false"
         >
-        <div *ngIf="user.imageUrl" >
-          <img
-            id="img1"
-            src="{{ user.imageUrl }} "
-            class="rounded-circle z-depth-0"
-          />
-        </div>
-        <div *ngIf= " !user.imageUrl">
-          <img
-            id="img1"
-            src="https://www.w3schools.com/howto/img_avatar.png"
-            class="rounded-circle z-depth-0"
-          />
+          <div *ngIf="user.imageUrl">
+            <img
+              id="img1"
+              src="{{ user.imageUrl }} "
+              class="rounded-circle z-depth-0"
+            />
+          </div>
+          <div *ngIf="!user.imageUrl">
+            <img
+              id="img1"
+              src="https://www.w3schools.com/howto/img_avatar.png"
+              class="rounded-circle z-depth-0"
+            />
           </div>
         </a>
         <div
           class="dropdown-menu dropdown-menu-lg-right dropdown-secondary"
           aria-labelledby="navbarDropdownMenuLink-55"
         >
+<<<<<<< HEAD
           <a class="dropdown-item" routerLink="/teacherProfile">My profil</a>
+=======
+          <a class="dropdown-item" routerLink="/dashboard">My profil</a>
+>>>>>>> 91fa94f2fe60e79dda5b3e07ccca8666ccb8bb40
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" (click)="clearStorage()"
             ><i class="fas fa-sign-out-alt"></i> logOut</a
           >
         </div>
       </li>
-      <li *ngIf="studentloggedIn" class="nav-item avatar dropdown">
+      <li *ngIf="loggedIn && studentloggedIn" class="nav-item avatar dropdown">
         <a
           class="nav-link1 dropdown-toggle"
           id="navbarDropdownMenuLink-55"
@@ -199,20 +204,20 @@
           aria-haspopup="true"
           aria-expanded="false"
         >
-        <div *ngIf= " !student.imageUrl">
-          <img
-            id="img1"
-            src=" https://previews.123rf.com/images/hvostik/hvostik1603/hvostik160300358/54767450-graduate-student-avatar-student-student-icon-flat-design-style-education-graduation-isolated-student.jpg"
-            class="rounded-circle z-depth-0"
-          />
-          </div>
-          <div *ngIf= "student.imageUrl">
+          <div *ngIf="!student.imageUrl">
             <img
               id="img1"
-              src="{{student.imageUrl}}"
+              src=" https://previews.123rf.com/images/hvostik/hvostik1603/hvostik160300358/54767450-graduate-student-avatar-student-student-icon-flat-design-style-education-graduation-isolated-student.jpg"
               class="rounded-circle z-depth-0"
             />
-            </div>
+          </div>
+          <div *ngIf="student.imageUrl">
+            <img
+              id="img1"
+              src="{{ student.imageUrl }}"
+              class="rounded-circle z-depth-0"
+            />
+          </div>
         </a>
         <div
           class="dropdown-menu dropdown-menu-lg-right dropdown-secondary"
@@ -228,4 +233,5 @@
     </ul>
   </div>
 </nav>
+
 <router-outlet></router-outlet>

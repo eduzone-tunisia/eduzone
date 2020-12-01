@@ -21,11 +21,20 @@ const Course = new Schema(
       type: String,
       required: true,
     },
+    imgUrl: {
+      type: String,
+      required: true,
+    },
     price: {
       type: Number,
       required: true,
     },
     numberOfViews: {
+      type: Number,
+      required: false,
+      default: 0,
+    },
+    rating: {
       type: Number,
       required: false,
       default: 0,

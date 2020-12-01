@@ -26,13 +26,12 @@ export class LoginComponent implements OnInit {
         window.localStorage.setItem('token', res.token);
         window.localStorage.setItem('id', res.id);
         console.log(res);
+        location.reload();
       },
       (error) => {
         this.validationError = error.error;
         console.log(this.validationError);
       }
     );
-  
   }
-
 }

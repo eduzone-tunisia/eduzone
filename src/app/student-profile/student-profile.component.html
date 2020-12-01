@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div *ngIf="id && student">
   <div class="sidenav">
     <a routerLink="/Profile">My Courses</a>
@@ -27,3 +28,37 @@
 
    <router-outlet></router-outlet>
   
+=======
+<app-navbar></app-navbar>&nbsp;
+
+<div class="sidenav">
+  <a routerLink="/Profile">My Courses</a>
+  <a routerLink="/updateStudentInfo">Update My info</a>
+  <a>My Teachers</a>
+</div>
+
+<div class="main">
+  <h1>welcome {{ student.firstName }}</h1>
+  <div class="row">
+    <div
+      class="col-lg-3"
+      *ngFor="let course of myCourses"
+      style="margin-top: 50px"
+    >
+      <div class="our-team-main">
+        <div class="team-front">
+          <img src="{{ course.imgUrl }}" class="img-fluid" />
+          <h3>{{ course.title }}</h3>
+        </div>
+
+        <div class="team-back">
+          <span (click)="onClick(course)">
+            {{ course.description }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>
+>>>>>>> 91fa94f2fe60e79dda5b3e07ccca8666ccb8bb40

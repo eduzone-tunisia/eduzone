@@ -5,6 +5,14 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const verify = require("./verifyToken.js");
 const dotenv = require("dotenv");
+
+dotenv.config();
+
+router.get("/:id", async (req, res) => {
+  const student = await Student.findById(req.params.id);
+  res.json(student);
+});
+
 const nodemailer = require("nodemailer");
 const smtpTransport = require("nodemailer-smtp-transport");
 
@@ -33,7 +41,6 @@ const schema = Joi.object({
   imageUrl: Joi.string(),
 });
 
-
 //create a student
 router.post("/studentRegistration", async (req, res, next) => {
   console.log(req.body);
@@ -54,29 +61,29 @@ router.post("/studentRegistration", async (req, res, next) => {
       dateOfBirth: req.body.dateOfBirth,
       imageUrl: req.body.imageUrl,
     });
-///send mail to student after sign up
+    ///send mail to student after sign up
     nodemailer.createTestAccount((err, email) => {
       var transporter = nodemailer.createTransport(
-          smtpTransport({
-              service: "gmail",
-              port: 465,
-              secure: false,
-              host: "smtp.gmail.com",
-              auth: {
-                  user: "Eduzone.Tunisia@gmail.com",
-                  pass: "eduzone12112020"
-              },
-              tls: {
-                  rejectUnauthorized: false,
-              },
-          })
+        smtpTransport({
+          service: "gmail",
+          port: 465,
+          secure: false,
+          host: "smtp.gmail.com",
+          auth: {
+            user: "Eduzone.Tunisia@gmail.com",
+            pass: "eduzone12112020",
+          },
+          tls: {
+            rejectUnauthorized: false,
+          },
+        })
       );
-  
+
       let mailOptions = {
-          from: "Eduzone.Tunisia@gmail.com",
-          to: `${req.body.email}`,
-          subject: "eduZone Application",
-          text: `
+        from: "Eduzone.Tunisia@gmail.com",
+        to: `${req.body.email}`,
+        subject: "eduZone Application",
+        text: `
           welcome ${req.body.lastName} ${req.body.firstName},
           
                     Congratulation! you've successfuliy signed up for eduZone.
@@ -94,11 +101,11 @@ router.post("/studentRegistration", async (req, res, next) => {
                     The eduZone team.`,
       };
       transporter.sendMail(mailOptions, (err, info) => {
-          if (err) {
-              console.log(err);
-          }
+        if (err) {
+          console.log(err);
+        }
       });
-  })
+    });
 
     const { error } = await schema.validateAsync(req.body);
     const savedStudent = await newStudent.save();
@@ -141,6 +148,7 @@ router.post("/login", async (req, res, next) => {
 
 //update a student
 router.put("/:id", async (req, res) => {
+<<<<<<< HEAD
   //check if email exists
   const emailExist = await Student.findOne({ email: req.body.email });
   if (emailExist) return res.status(400).send("email already exists")
@@ -160,6 +168,36 @@ router.put("/:id", async (req, res) => {
      console.log(updatedInfo)
      res.send(updatedInfo)
  
+=======
+  console.log(req.body);
+  //check if email exists
+  const emailExist = await Student.findOne({ email: req.body.email });
+  if (emailExist) return res.status(400).send("email already exists");
+  //hash password
+  const salt = await bcrypt.genSalt(10);
+  const hashedPassword = await bcrypt.hash(req.body.password, salt);
+  const newInfo = {
+    email: req.body.email,
+    password: hashedPassword,
+    phoneNumber: req.body.phoneNumber,
+    dateOfBirth: req.body.dateOfBirth,
+    videos: req.body.videos,
+  };
+  // still joi validation for the update form
+  //  const {error}  = await updateValidation.validateAsync(req.body)
+
+  const updatedInfo = await Student.findByIdAndUpdate(req.params.id, newInfo);
+  console.log(updatedInfo);
+  res.send(updatedInfo);
+});
+
+router.put("/likeCourse/:id", async (req, res) => {
+  const updatedst = {
+    videos: req.body.videos,
+  };
+  await Student.findByIdAndUpdate(req.params.id, updatedst);
+  res.json("student  updated");
+>>>>>>> 91fa94f2fe60e79dda5b3e07ccca8666ccb8bb40
 });
 
 module.exports = router;

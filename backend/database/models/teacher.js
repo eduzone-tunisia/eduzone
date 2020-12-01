@@ -29,6 +29,11 @@ const teacher = new Schema({
   imageUrl: {
     type: String,
   },
+  balance: {
+    type: Number,
+    required: false,
+    default: 0,
+  },
   experience: {
     type: String,
   },
