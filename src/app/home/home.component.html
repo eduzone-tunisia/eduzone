@@ -1,10 +1,10 @@
-
+<app-navbar></app-navbar>&nbsp;
 <app-search></app-search>
 <div class= 'container-fluid' >
 
     
     
-<div id="carouselExampleCaptions" style="margin-right: 2%; margin-left: 2%; " class="carousel slide" data-ride="carousel">
+<div id="carouselExampleCaptions" style="margin-right: 2%; margin-left: 2%;" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li
       data-target="#carouselExampleCaptions"
@@ -82,7 +82,6 @@
         <div class="team-front">
           <img src="{{ course.imgUrl }}" class="img-fluid" />
           <h3>{{ course.title }}</h3>
-          <p>rating: {{ course.rating }} out of 5</p>
         </div>
 
         <div class="team-back">
@@ -91,7 +90,23 @@
           </span>
         </div>
       </div>
+      <!-- <p class="rate">rating: {{ course.rating }} out of 5</p> -->
       <p class="price">price: {{ course.price }} DT</p>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <ul
+            class="list-inline rating-list"
+            *ngFor="let star of stars"
+            style="display: inline-block"
+          >
+            <li [ngClass]="{ selected: star <= course.rating }">
+              <i class="fa fa-star"></i>
+            </li>
+          </ul>
+        </div>
+      </div>
+
       <!-- <div class="row">
         <div class="col-sm-12">
             <ul class="list-inline rating-list" 
@@ -108,6 +123,7 @@
         *ngIf="isstudent"
         class="btn btn-primary btn-lg active"
         (click)="clickToBuy(course)"
+        routerLink="/payement"
       >
         Buy  <i class="fas fa-shopping-cart"></i>
       </button>
@@ -128,7 +144,6 @@
         <div class="team-front">
           <img src="{{ course.imgUrl }}" class="img-fluid" />
           <h3>{{ course.title }}</h3>
-          <p>rating: {{ course.rating }} out of 5</p>
         </div>
 
         <div class="team-back">
@@ -138,10 +153,24 @@
         </div>
       </div>
       <p class="price">price: {{ course.price }} DT</p>
+      <div class="row">
+        <div class="col-sm-12">
+          <ul
+            class="list-inline rating-list"
+            *ngFor="let star of stars"
+            style="display: inline-block"
+          >
+            <li [ngClass]="{ selected: star <= course.rating }">
+              <i class="fa fa-star"></i>
+            </li>
+          </ul>
+        </div>
+      </div>
       <button
         *ngIf="isstudent"
         class="btn btn-primary btn-lg active"
         (click)="clickToBuy(course)"
+        routerLink="/payement"
       >
         Buy  <i class="fas fa-shopping-cart"></i>
       </button>
@@ -161,7 +190,6 @@
         <div class="team-front">
           <img src="{{ course.imgUrl }}" class="img-fluid" />
           <h3>{{ course.title }}</h3>
-          <p>rating: {{ course.rating }} out of 5</p>
         </div>
 
         <div class="team-back">
@@ -171,10 +199,24 @@
         </div>
       </div>
       <p class="price">price: {{ course.price }} DT</p>
+      <div class="row">
+        <div class="col-sm-12">
+          <ul
+            class="list-inline rating-list"
+            *ngFor="let star of stars"
+            style="display: inline-block"
+          >
+            <li [ngClass]="{ selected: star <= course.rating }">
+              <i class="fa fa-star"></i>
+            </li>
+          </ul>
+        </div>
+      </div>
       <button
         *ngIf="isstudent"
         class="btn btn-primary btn-lg active"
         (click)="clickToBuy(course)"
+        routerLink="/payement"
       >
         Buy  <i class="fas fa-shopping-cart"></i>
       </button>
@@ -203,6 +245,19 @@
         </div>
       </div>
       <p class="price">price: {{ course.price }} DT</p>
+      <div class="row">
+        <div class="col-sm-12">
+          <ul
+            class="list-inline rating-list"
+            *ngFor="let star of stars"
+            style="display: inline-block"
+          >
+            <li [ngClass]="{ selected: star <= course.rating }">
+              <i class="fa fa-star"></i>
+            </li>
+          </ul>
+        </div>
+      </div>
       <button
         *ngIf="isstudent"
         class="btn btn-primary btn-lg active"

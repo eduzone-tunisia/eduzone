@@ -77,9 +77,7 @@ p{
 
 .carousel-item{
   box-sizing: border-box;
-  
   border-radius: 8px;
-   
 }
 .a {
   color: black;
@@ -143,18 +141,26 @@ p{
   letter-spacing: -0.02rem;
   font-size: 1.6rem;
 }
+.rate {
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.02rem;
+  font-size: 1.2rem;
+}
 
-:host::ng-deep .rating-list li {
+.rating-list li {
   float: right;
   color: #ddd;
   padding: 10px 5px;
+
 }
 
-.rating-list li.selected {
+.rating-list li:hover,
+.rating-list li:hover ~ li, .rating-list li.selected {
   color: #ffd700;
 }
 
-:host::ng-deep .rating-list {
+.rating-list {
   display: inline-block;
   list-style: none;
 }
