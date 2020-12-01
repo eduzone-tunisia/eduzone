@@ -13,10 +13,10 @@ export class BalanceComponent implements OnInit {
 
  public chartType: string = 'line';
  public chartDatasets: Array<any> = [
-  { data: [0, 32, 42, 55, 60, 61, 80], label: ' Balance' },
+  { data: [0, 55, 110, 175, 215, 270, 320], label: ' Balance' },
 ];
 
-public chartLabels: Array<any> = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+public chartLabels: Array<any> = ['1 November', '5 November', '10 November', ' 15 November', '20 November', '25 November', ' 30 November'];
 
 public chartColors: Array<any> = [
   
