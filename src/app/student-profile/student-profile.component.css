@@ -33,7 +33,6 @@
 }
 
 .our-team-main {
-
   border-bottom: 5px #323233 solid;
   background: #fff;
   text-align: center;
@@ -43,7 +42,6 @@
   transition: 0.5s;
   margin-bottom: 28px;
   height: 100%;
-  
 }
 
 .our-team-main img {
@@ -157,9 +155,24 @@
   margin-top: 40px;
 }
 
-.row{
-  
+.row {
   margin-top: 20px;
-  margin-left:  25px;
+  margin-left: 25px;
 }
 
+.rating-list li {
+  float: right;
+  color: #ddd;
+  padding: 10px 5px;
+}
+
+.rating-list li:hover,
+.rating-list li:hover ~ li,
+.rating-list li.selected {
+  color: #ffd700;
+}
+
+.rating-list {
+  display: inline-block;
+  list-style: none;
+}
