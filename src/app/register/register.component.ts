@@ -28,7 +28,6 @@ export class RegisterComponent implements OnInit {
         console.log(res);
         ///send email to student
         this.studentService.sendEmail({ email: this.student.email });
-        this.router.navigateByUrl('/home');
       },
       (error) => {
         this.validationError = error.error;

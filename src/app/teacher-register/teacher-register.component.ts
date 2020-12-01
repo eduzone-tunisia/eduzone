@@ -16,7 +16,7 @@ export class TeacherRegisterComponent implements OnInit {
   };
   registred = false;
   validationError = '';
-  constructor(private teacherService: TeacherService , private router :Router ) {}
+  constructor(private teacherService: TeacherService, private router: Router) {}
 
   ngOnInit() {}
 
@@ -27,8 +27,7 @@ export class TeacherRegisterComponent implements OnInit {
         this.registred = !this.registred;
         console.log(res);
         //send email to teacher
-        this.teacherService.sendEmail({email:this.teacher.email})
-        this.router.navigateByUrl('/home');
+        this.teacherService.sendEmail({ email: this.teacher.email });
       },
       (error) => {
         this.validationError = error.error;
