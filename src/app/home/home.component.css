@@ -7,6 +7,13 @@ h1 {
   margin: 40px 0 60px 0;
   font-weight: 300;
 }
+h2{
+  color:#0d47a1;
+  font-size: 40px;
+}
+p{
+  color:#3F729B;
+}
 
 .our-team-main {
   width: 100%;
@@ -68,12 +75,9 @@ h1 {
   transition: 0.5s;
 }
 
-.carousel-item {
+.carousel-item{
   box-sizing: border-box;
-  width: 1790px;
-  height: 650px;
   border-radius: 8px;
-  margin-left: 55px;
 }
 .a {
   color: black;
@@ -137,18 +141,29 @@ h1 {
   letter-spacing: -0.02rem;
   font-size: 1.6rem;
 }
+.rate {
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.02rem;
+  font-size: 1.2rem;
+}
 
-:host::ng-deep .rating-list li {
+.rating-list li {
   float: right;
   color: #ddd;
   padding: 10px 5px;
+
 }
 
-.rating-list li.selected {
+.rating-list li:hover,
+.rating-list li:hover ~ li, .rating-list li.selected {
   color: #ffd700;
 }
 
-:host::ng-deep .rating-list {
+.rating-list {
   display: inline-block;
   list-style: none;
+}
+.btn.btn-primary.btn-lg.active{
+  margin-left: 100px;
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { StudentService } from '../services/student.service';
 @Component({
   selector: 'app-register',
@@ -15,7 +16,7 @@ export class RegisterComponent implements OnInit {
   registred = false;
   validationError = '';
 
-  constructor(private studentService: StudentService) {}
+  constructor(private studentService: StudentService, private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -26,7 +27,8 @@ export class RegisterComponent implements OnInit {
         this.registred = !this.registred;
         console.log(res);
         ///send email to student
-        this.studentService.sendEmail({email:this.student.email})
+        this.studentService.sendEmail({ email: this.student.email });
+        this.router.navigateByUrl('/home');
       },
       (error) => {
         this.validationError = error.error;

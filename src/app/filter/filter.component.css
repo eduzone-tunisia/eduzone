@@ -137,3 +137,32 @@ h2{
 
 }
 
+.price {
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02rem;
+  font-size: 1.6rem;
+}
+.rate {
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.02rem;
+  font-size: 1.2rem;
+}
+
+.rating-list li {
+  float: right;
+  color: #ddd;
+  padding: 10px 5px;
+
+}
+
+.rating-list li:hover,
+.rating-list li:hover ~ li, .rating-list li.selected {
+  color: #ffd700;
+}
+
+.rating-list {
+  display: inline-block;
+  list-style: none;
+}
