@@ -1,4 +1,20 @@
 
+<app-navbar></app-navbar>&nbsp;
+
+<div class="row">
+  <div class="col-12">
+
+
+<h1>Billing & Credit Card Information</h1>
+<p>let's get your trip'in! Complete the payement form below to confirm your purchase(s).</p>
+</div>
+</div>
+
+<div class="row">
+    <div class="col-1"> 
+  </div>
+  <div class="col-11">
+
 <div class ='payement'>
   <form
   class="text-center border border-light p-5"
@@ -11,7 +27,7 @@
   <!-- Grid column -->
   <div class="col-xl-3 col-md-4 mb-3">
 
-    <img src="https://www.presse-citron.net/wordpress_prod/wp-content/uploads/2020/01/visa-1000x600.jpg" class="img-fluid z-depth-1"
+    <img src="../../assets/credit card logo/visa-1000x600.jpg" class="img-fluid z-depth-1"
       alt="Responsive image">
 
   </div>
@@ -20,7 +36,7 @@
   <!-- Grid column -->
   <div class="col-xl-3 col-md-4 mb-3 text-center">
 
-    <img src="https://www.techcityng.com/wp-content/uploads/2014/03/Mastercard--e1427370262526.jpg" class="img-fluid z-depth-1"
+    <img src="../../assets/credit card logo/Mastercard.jpg" class="img-fluid z-depth-1"
     alt="Responsive image">
 
 
@@ -30,7 +46,7 @@
   <!-- Grid column -->
   <div class="col-xl-3 col-md-4 mb-3 text-right">
 
-    <img src="https://img.generation-nt.com/paypal-logo_0670045701665860.png" class="img-fluid z-depth-1"
+    <img src="../../assets/credit card logo/paypal-logo_0670045701665860.png" class="img-fluid z-depth-1"
     alt="Responsive image">
 
 
@@ -41,7 +57,7 @@
 </div>
 </div>
 <!-- Grid row -->
-  <p class="h4 mb-4">Checkout</p>
+  <!-- <p class="h4 mb-4">Checkout</p> -->
 
   <div class="d-block my-3">
     <div class="custom-control custom-radio">
@@ -57,6 +73,7 @@
       <label class="custom-control-label" for="paypal">Paypal</label>
     </div>
   </div>
+  
   <div class="form-row mb-4">
     <div class="col">
       <!-- First name -->
@@ -69,51 +86,61 @@
         class="form-control"
         placeholder="Enter Name on card"
       />
-    </div>
-    <div class="col">
-      <!-- Last name -->
-      <label for="number">Credit card <i class="far fa-credit-card"></i></label>
-  <input
-    type="text"
-    name="creditCard"
-    ngModel
-    required
-    class="form-control"
-    placeholder=" credit card number"
-  />
-    </div>
-  </div>
 
-  <div class="form-row mb-4">
-  <div class="col">
-    <!-- CCV-->
-    <label for="CCV">CCV</label>
-    <input
-      type="text"
-      name="CCV"
-      ngModel
-      required
-      class="form-control"
-      placeholder="CCV"
-    />
+    </div>
+    <div class="form-row mb-4">
+      <div class="col">
+        <!-- First name -->
+        <label for="fname">Name on card</label>
+        <input
+          type="text"
+          name="Name on card"
+          ngModel
+          required
+          class="form-control"
+          placeholder="Enter Name on card"
+        />
+      </div>
+      <div class="col">
+        <!-- Last name -->
+        <label for="number"
+          >Credit card <i class="far fa-credit-card"></i
+        ></label>
+        <input
+          type="text"
+          name="creditCard"
+          ngModel
+          required
+          class="form-control"
+          placeholder=" credit card number"
+        />
+      </div>
+    </div>
+
   </div>
-  <div class="col">
-  <!-- Date of expiration -->
-  <div class="md-form md-outline input-with-post-icon datepicker">
-    <label for="example">Date of expiration</label><input
-      placeholder="Select date"
-      type="date"
-      name="Date of expiration"
-      ngModel
-      required
-      class="form-control"
-    />
+<div class='ce'>
+  <div class='form-row'><!-- CCV-->
+    <div class='col-xs-4 form-group cvc required'>
+      <label class='control-label'>CVC</label>
+      <input autocomplete='off' class='form-control card-cvc' placeholder='ex. 311' size='4' type='text'>
+    </div>
+    <div class='col-xs-4 form-group expiration required'><!-- Date of expiration -->
+      <label class='control-label'>Expiration</label>
+      <input class='form-control card-expiry-month' placeholder='MM' size='2' type='text'>
+    </div>
+    <div class='col-xs-4 form-group expiration required'>
+      <label class='control-label'> </label>
+      <input class='form-control card-expiry-year' placeholder='YYYY' size='4' type='text'>
+    </div>
   </div>
 </div>
-</div>
+  
 <!--update button -->
 <button class="btn btn-primary btn-lg active" type="submit"><i class="fas fa-lock"></i> Pay</button>
 </form>
 </div> 
+  </div>
+</div>
+
 
 <router-outlet></router-outlet>

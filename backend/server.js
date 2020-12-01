@@ -6,6 +6,7 @@ const cors = require("cors");
 const fileupload = require("express-fileupload")
 const course = require("./routes/courses");
 const file = require("./routes/upload");
+const verify = require("./routes/verifyToken.js");
 const app = express();
 
 const student = require("./routes/students");

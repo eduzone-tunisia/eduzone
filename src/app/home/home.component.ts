@@ -15,6 +15,7 @@ import { TeacherService } from '../services/teacher.service';
 })
 export class HomeComponent implements OnInit {
   id = window.localStorage.id;
+  isstudent: boolean = false;
   balance: any;
   student: any;
   courses: any;
@@ -24,6 +25,8 @@ export class HomeComponent implements OnInit {
   gDcourse: any;
   course: any;
   ObjectId: any;
+  selectedValue: any;
+  stars: number[] = [1, 2, 3, 4, 5];
   constructor(
     private coursesService: CousesService,
     private router: Router,
@@ -38,12 +41,22 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.getAllCourses();
+    this.getConnectedStudent();
+  }
+  getConnectedStudent() {
+    this.studentService.studentProfile(this.id).subscribe((res) => {
+      this.student = res;
+      console.log('student in home', this.student);
+      if (this.student !== null) this.isstudent = true;
+      console.log('is logged in ', this.isstudent);
+    });
   }
 
   getAllCourses() {
     this.coursesService.getAllcourses().subscribe((res) => {
       console.log(res);
       this.courses = res;
+      this.selectedValue = this.courses.rating;
       if (this.courses) {
         this.CScourses = this.courses.filter(
           (cours: any) => cours.sections === 'computer science'

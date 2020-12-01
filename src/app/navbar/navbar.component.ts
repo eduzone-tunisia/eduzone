@@ -1,4 +1,10 @@
-import { Component, OnInit, AfterContentChecked, Output } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  AfterContentChecked,
+  Output,
+  OnChanges,
+} from '@angular/core';
 import { TeacherService } from '../services/teacher.service';
 import { StudentService } from '../services/student.service';
 import { SearchComponent } from '../search/search.component';
@@ -20,6 +26,11 @@ export class NavbarComponent implements OnInit {
     private studentService: StudentService
   ) {}
 
+  // ngAfterContentInit() {
+  //   this.getConnectedTeacher();
+  //   this.getStudentProfile();
+  // }
+
   ngOnInit() {
     this.getConnectedTeacher();
     this.getStudentProfile();
@@ -29,7 +40,7 @@ export class NavbarComponent implements OnInit {
     console.log('id', this.id);
     this.teacherService.getConnectedTeacher(this.id).subscribe((res) => {
       this.user = res;
-      if (this.user) this.teacherloggedIn = true;
+
       console.log(res);
       console.log('user', this.user);
     });
@@ -40,7 +51,7 @@ export class NavbarComponent implements OnInit {
       (res) => {
         console.log(res);
         this.student = res;
-        if (this.student) this.studentloggedIn = true;
+
         console.log('student', this.student);
       },
       (error) => {
@@ -51,12 +62,22 @@ export class NavbarComponent implements OnInit {
 
   ngAfterContentChecked() {
     this.isLoggedIn();
+    this.teachers();
+    this.students();
   }
 
   isLoggedIn() {
     if (typeof localStorage.getItem('token') === 'string') {
       this.loggedIn = true;
     }
+  }
+
+  teachers() {
+    if (this.user && !this.student) this.teacherloggedIn = true;
+  }
+
+  students() {
+    if (this.student && !this.user) this.studentloggedIn = true;
   }
 
   clearStorage() {

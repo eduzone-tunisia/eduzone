@@ -39,6 +39,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { TestStarComponent } from './test-star/test-star.component';
 // import { RatingComponent } from './rating/rating.component';
 import { TeacherProfileComponent } from './teacher-profile/teacher-profile.component';
+
  //pipe/search/filter
 import { FilterPipe  } from './search/filter.pipe';
 import { SearchComponent } from './search/search.component';
@@ -77,6 +78,7 @@ import { GDfilterComponent } from './GDfilter/GDfilter.component';
   VideoPlayerComponent,
       SearchComponent,
       TestStarComponent,
+    
       //search/pipe
       FilterPipe,
       HighlightDirective,
@@ -103,7 +105,6 @@ import { GDfilterComponent } from './GDfilter/GDfilter.component';
   CommonModule,
   MatSnackBarModule,
   BrowserAnimationsModule,
-  
   MatTooltipModule,
   MatIconModule,
   MatFormFieldModule,
