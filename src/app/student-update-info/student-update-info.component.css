@@ -1,5 +1,4 @@
 .row{
-    background-color: whitesmoke;
     color: black;
   }
   
@@ -9,7 +8,7 @@
         font-family: italic ;
   }
   .btnn {
-    background-color : #0062cc;
+    background-color : #0d47a1;
     margin: .375rem;
     color: inherit;
     text-transform: uppercase;
@@ -27,5 +26,26 @@
     padding: .84rem 2.14rem;
     font-size: .81rem;
     color: #fff;
-    float: right;
+    /* float: right; */
+    border-radius: 12px;
+    margin-left:270px;
+    margin-top:20px;
 }
+p{
+  margin-left: 150px;
+  margin-top:20px;
+}
+.h4.mb-4{
+  font-weight: bolder;
+  font-size: 50px;
+}
+/* .btn.btn-primary.btn-lg.active {
+  height: 45px;
+  width: 110px;
+  padding: 10px;
+  border-radius: 12px;
+  text-align: center;
+  margin: 4px 2px;
+  margin-left: 900px;
+  margin-top: 40px;
+} */

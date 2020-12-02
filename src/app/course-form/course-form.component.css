@@ -21,3 +21,16 @@
     padding: .84rem 2.14rem;
     font-size: .81rem;
   }
+  button{
+    height: 40px;
+    width: 90px;
+    padding: 10px;
+    border-radius: 12px;
+    text-align: center;
+    margin: 4px 2px;
+    margin-left: 600px;
+    margin-top: 20px;
+  }
+  h3{
+    font-size: 40px;
+  }
