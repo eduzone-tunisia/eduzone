@@ -23,7 +23,9 @@ app.use(cors());
 
 app.use(express.static(`../dist/eduzone`));
 
-
+app.get("/*", function (req, res) {
+  res.sendFile(path.join(__dirname + "../dist/eduzone/index.html"));
+});
 
 app.use("/file",file)
 app.use("/course", course);
