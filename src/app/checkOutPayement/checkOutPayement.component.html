@@ -1,64 +1,42 @@
-
 <app-navbar></app-navbar>&nbsp;
 
-<div class="row">
-  <div class="col-12">
 
+
+<div class= 'container-fluid' >
 
 <h1>Billing & Credit Card Information</h1>
 <p>let's get your trip'in! Complete the payement form below to confirm your purchase(s).</p>
-</div>
-</div>
 
-<div class="row">
-    <div class="col-1"> 
-  </div>
-  <div class="col-11">
 
-<div class ='payement'>
+
+<div class ='payement' style="margin-right: 10%; margin-left: 10%;">
   <form
   class="text-center border border-light p-5"
   >
-<p class="h4 mb-4">Payement amount:</p>
+  <p class="h4 mb-4">Payement amount:</p>
   <!-- Grid row -->
   <div class='photo'>
-<div class="row">
-
+  <div class="row">
   <!-- Grid column -->
   <div class="col-xl-3 col-md-4 mb-3">
-
     <img src="../../assets/credit card logo/visa-1000x600.jpg" class="img-fluid z-depth-1"
       alt="Responsive image">
-
   </div>
-  <!-- Grid column -->
-
-  <!-- Grid column -->
   <div class="col-xl-3 col-md-4 mb-3 text-center">
-
     <img src="../../assets/credit card logo/Mastercard.jpg" class="img-fluid z-depth-1"
     alt="Responsive image">
-
-
   </div>
   <!-- Grid column -->
-
   <!-- Grid column -->
   <div class="col-xl-3 col-md-4 mb-3 text-right">
-
     <img src="../../assets/credit card logo/paypal-logo_0670045701665860.png" class="img-fluid z-depth-1"
     alt="Responsive image">
-
-
   </div>
   <!-- Grid column -->
-
-
 </div>
 </div>
 <!-- Grid row -->
   <!-- <p class="h4 mb-4">Checkout</p> -->
-
   <div class="d-block my-3">
     <div class="custom-control custom-radio">
       <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
@@ -73,7 +51,6 @@
       <label class="custom-control-label" for="paypal">Paypal</label>
     </div>
   </div>
-  
   <div class="form-row mb-4">
     <div class="col">
       <!-- First name -->
@@ -86,7 +63,6 @@
         class="form-control"
         placeholder="Enter Name on card"
       />
-
     </div>
     <div class="form-row mb-4">
       <div class="col">
@@ -116,7 +92,6 @@
         />
       </div>
     </div>
-
   </div>
 <div class='ce'>
   <div class='form-row'><!-- CCV-->
@@ -136,11 +111,15 @@
 </div>
   
 <!--update button -->
-<button class="btn btn-primary btn-lg active" type="submit"><i class="fas fa-lock"></i> Pay</button>
+<button class="btn btn-primary btn-lg active" type="submit" ><i class="fas fa-lock"></i> Pay</button>
+<hr />
+  <!-- Terms of service -->
+  <p>
+    By clicking <em>pay</em> you agree to our
+    <a   routerLink="/servicesTerms" >terms of service</a>
+  </p>
 </form>
 </div> 
-  </div>
 </div>
-
 
 <router-outlet></router-outlet>

@@ -16,7 +16,7 @@
 
 <div class="row">
   
-  <div class="col-lg-3 col-md-12 col-sm-12">
+  <div class="col-lg-3 col-md-12 col-sm-12" style="margin-right: 40%; margin-left: 40%;">
     <div class="card card-stats">
       <div class="card-body ">
         <div class="row">
@@ -35,26 +35,27 @@
         </div>
       </div>
       <div class="card-footer ">
-       
-        
       </div>
-      
     </div>
-
   </div>
- <div class="col-12">
-  <div style="display: block; height: 425px;
-  width: 1089px;margin-left: 500px;" >
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <div class= 'container-fluid' >
+ <div class="col-12" style="margin-right: 20%; margin-left: 20%;">
+  <div style="display: block; height: 200px;
+  width: 1089px;" >
     <canvas mdbChart
         [chartType]="chartType"
         [datasets]="chartDatasets"
         [labels]="chartLabels"
         [colors]="chartColors"
         [options]="chartOptions"
-        [legend]="true"
-    >
+        [legend]="true">
     </canvas>
   </div>
- </div>
- 
+</div>
+</div>
+<a class="btn btn-primary btn-lg active" role="button" aria-pressed="true" routerLink="/dashboard"> GO BACK </a>
 </div>

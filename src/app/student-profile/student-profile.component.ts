@@ -16,6 +16,7 @@ export class StudentProfileComponent implements OnInit {
   video: any;
   course: any;
   loggedIn = false;
+  stars: number[] = [1, 2, 3, 4, 5];
   constructor(
     private coursesService: CousesService,
     private router: Router,

@@ -1,15 +1,17 @@
 
 <app-navbar></app-navbar>&nbsp;
+<div class= 'container-fluid' >
 <form
-  class="text-center border border-light p-5"
+  class="text-center border border-light p-5" style="margin-right: 5%; margin-left: 5%;"
   #f="ngForm"
   (ngSubmit)="onSubmit(f)"
 >
-  <p class="h4 mb-4">Register</p>
+  <p class="h4 mb-4">Update your information</p>
 
   <div class="form-row mb-4">
     <div class="col">
       <!-- First name -->
+      <label>First Name  </label>
       <input
         type="text"
         name="firstName"
@@ -17,11 +19,12 @@
         required
         #firstName="ngModel"
         class="form-control"
-        placeholder="Enter firstname"
+        placeholder="Enter your first name"
       />
     </div>
     <div class="col">
       <!-- Last name -->
+      <label>Last Name  </label>
       <input
         type="text"
         name="lastName"
@@ -35,8 +38,8 @@
   </div>
 
   <!-- E-mail -->
-  <i class="far fa-envelope"></i
-  ><input
+  <label>Email  <i class="far fa-envelope"></i></label>
+  <input
     type="email"
     name="email"
     ngModel
@@ -47,8 +50,9 @@
   />
 
   <!-- Password -->
-  <i class="fas fa-lock"></i
-  ><input
+  <label>Password  <i class="fas fa-lock"></i
+    ></label>
+    <input
     type="password"
     name="password"
     ngModel
@@ -65,7 +69,7 @@
   </small>
 
   <!-- Phone number -->
-
+  <label>Phone number  <i class="fas fa-phone"></i></label>
   <input
     type="text"
     name="phoneNumber"
@@ -75,13 +79,13 @@
     class="form-control"
     placeholder="Enter phonenumber"
   />
-  <i class="fas fa-phone"></i>
+  
   <small
     id="defaultRegisterFormPhoneHelpBlock"
     class="form-text text-muted mb-4"
   >
   </small>
-
+<label>Image <i class="far fa-image"></i> </label>
   <!-- Image -->
   <input
     type="text"
@@ -90,11 +94,12 @@
     required
     #imageUrl="ngModel"
     class="form-control"
-    placeholder="Enter image"
+    placeholder="Enter your image"
   />
-  <i class="far fa-image"></i>
+  <label>Date Of Birth  <i class="fas fa-birthday-cake"></i>  </label>
   <small class="form-text text-muted mb-4"> </small>
   <!-- Date of birth -->
+  
   <div class="md-form md-outline input-with-post-icon datepicker">
     <input
       placeholder="Select date"
@@ -105,10 +110,11 @@
       #dateOfBirth="ngModel"
       class="form-control"
     />
-    <i class="fas fa-birthday-cake"></i>
+    
     <label for="example">Date of birth</label>
   </div>
   <!-- Experience -->
+  <label>Experience  <i class="fas fa-user-check"></i>  </label>
   <input
     type="text"
     name="experience"
@@ -118,11 +124,11 @@
     class="form-control"
     placeholder="Enter your experience"
   />
-  <i class="fas fa-user-check"></i>
+  
   <small class="form-text text-muted mb-4"> </small>
   <!--update button -->
   <button class="btn btn-primary btn-lg active" type="submit" routerLink="/dashboard">
-    Update your information
+    Update  <i class="fas fa-edit"></i>
   </button>
   <hr />
   <!-- Terms of service -->
@@ -131,4 +137,5 @@
     <a   routerLink="/servicesTerms" >terms of service</a>
   </p>
 </form>
+</div>
 <router-outlet></router-outlet>

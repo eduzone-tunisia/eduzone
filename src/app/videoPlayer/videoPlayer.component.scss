@@ -23,6 +23,7 @@ h3 {
 }
 
 .embed-responsive-item {
+  
   width: 880px;
   height: 465px;
   margin-left: -13px;
@@ -51,8 +52,8 @@ h3 {
 // .modal.fade{
 //     background-image: url(../../assets/background/background.jpg);
 // }
-body {
-  background: url("../../assets/background/video-play-button-ss-1920.jpg")
+.body {
+  background: url("../../assets/background/background.jpg")
     no-repeat;
   overflow: hidden;
   background-size: cover;
@@ -82,3 +83,16 @@ body {
   display: inline-block;
   list-style: none;
 }
+p{
+  margin-top: -120px;
+  font-size: large;
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+h1{
+  margin-top: 72px;
+}
+// .body{
+//   background-image: url('https://oc-images.imgix.net/backgrounds/bg_oc_things_grey.png?auto=compress,format&q=80)');
+// }
