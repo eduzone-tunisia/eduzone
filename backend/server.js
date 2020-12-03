@@ -9,11 +9,11 @@ const file = require("./routes/upload");
 const verify = require("./routes/verifyToken.js");
 const app = express();
 const port = process.env.PORT || 8080;
-var server=app.listen(8080,()=>{
+var server = app.listen(port, () => {
   console.log(`listening at port at http://localhost:${port}`);
-})
+});
 
-var io = require('socket.io').listen(server);
+var io = require("socket.io").listen(server);
 const student = require("./routes/students");
 const teacher = require("./routes/teachers");
 const cloudinary = require("cloudinary");
@@ -38,51 +38,45 @@ app.use("/course", course);
 app.use("/student", student);
 app.use("/teacher", teacher);
 // signaling for socket io
-io.on('connection', function (socket) {
+io.on("connection", function (socket) {
   // console.log('a user connected');
 
-  socket.on('create or join', function (room) {
-      console.log('create or join to room ', room);
-      
-      var myRoom = io.sockets.adapter.rooms[room] || { length: 0 };
-  
-      var numClients = myRoom.length;
-      
+  socket.on("create or join", function (room) {
+    console.log("create or join to room ", room);
 
-      console.log(room, ' has ', numClients, ' clients');
+    var myRoom = io.sockets.adapter.rooms[room] || { length: 0 };
 
-      if (numClients == 0) {
-          socket.join(room);
-          socket.emit('created', room);
-      } else if (numClients == 1) {
-          socket.join(room);
-          socket.emit('joined', room);
-      
-      } else {
-          socket.emit('full', room);
-      }
+    var numClients = myRoom.length;
+
+    console.log(room, " has ", numClients, " clients");
+
+    if (numClients == 0) {
+      socket.join(room);
+      socket.emit("created", room);
+    } else if (numClients == 1) {
+      socket.join(room);
+      socket.emit("joined", room);
+    } else {
+      socket.emit("full", room);
+    }
   });
 
-  socket.on('ready', function (room){
-      socket.broadcast.to(room).emit('ready');
+  socket.on("ready", function (room) {
+    socket.broadcast.to(room).emit("ready");
   });
 
-  socket.on('candidate', function (event){
-   
-      socket.broadcast.to(event.room).emit('candidate', event);
+  socket.on("candidate", function (event) {
+    socket.broadcast.to(event.room).emit("candidate", event);
   });
 
-  socket.on('offer', function(event){
-      socket.broadcast.to(event.room).emit('offer',event.sdp);
+  socket.on("offer", function (event) {
+    socket.broadcast.to(event.room).emit("offer", event.sdp);
   });
 
-  socket.on('answer', function(event){
-      socket.broadcast.to(event.room).emit('answer',event.sdp);
+  socket.on("answer", function (event) {
+    socket.broadcast.to(event.room).emit("answer", event.sdp);
   });
-
 });
-
-
 
 // app.listen(port, () => {
 //   console.log(`listening at port at http://localhost:${port}`);
