@@ -148,27 +148,6 @@ router.post("/login", async (req, res, next) => {
 
 //update a student
 router.put("/:id", async (req, res) => {
-<<<<<<< HEAD
-  //check if email exists
-  const emailExist = await Student.findOne({ email: req.body.email });
-  if (emailExist) return res.status(400).send("email already exists")
-    //hash password
-    const salt = await bcrypt.genSalt(10);
-    const hashedPassword = await bcrypt.hash(req.body.password, salt);
-    const newInfo ={
-      email: req.body.email,
-      password: hashedPassword,
-      phoneNumber: req.body.phoneNumber,
-      dateOfBirth: req.body.dateOfBirth,
-    }
- // still joi validation for the update form   
-//  const {error}  = await updateValidation.validateAsync(req.body)
- 
-     const updatedInfo= await Student.findByIdAndUpdate(req.params.id, newInfo);
-     console.log(updatedInfo)
-     res.send(updatedInfo)
- 
-=======
   console.log(req.body);
   //check if email exists
   const emailExist = await Student.findOne({ email: req.body.email });
@@ -197,7 +176,6 @@ router.put("/likeCourse/:id", async (req, res) => {
   };
   await Student.findByIdAndUpdate(req.params.id, updatedst);
   res.json("student  updated");
->>>>>>> 91fa94f2fe60e79dda5b3e07ccca8666ccb8bb40
 });
 
 module.exports = router;

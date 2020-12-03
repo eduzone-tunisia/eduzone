@@ -16,9 +16,6 @@ import {CourseFormComponent} from './course-form/course-form.component';
 import {StudentInfoComponent } from "./student-update-info/student-update-info.component"
 import { UpdateTeacherComponent } from './update-teacher/update-teacher.component';
 import { TermOfServiceComponent } from './termOfService/termOfService.component';
-<<<<<<< HEAD
-import {TeacherProfileComponent} from './teacher-profile/teacher-profile.component';
-=======
 
 import { VideoPlayerComponent } from './videoPlayer/videoPlayer.component';
 
@@ -31,13 +28,12 @@ import { TeacherProfileComponent } from './teacher-profile/teacher-profile.compo
 import { SearchComponent } from './search/search.component';
 import { SearchResultComponent } from './searchResult/searchResult.component';
 import { BalanceComponent } from './Balance/Balance.component';
-
+import{ VideoChatComponent} from './video-chat/video-chat.component'
 import { CheckOutPayementComponent } from './checkOutPayement/checkOutPayement.component';
 import { ScienceFilterComponent } from './science-filter/science-filter.component';
 import { GDfilterComponent } from './GDfilter/GDfilter.component';
 
 
->>>>>>> 91fa94f2fe60e79dda5b3e07ccca8666ccb8bb40
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
   
@@ -55,9 +51,6 @@ const routes: Routes = [
   { path: 'updateTeacher', component: UpdateTeacherComponent },
   {path : "updateStudentInfo" , component:StudentInfoComponent },
   {path : "servicesTerms", component:TermOfServiceComponent},
-<<<<<<< HEAD
-  {path:"teacherProfile", component:TeacherProfileComponent}
-=======
   {path: "videoPlayer", component:VideoPlayerComponent},
   {path : "addCourse", component:CourseFormComponent},
   {path : "dashboard", component: TeacherProfileComponent},
@@ -66,8 +59,8 @@ const routes: Routes = [
   {path : "payement", component: CheckOutPayementComponent },
   {path : "sciencefilter", component : ScienceFilterComponent},
   {path : "gdfilter", component : GDfilterComponent},
+  {path :"videoChat" ,component:VideoChatComponent}
 
->>>>>>> 91fa94f2fe60e79dda5b3e07ccca8666ccb8bb40
 ];
 
 @NgModule({

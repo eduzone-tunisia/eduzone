@@ -25,9 +25,6 @@ import { StudentProfileComponent } from './student-profile/student-profile.compo
 import { NgxDropzoneModule } from 'ngx-dropzone';
 import { UpdateTeacherComponent } from './update-teacher/update-teacher.component';
 import { TermOfServiceComponent } from './termOfService/termOfService.component';
-<<<<<<< HEAD
-import {TeacherProfileComponent} from './teacher-profile/teacher-profile.component'
-=======
 import { VideoPlayerComponent } from './videoPlayer/videoPlayer.component';
 import { FilterComponent } from './filter/filter.component';
 import { TypeComponent } from './type/type.component';
@@ -55,7 +52,10 @@ import { BalanceComponent } from './Balance/Balance.component';
 import { CheckOutPayementComponent } from './checkOutPayement/checkOutPayement.component';
 import { ScienceFilterComponent } from './science-filter/science-filter.component';
 import { GDfilterComponent } from './GDfilter/GDfilter.component';
->>>>>>> 91fa94f2fe60e79dda5b3e07ccca8666ccb8bb40
+import { VideoChatComponent } from './video-chat/video-chat.component';
+
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+const config: SocketIoConfig = { url: 'http://localhost:8080', options: {} };
 @NgModule({
 
   declarations: [					
@@ -69,10 +69,6 @@ import { GDfilterComponent } from './GDfilter/GDfilter.component';
     RegisterComponent,
     LoginComponent,
     TeacherRegisterComponent,
-<<<<<<< HEAD
-    TeacherProfileComponent,
-=======
->>>>>>> 91fa94f2fe60e79dda5b3e07ccca8666ccb8bb40
     TeacherLoginComponent,
     HomeComponent,
     StudentInfoComponent,
@@ -86,7 +82,7 @@ import { GDfilterComponent } from './GDfilter/GDfilter.component';
   VideoPlayerComponent,
       SearchComponent,
       TestStarComponent,
-    
+      VideoChatComponent,
       //search/pipe
       FilterPipe,
       HighlightDirective,
@@ -116,6 +112,7 @@ import { GDfilterComponent } from './GDfilter/GDfilter.component';
   MatTooltipModule,
   MatIconModule,
   MatFormFieldModule,
+  SocketIoModule.forRoot(config)
  
 
 

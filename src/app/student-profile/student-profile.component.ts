@@ -9,32 +9,6 @@ import { Router } from '@angular/router';
   templateUrl: './student-profile.component.html',
   styleUrls: ['./student-profile.component.css'],
 })
-<<<<<<< HEAD
-
-
-export class StudentProfileComponent implements OnInit{
-student :any ={}
-id : any =window.localStorage.id
-loggedIn :any=false
-constructor( private studentService : StudentService ,private coursesService:CousesService ){}
-//dummy data to display in the profile
-myCourses = this.coursesService.courses.filter(cate => cate.cate==="front-end")
-ngOnInit(){
-this.getStudentProfile()
-
-
-}
-getStudentProfile(){
-    this.studentService.studentProfile(this.id).subscribe(
-        (res) => {
-          this.student=res
-          this.loggedIn=true
-        
-        
-        },
-        (error) => {
-          console.log(error);
-=======
 export class StudentProfileComponent implements OnInit {
   student: any;
   id = window.localStorage.id;
@@ -66,7 +40,6 @@ export class StudentProfileComponent implements OnInit {
             this.myCourses.push(res);
             console.log('my courses in get one', this.myCourses);
           });
->>>>>>> 91fa94f2fe60e79dda5b3e07ccca8666ccb8bb40
         }
         // console.log('student in profile', this.student.videos);
         this.loggedIn = !this.loggedIn;
