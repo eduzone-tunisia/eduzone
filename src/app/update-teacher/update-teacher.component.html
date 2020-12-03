@@ -1,58 +1,134 @@
 
-
-<!-- Default form register -->
-<form class="text-center border border-light p-5" action="#!">
-
+<app-navbar></app-navbar>&nbsp;
+<form
+  class="text-center border border-light p-5"
+  #f="ngForm"
+  (ngSubmit)="onSubmit(f)"
+>
   <p class="h4 mb-4">Register</p>
 
   <div class="form-row mb-4">
-      <div class="col">
-          <!-- First name -->
-          <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="First name">
-      </div>
-      <div class="col">
-          <!-- Last name -->
-          <input type="text" id="defaultRegisterFormLastName" class="form-control" placeholder="Last name">
-      </div>
+    <div class="col">
+      <!-- First name -->
+      <input
+        type="text"
+        name="firstName"
+        ngModel
+        required
+        #firstName="ngModel"
+        class="form-control"
+        placeholder="Enter firstname"
+      />
+    </div>
+    <div class="col">
+      <!-- Last name -->
+      <input
+        type="text"
+        name="lastName"
+        ngModel
+        required
+        #lastName="ngModel"
+        class="form-control"
+        placeholder="Enter lastname"
+      />
+    </div>
   </div>
 
   <!-- E-mail -->
-  <i class="far fa-envelope"></i><input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder=" E-mail">
+  <i class="far fa-envelope"></i
+  ><input
+    type="email"
+    name="email"
+    ngModel
+    required
+    #email="ngModel"
+    class="form-control"
+    placeholder="Enter email"
+  />
 
   <!-- Password -->
-  <i class="fas fa-lock"></i><input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
-  <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
-      At least 6 characters 
-      
+  <i class="fas fa-lock"></i
+  ><input
+    type="password"
+    name="password"
+    ngModel
+    required
+    #password="ngModel"
+    class="form-control"
+    placeholder="Enter password"
+  />
+  <small
+    id="defaultRegisterFormPasswordHelpBlock"
+    class="form-text text-muted mb-4"
+  >
+    At least 6 characters
   </small>
 
   <!-- Phone number -->
 
-  <input type="text" id="defaultRegisterPhonePassword" class="form-control" placeholder="Phone number" aria-describedby="defaultRegisterFormPhoneHelpBlock">
+  <input
+    type="text"
+    name="phoneNumber"
+    ngModel
+    required
+    #phoneNumber="ngModel"
+    class="form-control"
+    placeholder="Enter phonenumber"
+  />
   <i class="fas fa-phone"></i>
-  <small id="defaultRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
+  <small
+    id="defaultRegisterFormPhoneHelpBlock"
+    class="form-text text-muted mb-4"
+  >
   </small>
 
-<!-- Image -->
-  <input class="form-control" type="text" placeholder="Image(URL)">
-  <small  class="form-text text-muted mb-4">
-  </small>
-<!-- Date of birth -->
+  <!-- Image -->
+  <input
+    type="text"
+    name="imageUrl"
+    ngModel
+    required
+    #imageUrl="ngModel"
+    class="form-control"
+    placeholder="Enter image"
+  />
+  <i class="far fa-image"></i>
+  <small class="form-text text-muted mb-4"> </small>
+  <!-- Date of birth -->
   <div class="md-form md-outline input-with-post-icon datepicker">
-    <input placeholder="Select date" type="date" id="example" class="form-control">
+    <input
+      placeholder="Select date"
+      type="date"
+      name="dateOfBirth"
+      ngModel
+      required
+      #dateOfBirth="ngModel"
+      class="form-control"
+    />
+    <i class="fas fa-birthday-cake"></i>
     <label for="example">Date of birth</label>
   </div>
-<!-- Experience -->
-  <input class="form-control" type="text" placeholder="Experience">
-  <small  class="form-text text-muted mb-4">
-  </small>
+  <!-- Experience -->
+  <input
+    type="text"
+    name="experience"
+    ngModel
+    required
+    #experience="ngModel"
+    class="form-control"
+    placeholder="Enter your experience"
+  />
+  <i class="fas fa-user-check"></i>
+  <small class="form-text text-muted mb-4"> </small>
   <!--update button -->
-  <button class="btn btn-primary btn-lg active " type="submit">Update your information</button>
-  <hr>
+  <button class="btn btn-primary btn-lg active" type="submit" routerLink="/dashboard">
+    Update your information
+  </button>
+  <hr />
   <!-- Terms of service -->
-  <p>By clicking
-      <em>Update your information</em> you agree to our
-      <a href="" target="_blank">terms of service</a>
-
+  <p>
+    By clicking <em>Update your information</em> you agree to our
+    <a   routerLink="/servicesTerms" >terms of service</a>
+  </p>
 </form>
-<!-- Default form register -->
+<router-outlet></router-outlet>

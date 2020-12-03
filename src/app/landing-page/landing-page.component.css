@@ -1,9 +1,9 @@
 .carousel-item{
     box-sizing: border-box;
-    width: 1790px;
-    height: 650px;
+    width: 1440px;
+    height: 550px;
     border-radius: 8px;
-    margin-left:55px;
+    margin-left:50px;
 }
 .a{
     color:black;
@@ -59,4 +59,19 @@
     margin: 4px 2px;
     margin-left: 900px;
     margin-top:40px;
+}
+
+.img-fluid.z-depth-1{
+    height: 180px;
+    width: 360px;
+    margin-left: 60px;
+}
+h2{
+    margin-left: 40px;
+}
+.col-lg-4.col-md-6.mb-4{
+    margin-left: -10px;
+}
+.x{
+    margin-left: 40px;
 }

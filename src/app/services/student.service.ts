@@ -16,10 +16,19 @@ export class StudentService {
   studentLogin(userInfo: any): Observable<any> {
     return this.http.post(serverUrl + 'login', userInfo);
   }
-  studentProfile(id :any) :Observable <any> {
-  return this.http.get(serverUrl +id)
+  studentProfile(id: any): Observable<any> {
+    return this.http.get(serverUrl + id);
   }
-  updateInfo(id:any , updatedInfo : any): Observable <any> {
-    return this.http.put(serverUrl+id,updatedInfo)
+  updateInfo(id: any, updatedInfo: any): Observable<any> {
+    return this.http.put(serverUrl + id, updatedInfo);
+  }
+  ////send email to student
+  sendEmail(studentEmail: any): Observable<any> {
+    return this.http.post(serverUrl + '/sendemail', studentEmail);
+  }
+
+  //buy course
+  buyCourse(id: any, data: any): Observable<any> {
+    return this.http.put(serverUrl + '/likeCourse/' + id, data);
   }
 }

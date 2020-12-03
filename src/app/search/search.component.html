@@ -1,0 +1,18 @@
+
+  
+    <div class="form-group">
+      <i class="fas fa-search"></i><input  type="email" class="form-control form-control-lg" id="search-text" aria-describedby="search-text" 
+        [(ngModel)]="searchText" (ngModelChange)="modelChangeFn($event)" placeholder="Enter text to search" 
+        autofocus>
+    </div>
+    <ul *ngIf="searchText.length > 0" class="list-group list-group-flush">
+
+      <li (click)="clickOnMe(item)" class="list-group-item" *ngFor="let item of courses | appFilter: searchText" 
+        appHighlight [searchedWord]="searchText" [content]="item.title"  
+        [classToApply]="'font-weight-bold'" [setTitle]="true" >
+        {{item}}
+      </li>
+    </ul>
+  
+
+

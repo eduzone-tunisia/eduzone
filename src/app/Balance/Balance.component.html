@@ -1,0 +1,60 @@
+<!-- <p>
+  You Balance :{{balance}}
+</p> -->
+
+
+
+<!-- 
+<div class="col-7 col-md-8">
+  <div class="numbers">
+    <p class="card-category">Your Balance</p>
+    <p class="card-title">DT :{{balance}}
+      <p>
+  </div>
+</div> -->
+<app-navbar></app-navbar>&nbsp;
+
+<div class="row">
+  
+  <div class="col-lg-3 col-md-12 col-sm-12">
+    <div class="card card-stats">
+      <div class="card-body ">
+        <div class="row">
+          <div class="col-6 col-md-4">
+            <div class="icon-big text-center icon-warning">
+              <i class="nc-icon nc-bank"></i>
+            </div>
+          </div>
+          <div class="col-7 col-md-8">
+            <div class="numbers">
+              <p class="card-category">Your Balance</p>
+              <p class="card-title"> {{balance}} DT 
+                <p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer ">
+       
+        
+      </div>
+      
+    </div>
+
+  </div>
+ <div class="col-12">
+  <div style="display: block; height: 425px;
+  width: 1089px;margin-left: 500px;" >
+    <canvas mdbChart
+        [chartType]="chartType"
+        [datasets]="chartDatasets"
+        [labels]="chartLabels"
+        [colors]="chartColors"
+        [options]="chartOptions"
+        [legend]="true"
+    >
+    </canvas>
+  </div>
+ </div>
+ 
+</div>
