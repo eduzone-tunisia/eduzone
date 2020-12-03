@@ -12,6 +12,10 @@
     margin-bottom:28px;
     
   }
+  img{
+    height:110px;
+    width:140px;
+  }
   
   
   .our-team-main img
@@ -134,7 +138,11 @@
 }
 h2{
     margin-left: 3%;
-
+      color:#0d47a1;
+      font-size: 40px;
+}
+p{
+  color:#3F729B;
 }
 
 .price {
