@@ -32,6 +32,7 @@ import { BalanceComponent } from './Balance/Balance.component';
 import { CheckOutPayementComponent } from './checkOutPayement/checkOutPayement.component';
 import { ScienceFilterComponent } from './science-filter/science-filter.component';
 import { GDfilterComponent } from './GDfilter/GDfilter.component';
+import { AllTeachersComponent } from './all-teachers/all-teachers.component';
 
 
 const routes: Routes = [
@@ -59,6 +60,7 @@ const routes: Routes = [
   {path : "payement", component: CheckOutPayementComponent },
   {path : "sciencefilter", component : ScienceFilterComponent},
   {path : "gdfilter", component : GDfilterComponent},
+  {path : "allTeachers", component : AllTeachersComponent}
 
 ];
 

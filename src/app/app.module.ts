@@ -52,9 +52,10 @@ import { BalanceComponent } from './Balance/Balance.component';
 import { CheckOutPayementComponent } from './checkOutPayement/checkOutPayement.component';
 import { ScienceFilterComponent } from './science-filter/science-filter.component';
 import { GDfilterComponent } from './GDfilter/GDfilter.component';
+import { AllTeachersComponent } from './all-teachers/all-teachers.component';
 @NgModule({
 
-  declarations: [					
+  declarations: [						
 
     AppComponent,
     LandingPageComponent,
@@ -89,8 +90,8 @@ import { GDfilterComponent } from './GDfilter/GDfilter.component';
 
       CheckOutPayementComponent,
       ScienceFilterComponent,
-      GDfilterComponent
-
+      GDfilterComponent,
+      AllTeachersComponent
    ],
 
 
