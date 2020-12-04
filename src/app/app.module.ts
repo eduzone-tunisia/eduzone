@@ -95,6 +95,7 @@ const config: SocketIoConfig = {
     GDfilterComponent,
   ],
 
+
   imports: [
     BrowserModule,
     MDBBootstrapModule.forRoot(),
