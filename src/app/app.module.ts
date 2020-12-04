@@ -52,13 +52,14 @@ import { BalanceComponent } from './Balance/Balance.component';
 import { CheckOutPayementComponent } from './checkOutPayement/checkOutPayement.component';
 import { ScienceFilterComponent } from './science-filter/science-filter.component';
 import { GDfilterComponent } from './GDfilter/GDfilter.component';
+
 import { VideoChatComponent } from './video-chat/video-chat.component';
 
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 const config: SocketIoConfig = { url: 'http://localhost:8080', options: {} };
 @NgModule({
 
-  declarations: [					
+  declarations: [						
 
     AppComponent,
     LandingPageComponent,
@@ -93,8 +94,8 @@ const config: SocketIoConfig = { url: 'http://localhost:8080', options: {} };
 
       CheckOutPayementComponent,
       ScienceFilterComponent,
-      GDfilterComponent
-
+      GDfilterComponent,
+   
    ],
 
 
