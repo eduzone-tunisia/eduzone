@@ -1,4 +1,6 @@
 import { Component, OnInit , ViewChild, ElementRef  } from '@angular/core';
+import { TeacherService } from '../services/teacher.service';
+import { StudentService } from '../services/student.service';
 import{SocketService} from '../services/socket.service'
 @Component({
   selector: 'app-video-chat',
@@ -6,6 +8,10 @@ import{SocketService} from '../services/socket.service'
   styleUrls: ['./video-chat.component.css']
 })
 export class VideoChatComponent implements OnInit {
+  teachers: any;
+  sendToName:any;
+  sendToLastName:any;
+  sendToEmail:any;
 
   @ViewChild("selectRoom", { static: true })selectRoom!: ElementRef;
   @ViewChild("consultingRoom", { static: true })consultingRoom!: ElementRef;
@@ -25,13 +31,29 @@ export class VideoChatComponent implements OnInit {
    isCaller :any;
    end:any=false;
 
-  constructor(private socket:SocketService) {
+  constructor(private socket:SocketService , private teacherService: TeacherService ,private studentService: StudentService) {
     this.onIceCandidate=this.onIceCandidate.bind(this)
     this.onAddStream=this.onAddStream.bind(this)
    }
 
 launchCall(){
+   this.sendToEmail=this.selectRoom.nativeElement.children.email.value
    this.roomNumber=this.selectRoom.nativeElement.children.roomNumber.value
+   this.teachers.map((teacher:any)=>{
+      
+          if(teacher.email===this.sendToEmail){
+            this.sendToLastName=teacher.lastName
+            this.sendToName=teacher.firstName
+          }
+    })
+    if(this.sendToEmail){
+      this.studentService.sendRequest(this.sendToEmail,this.roomNumber,this.sendToName,this.sendToLastName)
+      .subscribe((res)=>{
+       console.log(res)
+      })
+    }
+   
+       
      if(!this.roomNumber){
         alert("Please enter a room number")
       }else{
@@ -40,6 +62,7 @@ launchCall(){
     this.selectRoom.nativeElement.style = "display: none;";
     this.consultingRoom.nativeElement.style = "display: block;";
       }
+  //  console.log(this.sendToEmail,this.sendToLastName,this.sendToName)
   }
 
    endCall(){
@@ -66,7 +89,14 @@ launchCall(){
 
 
   ngOnInit() {
+     
+    this.teacherService.getAllTeachers().subscribe((res) => {
+      console.log(res);
   
+      this.teachers = res;
+      
+      console.log(res);
+    });
     // listening to the event  created
     this.socket.listen("created")
     .subscribe(()=>{
