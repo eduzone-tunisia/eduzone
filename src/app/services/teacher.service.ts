@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-const teacherUrl = 'https://eduzone.herokuapp.com/teacher/';
+const teacherUrl = 'http://localhost:8080/teacher/';
 
 @Injectable({
   providedIn: 'root',
