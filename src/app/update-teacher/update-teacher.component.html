@@ -1,8 +1,15 @@
 
 <app-navbar></app-navbar>&nbsp;
+<div class="sidenav">
+  <a routerLink="/dashboard">My courses</a>
+  <a routerLink="/updateTeacher">Update My Info</a>
+  <a routerLink="/addCourse">Add A Course</a>
+  <a routerLink="/balance" >My Balance</a>
+  <a routerLink="/videoChat">My Students</a>
+</div>
 <div class= 'container-fluid' >
 <form
-  class="text-center border border-light p-5" style="margin-right: 5%; margin-left: 5%;"
+  class="text-center border border-light p-5" style="margin-right: 15%; margin-left: 15%;"
   #f="ngForm"
   (ngSubmit)="onSubmit(f)"
 >
