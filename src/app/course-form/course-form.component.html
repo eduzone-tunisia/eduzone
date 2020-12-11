@@ -1,4 +1,11 @@
 <app-navbar></app-navbar>&nbsp;
+<div class="sidenav">
+  <a routerLink="/dashboard">My courses</a>
+  <a routerLink="/updateTeacher">Update My Info</a>
+  <a routerLink="/addCourse">Add A Course</a>
+  <a routerLink="/balance" >My Balance</a>
+  <a routerLink="/videoChat">My Students</a>
+</div>
 <div class="row">
   <div class="col-md-6 offset-md-3 mt-4">
     <h3>Add Courses</h3>
@@ -13,13 +20,13 @@
           id="title"
           required
           class="form-control"
-          placeholder="Title"
+          placeholder="Enter the title"
         />
       </div>
 
       <!-- description -->
       <div class="form-group">
-        <label for="description">description</label>
+        <label for="description">Description</label>
         <input
           type="text"
           name="description"
@@ -27,7 +34,7 @@
           id="description"
           required
           class="form-control"
-          placeholder="description"
+          placeholder="Enter the description"
         />
       </div>
       <div class="form-group">
@@ -40,12 +47,12 @@
           id="section"
           required
           class="form-control"
-          placeholder="section"
+          placeholder="Choose the section"
         />
       </div>
       <div class="form-group">
         <!-- email -->
-        <label for="section">image</label>
+        <label for="section">Image</label>
         <input
           type="text"
           name="imgUrl"
@@ -53,7 +60,7 @@
           id="imgUrl"
           required
           class="form-control"
-          placeholder="image"
+          placeholder="Enter an image (url)"
         />
       </div>
 
@@ -67,12 +74,12 @@
           [(ngModel)]="course.price"
           id="price"
           class="form-control"
-          placeholder="Price"
+          placeholder="Enter your Price"
         />
       </div>
 
       <ngx-dropzone (change)="selectedFile($event)">
-        <ngx-dropzone-label>upload</ngx-dropzone-label>
+        <ngx-dropzone-label>Upload the video(MP4)</ngx-dropzone-label>
         <!-- <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
             <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
         </ngx-dropzone-preview> -->
